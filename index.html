@@ -18,6 +18,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2.5rem 4rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,164,0.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:1100px;margin:0 auto;width:100%}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin-bottom:1.5rem;display:block;}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,212,164,0.3);padding:6px 14px;border-radius:20px;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
@@ -113,6 +114,7 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
 <section class="hero" id="accueil">
   <div class="hero-inner">
     <div class="hero-tag">Disponible · Stage en cours</div>
+    <img src="photo.jpg" alt="Ibrahima Souaré" class="avatar">
     <h1 class="hero-name">Ibrahima<br><span>Souaré</span></h1>
     <p class="hero-title">Étudiant BUT Réseaux &amp; Télécommunications · Parcours DevCloud · IUT de Colmar</p>
     <p class="hero-desc">Passionné par l'administration système, les réseaux et l'automatisation. Actuellement en stage à la Banque Alimentaire du Bas-Rhin où je mets en pratique mes compétences en infrastructure et supervision réseau.</p>
