@@ -183,74 +183,104 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
   <div class="section-inner">
     <div class="section-label">BUT Réseaux &amp; Télécommunications</div>
     <h2 class="section-title">Les <span>5 compétences</span> du parcours</h2>
-    <div class="comp-grid">
+   <div class="comp-grid">
 
-      <div class="comp-card">
-        <div class="comp-num">Compétence 01</div>
-        <div class="comp-name">Administrer les réseaux et l'internet</div>
-        <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> Stage à la Banque Alimentaire du Bas-Rhin — administration du parc informatique via GLPI sous Docker, supervision automatique des imprimantes via SNMP, configuration Scan to Email sur HP Color LaserJet MFP E57540 via SMTP Gmail.</div>
-        <div class="comp-reflexion">
-          <div class="comp-reflexion-label">Réflexivité</div>
-          <p>La principale difficulté a été de comprendre le protocole SNMP sans documentation interne. J'ai recherché de façon autonome les OIDs spécifiques aux imprimantes HP, testé plusieurs approches avant de trouver la bonne. Cette expérience m'a appris à exploiter des documentations techniques en anglais et à travailler de manière méthodique face à l'inconnu.</p>
-        </div>
-        <div class="comp-tags">
-          <span class="tag accent">GLPI</span><span class="tag accent">Docker</span><span class="tag accent">SNMP</span><span class="tag">Windows Server</span><span class="tag">SAE-303</span>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-num">Compétence 02</div>
-        <div class="comp-name">Connecter les entreprises et les usagers</div>
-        <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE-303 — conception et configuration de l'architecture LAN complète sur GNS3 avec architecture hiérarchique 3 niveaux, VLANs segmentés et trunks 802.1Q. En stage, configuration du Scan to Email via SMTP Gmail sur imprimante HP.</div>
-        <div class="comp-reflexion">
-          <div class="comp-reflexion-label">Réflexivité</div>
-          <p>La configuration SMTP sur l'imprimante HP a nécessité de comprendre les mécanismes d'authentification Gmail. J'ai dû adapter la procédure constructeur aux contraintes de sécurité Google. Cela m'a montré que les protocoles standards peuvent avoir des implémentations très différentes selon les équipements.</p>
-        </div>
-        <div class="comp-tags">
-          <span class="tag accent">VLANs</span><span class="tag accent">802.1Q</span><span class="tag accent">SMTP</span><span class="tag">VTP</span><span class="tag">GNS3</span>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-num">Compétence 03</div>
-        <div class="comp-name">Programmer les équipements du réseau</div>
-        <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> Développement d'un script batch Windows automatisant la surveillance des imprimantes via SNMP. Le script interroge les OIDs des niveaux d'encre, compare les valeurs au seuil de 15% et envoie automatiquement des alertes e-mail. Exécution chaque nuit à 2h00 via le Planificateur de tâches Windows.</div>
-        <div class="comp-reflexion">
-          <div class="comp-reflexion-label">Réflexivité</div>
-          <p>Premier script d'automatisation en environnement professionnel réel. La difficulté principale était l'envoi d'e-mails en ligne de commandes sous Windows. J'ai trouvé et intégré l'outil Blat SMTP. Ce projet m'a appris que l'automatisation c'est avant tout de la résolution de problèmes concrets.</p>
-        </div>
-        <div class="comp-tags">
-          <span class="tag accent">Batch/CMD</span><span class="tag accent">SNMP</span><span class="tag accent">Automatisation</span><span class="tag">Planificateur Windows</span><span class="tag">GitHub</span>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-num">Compétence 04</div>
-        <div class="comp-name">Concevoir un réseau informatique</div>
-        <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> Responsable LAN dans la SAE-303 — conception du plan d'adressage IP pour 2 entreprises sur 3 sites avec 4 VLANs par site. En stage, élaboration d'un plan de déploiement Active Directory en 24 étapes avec Synology Directory Server et Samba 4.</div>
-        <div class="comp-reflexion">
-          <div class="comp-reflexion-label">Réflexivité</div>
-          <p>La conception du plan d'adressage IP a été un vrai défi : respecter la règle xy tout en optimisant les masques. Le plan AD m'a appris à penser en amont, documenter et anticiper les dépendances entre étapes. Ces compétences de conception méthodique sont fondamentales dans tout projet d'infrastructure.</p>
-        </div>
-        <div class="comp-tags">
-          <span class="tag accent">Plan d'adressage IP</span><span class="tag accent">Active Directory</span><span class="tag accent">Synology</span><span class="tag">Samba 4</span><span class="tag">GNS3</span>
-        </div>
-      </div>
-
-      <div class="comp-card">
-        <div class="comp-num">Compétence 05</div>
-        <div class="comp-name">Gérer le projet et développer ses compétences</div>
-        <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE-303 — coordination de la partie LAN dans un groupe de 4, en assurant la cohérence technique avec les parties services et interconnexion. En stage, gestion autonome du suivi de stock dans GLPI et organisation des priorités avec le tuteur Alexis Brandt.</div>
-        <div class="comp-reflexion">
-          <div class="comp-reflexion-label">Réflexivité</div>
-          <p>Travailler en groupe m'a appris à communiquer sur des interfaces techniques. En stage, l'autonomie totale sur certaines missions m'a appris à prendre des initiatives, documenter mon travail pour qu'il soit réutilisable et rendre compte clairement. Ces compétences sont indispensables dans tout poste IT.</p>
-        </div>
-        <div class="comp-tags">
-          <span class="tag accent">Gestion de projet</span><span class="tag accent">Travail en équipe</span><span class="tag accent">Autonomie</span><span class="tag">Documentation</span><span class="tag">GLPI</span>
-        </div>
-      </div>
-
+  <div class="comp-card">
+    <div class="comp-num">Compétence 01</div>
+    <div class="comp-name">Administrer</div>
+    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> Stage à la Banque Alimentaire du Bas-Rhin - déploiement de GLPI sous Docker, supervision automatique des imprimantes réseau via SNMP avec alertes e-mail à 15%, configuration Scan to Email sur HP Color LaserJet MFP E57540 via SMTP Gmail, gestion du parc et des consommables, rédaction d'un plan Active Directory en 24 étapes avec Synology Directory Server et Samba 4.</div>
+    <div class="comp-reflexion">
+      <div class="comp-reflexion-label">Réflexivité</div>
+      <p>En stage, j'ai découvert ce que ça veut vraiment dire d'administrer un système en production. Sans documentation interne, j'ai dû identifier les OIDs SNMP des imprimantes HP par moi-même, tester plusieurs approches avant de trouver la bonne. Déployer GLPI sous Docker m'a appris à travailler avec des conteneurs en conditions réelles. Ce que je retiens : en entreprise, l'administration demande autant de méthode que de capacité à chercher seul.</p>
     </div>
+    <div class="comp-tags">
+      <span class="tag accent">GLPI</span>
+      <span class="tag accent">Docker</span>
+      <span class="tag accent">SNMP</span>
+      <span class="tag accent">Active Directory</span>
+      <span class="tag">Windows Server</span>
+      <span class="tag">Synology</span>
+      <span class="tag">Linux</span>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-num">Compétence 02</div>
+    <div class="comp-name">Connecter</div>
+    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE-303 - responsable de la partie LAN, configuration complète sur GNS3 : architecture hiérarchique 3 niveaux, VLANs 10/20/30/40, trunks 802.1Q, VTP, MSTP, routage inter-VLAN Router-on-a-Stick, haute disponibilité VRRP, DHCP avec adressage statique pour les serveurs. Plan d'adressage IP pour 2 entreprises sur 3 sites.</div>
+    <div class="comp-reflexion">
+      <div class="comp-reflexion-label">Réflexivité</div>
+      <p>La partie la plus difficile a été la coordination avec mes collègues. Mon plan d'adressage LAN devait coller exactement avec la partie services et la partie interconnexion. J'ai appris à documenter mes choix techniques pour que les autres puissent s'y appuyer sans ambiguité. C'est là que j'ai compris qu'un réseau ne se configure pas en silo : tout est lié dès la conception.</p>
+    </div>
+    <div class="comp-tags">
+      <span class="tag accent">VLANs</span>
+      <span class="tag accent">VRRP</span>
+      <span class="tag accent">MSTP</span>
+      <span class="tag accent">802.1Q</span>
+      <span class="tag">Router-on-a-Stick</span>
+      <span class="tag">DHCP</span>
+      <span class="tag">GNS3</span>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-num">Compétence 03</div>
+    <div class="comp-name">Programmer</div>
+    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE-302 - conception et développement seul d'un système de communication anonyme inspiré de TOR. Architecture multi-couches avec sockets TCP, chiffrement RSA par couches, interface graphique PyQt5, base de données MariaDB, déployé sur 3 VM (Linux Master, Linux Routeurs, Windows Clients). En stage, script batch Windows automatisant la surveillance SNMP des imprimantes avec alertes e-mail à 2h00.</div>
+    <div class="comp-reflexion">
+      <div class="comp-reflexion-label">Réflexivité</div>
+      <p>Sur la SAE-302, la difficulté principale c'était les tests multi-VM : mon PC n'avait pas assez de ressources, il plantait. J'ai fini par investir dans un PC 32 Go RAM pour pouvoir avancer. Ce projet m'a appris à travailler seul de A à Z, de la conception au déploiement. En stage, c'est la première fois que j'écrivais un script pour un vrai environnement professionnel. Trouver comment envoyer des e-mails en ligne de commande sous Windows m'a poussé à explorer des outils que je ne connaissais pas (Blat SMTP).</p>
+    </div>
+    <div class="comp-tags">
+      <span class="tag accent">Python</span>
+      <span class="tag accent">Sockets TCP</span>
+      <span class="tag accent">Chiffrement RSA</span>
+      <span class="tag accent">Batch/CMD</span>
+      <span class="tag">PyQt5</span>
+      <span class="tag">MariaDB</span>
+      <span class="tag">Automatisation</span>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-num">Compétence 04</div>
+    <div class="comp-name">Orchestrer</div>
+    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE DevCloud 04 - conception individuelle d'une infrastructure virtualisée pour la société LOR (PME pâtisserie). Dimensionnement de 2 serveurs Proxmox, NAS 4 baies RAID 5, switch 10 Gb, plan d'adressage IP pour 7 machines, architecture avec 6 VM (Prestashop, Odoo, base de données, sauvegardes, supervision, reverse proxy Nginx), gestion des pannes et des périodes de rush, plan d'installation en 6 étapes, budget estimé à 7 400 € TTC. Présentation orale individuelle le 13 décembre 2025.</div>
+    <div class="comp-reflexion">
+      <div class="comp-reflexion-label">Réflexivité</div>
+      <p>Ce projet était entièrement sur papier, sans manipulation directe des outils. La difficulté était de penser l'infrastructure dans sa globalité : choisir les bons composants, anticiper les pannes, respecter un RPO d'une heure, tout en restant dans un budget réaliste. J'ai appris à raisonner comme un architecte système, à justifier chaque choix technique devant un jury. C'est une compétence différente de la configuration : c'est savoir concevoir avant de déployer.</p>
+    </div>
+    <div class="comp-tags">
+      <span class="tag accent">Proxmox VE</span>
+      <span class="tag accent">RAID 5</span>
+      <span class="tag accent">iSCSI</span>
+      <span class="tag accent">Nginx</span>
+      <span class="tag">Prestashop</span>
+      <span class="tag">Odoo</span>
+      <span class="tag">Virtualisation</span>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-num">Compétence 05</div>
+    <div class="comp-name">Développer</div>
+    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE-301 - développement du serveur web Django sur Raspberry Pi pour une prise connectée WiFi. Interface de contrôle temps réel : allumage/extinction LED1 et LED2, affichage température via capteur DS18B20, gestion de plages horaires, communication MQTT avec 2 ESP8266. SAE-303 - déploiement et configuration des services réseau (DHCP, DNS, routage) sur l'infrastructure LAN multi-sites.</div>
+    <div class="comp-reflexion">
+      <div class="comp-reflexion-label">Réflexivité</div>
+      <p>Sur la SAE-301, c'était la première fois que je développais une application web connectée à un vrai système embarqué. Faire communiquer Django, MQTT et les ESP8266 en temps réel demandait de comprendre plusieurs technologies en même temps. La difficulté était de synchroniser les messages MQTT avec l'interface web sans latence visible. Ce projet m'a montré que développer une application, c'est aussi comprendre l'environnement dans lequel elle tourne.</p>
+    </div>
+    <div class="comp-tags">
+      <span class="tag accent">Django</span>
+      <span class="tag accent">Raspberry Pi</span>
+      <span class="tag accent">MQTT</span>
+      <span class="tag accent">ESP8266</span>
+      <span class="tag">Python</span>
+      <span class="tag">IoT</span>
+      <span class="tag">Linux</span>
+    </div>
+  </div>
+
+</div>
   </div>
 </section>
 
@@ -319,8 +349,8 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
       <div class="sae-role">Responsable de la partie LAN · Groupe de 4 étudiants</div>
       <div class="sae-comp-badges">
         <span class="sae-comp-badge">Connecter</span>
-        <span class="sae-comp-badge">Concevoir</span>
-        <span class="sae-comp-badge">Administrer</span>
+        <span class="sae-comp-badge">Développer</span>
+      
       </div>
       <div class="sae-body">Conception et configuration de l'architecture réseau LAN de deux entreprises fictives sur GNS3. Architecture hiérarchique 3 niveaux, plan d'adressage IP pour 3 sites, VLANs 10/20/30/40, Trunks 802.1Q, VTP, MSTP, routage inter-VLAN Router-on-a-Stick, haute disponibilité VRRP, service DHCP avec adressage statique pour les serveurs.</div>
       
@@ -343,8 +373,7 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
   <div class="sae-role">Projet individuel · Année 2025-2026</div>
   <div class="sae-comp-badges">
     <span class="sae-comp-badge">Programmer</span>
-    <span class="sae-comp-badge">Développer</span>
-    <span class="sae-comp-badge">Administrer</span>
+    
   </div>
   <div class="sae-body">Conception et implémentation d'un système de communication anonyme inspiré du réseau TOR, utilisant le routage en oignon. Le projet comprend un serveur Master centralisant les routeurs, plusieurs routeurs virtuels effectuant un routage multi-sauts, des clients bidirectionnels avec interface graphique PyQt, un chiffrement asymétrique RSA par couches et une base de données MariaDB. Déployé sur 3 machines virtuelles : 1 VM Linux Master, 1 VM Linux Routeurs, 1 VM Windows Clients. Projet réalisé seul, de la conception au déploiement.</div>
   <div class="comp-reflexion" style="margin-top:1rem;">
@@ -366,10 +395,51 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
     <span class="tag"><a href="https://github.com/Souare4089/SOUARE-SAE302" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;">Accéder au projet</a></span>
   </div>
 </div>
-
+<div class="sae-card">
+  <div class="sae-num">SAE-301 - BUT2</div>
+  <div class="sae-title">Prise connectée WiFi</div>
+  <div class="sae-role">Développeur serveur web · Groupe de 4 étudiants</div>
+  <div class="sae-comp-badges">
+    <span class="sae-comp-badge">Développer</span>
+    <span class="sae-comp-badge">Programmer</span>
+  </div>
+  <div class="sae-body">Projet IoT en groupe de 4 : conception d'une prise connectée WiFi pilotable à distance. Le système comprend 2 ESP8266 gérant des LEDs, un capteur de température DS18B20, un bouton physique avec anti-rebond, une synchronisation NTP et une communication MQTT en temps réel avec le broker test.mosquitto.org. Ma partie : développement du serveur web Django sur Raspberry Pi, avec interface de contrôle temps réel pour allumer/éteindre LED1 et LED2, afficher la température en direct et gérer des plages horaires automatiques.</div>
+  <div class="comp-reflexion" style="margin-top:1rem;">
+    <div class="comp-reflexion-label">Réflexivité</div>
+    <p>C'était la première fois que je développais une application web connectée à un système embarqué réel. La difficulté principale était de faire communiquer Django, MQTT et les ESP8266 en même temps, de manière fluide. Il fallait que l'interface web reflète l'état réel des LEDs sans délai visible. Ce projet m'a appris à travailler à l'interface entre le développement logiciel et le matériel, deux mondes qui ont leurs propres contraintes et qu'il faut apprendre à faire dialoguer.</p>
+  </div>
+  <div class="comp-tags">
+    <span class="tag accent">Django</span>
+    <span class="tag accent">Raspberry Pi</span>
+    <span class="tag accent">MQTT</span>
+    <span class="tag accent">ESP8266</span>
+    <span class="tag">Python</span>
+    <span class="tag">Arduino</span>
+    <span class="tag">IoT</span>
+    <span class="tag">DS18B20</span>
+  </div>
+</div>
 <div class="divider"></div>
 </div>
 </section>
+<section id="certifications" style="background:var(--bg3)">
+  <div class="section-inner">
+    <div class="section-label">Certification</div>
+    <h2 class="section-title">Ce que j'ai <span>obtenu</span></h2>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;align-items:center;gap:1.5rem;max-width:500px;">
+      <div style="width:48px;height:48px;background:rgba(0,212,164,0.1);border:1px solid rgba(0,212,164,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">MOOC SecNumAcadémie - ANSSI</div>
+        <div style="font-size:0.85rem;color:var(--accent);">Sensibilisation à la cybersécurité</div>
+        <div style="font-size:0.82rem;color:var(--muted);margin-top:4px;">2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>      
 <section id="skills">
   <div class="section-inner">
     <div class="section-label">Compétences techniques</div>
