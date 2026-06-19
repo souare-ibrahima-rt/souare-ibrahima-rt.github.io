@@ -413,6 +413,14 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;
   </div>
   <div class="sae-body">Conception et implémentation d'un système de communication anonyme inspiré du réseau TOR, utilisant le routage en oignon. Le projet comprend un serveur Master centralisant les routeurs, plusieurs routeurs virtuels effectuant un routage multi-sauts, des clients bidirectionnels avec interface graphique PyQt, un chiffrement asymétrique RSA par couches et une base de données MariaDB. Déployé sur 3 machines virtuelles : 1 VM Linux Master, 1 VM Linux Routeurs, 1 VM Windows Clients. Projet réalisé seul, de la conception au déploiement.</div>
   <div class="comp-reflexion" style="margin-top:1rem;">
+    <div class="comp-reflexion-label">Apprentissages critiques</div>
+    <p>AC23.01 | Automatiser l'administration système avec des scripts</p>
+    <p>AC23.02 | Développer une application à partir d'un cahier des charges donné, pour le Web ou les périphériques mobiles</p>
+    <p>AC23.03 | Utiliser un protocole réseau pour programmer une application client/serveur</p>
+    <p>AC23.04 | Installer, administrer un système de gestion de données</p>
+    <p>AC23.05 | Accéder à un ensemble de données depuis une application et/ou un site web</p>
+  </div>          
+  <div class="comp-reflexion" style="margin-top:1rem;">
     <div class="comp-reflexion-label">Réflexivité</div>
     <p>Ce projet m'a beaucoup appris. Avant de le commencer, j'avais déjà effleuré la cryptographie en première année, mais jamais à ce niveau de profondeur. Les sockets réseau en Python étaient également nouveaux pour moi. Comprendre comment un message peut traverser plusieurs routeurs sans qu'on puisse savoir d'où il vient m'a vraiment fasciné. Implémenter ça moi-même, couche par couche, c'était un vrai défi technique.</p>
     <p style="margin-top:0.75rem;">La difficulté principale que j'ai rencontrée, c'est les tests sur plusieurs machines virtuelles. Mon PC personnel n'avait pas assez de ressources pour faire tourner 3 VM en même temps - il plantait et buggait. Le projet a commencé juste avant les vacances de décembre, donc je ne pouvais pas utiliser les PC de l'IUT. J'ai fini par investir dans un nouveau PC avec 32 Go de RAM et 1 To de stockage pour pouvoir tester correctement.</p>
