@@ -1,700 +1,280 @@
-https://github.com/souare-ibrahima-rt/souare-ibrahima-rt.github.io/tree/main<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">      
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ibrahima SOUARE - Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0f1a;--bg2:#0f1624;--bg3:#141d2e;--accent:#00d4a4;--accent2:#0099ff;--text:#e8edf5;
-      --muted:#6b7a99;--border:rgba(255,255,255,0.07);--card:rgba(255,255,255,0.03)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2.5rem;background:rgba(10,15,26,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--accent);letter-spacing:-0.02em}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:0.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color 0.2s;letter-spacing:0.05em;text-transform:uppercase}
-.nav-links a:hover{color:var(--accent)}
-
-.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2.5rem 4rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,164,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%}
-.hero-layout{display:flex;align-items:flex-start;gap:4rem;flex-wrap:wrap}
-.hero-left{flex-shrink:0}
-.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--accent);display:block;animation:fadeUp 0.6s ease both}
-.hero-right{flex:1;min-width:300px}
-
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,212,164,0.3);padding:6px 14px;border-radius:20px;margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.0;letter-spacing:-0.03em;color:var(--text);animation:fadeUp 0.6s 0.1s ease both;margin-bottom:0.5rem}
-.hero-name span{color:var(--accent)}
-.hero-title{font-size:0.95rem;font-weight:300;color:var(--muted);margin-bottom:1.25rem;animation:fadeUp 0.6s 0.2s ease both}
-.hero-desc{font-size:0.95rem;color:rgba(232,237,245,0.75);line-height:1.8;animation:fadeUp 0.6s 0.3s ease both;margin-bottom:2rem;max-width:650px}
-.hero-links{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.4s ease both}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;border-radius:8px;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none}
-.btn-primary{background:var(--accent);color:#0a0f1a}
-.btn-primary:hover{background:#00f0bb;transform:translateY(-2px)}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.hero-stats{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.5s ease both}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:700;color:var(--text)}
-.stat-num span{color:var(--accent)}
-.stat-label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-section{padding:5rem 2.5rem}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-0.02em;color:var(--text);margin-bottom:3rem;line-height:1.2}
-.section-title span{color:var(--accent)}
-
-#competences{background:var(--bg2)}
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
-.comp-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s}
-.comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s}
-.comp-card:hover{border-color:rgba(0,212,164,0.3);transform:translateY(-4px)}
-.comp-card:hover::before{opacity:1}
-.comp-num{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem}
-.comp-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1rem}
-.comp-context{font-size:0.88rem;color:rgba(232,237,245,0.65);line-height:1.7;margin-bottom:1.2rem}
-.comp-reflexion{background:rgba(0,212,164,0.05);border:1px solid rgba(0,212,164,0.15);border-radius:10px;padding:1rem;margin-bottom:1.2rem}
-.comp-reflexion-label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
-.comp-reflexion p{font-size:0.87rem;color:rgba(232,237,245,0.75);line-height:1.65}
-.comp-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:0.75rem;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted)}
-.tag.accent{background:rgba(0,212,164,0.1);border-color:rgba(0,212,164,0.3);color:var(--accent)}
-
-.stage-header{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
-.stage-logo{width:80px;height:60px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#0a0f1a;flex-shrink:0}
-.stage-org{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text)}
-.stage-role{font-size:0.9rem;color:var(--accent);margin:4px 0}
-.stage-meta{font-size:0.85rem;color:var(--muted)}
-.missions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-.mission-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color 0.2s}
-.mission-card:hover{border-color:rgba(0,212,164,0.25)}
-.mission-icon{font-size:1.5rem;margin-bottom:0.75rem}
-.mission-title{font-weight:500;font-size:0.95rem;margin-bottom:6px;color:var(--text)}
-.mission-desc{font-size:0.85rem;color:var(--muted);line-height:1.6}
-
-#sae{background:var(--bg2)}
-.sae-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem;transition:border-color 0.3s}
-.sae-card:hover{border-color:rgba(0,153,255,0.3)}
-.sae-num{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent2);background:rgba(0,153,255,0.1);border:1px solid rgba(0,153,255,0.2);padding:3px 10px;border-radius:6px;margin-bottom:6px;display:inline-block}
-.sae-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text)}
-.sae-role{font-size:0.85rem;color:var(--accent);margin-top:4px;margin-bottom:1rem}
-.sae-body{font-size:0.9rem;color:rgba(232,237,245,0.7);line-height:1.75;margin-bottom:1rem}
-.sae-comp-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
-.sae-comp-badge{font-size:0.75rem;padding:4px 10px;border-radius:6px;background:rgba(0,212,164,0.08);border:1px solid rgba(0,212,164,0.2);color:var(--accent)}
-
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
-.skill-cat-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-.skill-pills{display:flex;flex-wrap:wrap;gap:6px}
-.skill-pill{font-size:0.8rem;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--text)}
-
-.cv-section{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center}
-.cv-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:0.5rem}
-.cv-sub{font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem}
-.cv-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-#contact{background:var(--bg2)}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;width:100%}
-.contact-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:border-color 0.2s,transform 0.2s}
-.contact-card:hover{border-color:rgba(0,212,164,0.3);transform:translateY(-2px)}
-.contact-icon-wrap{width:44px;height:44px;background:rgba(0,212,164,0.1);border:1px solid rgba(0,212,164,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.contact-info-label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
-.contact-info-val{font-size:0.9rem;color:var(--text);font-weight:500}
-
-footer{padding:2rem 2.5rem;border-top:1px solid var(--border);text-align:center;font-size:0.85rem;color:var(--muted)}
-.divider{height:1px;background:var(--border)}
-
-@media(max-width:768px){
-  .hero-layout{flex-direction:column;text-align:center}
-  .hero-left{display:flex;justify-content:center}
-  .hero-stats{justify-content:center}
-  .hero-links{justify-content:center}
-}
-@media(max-width:640px){nav{padding:1rem 1.25rem}.nav-links{display:none}section{padding:3.5rem 1.25rem}.hero{padding:7rem 1.25rem 3rem}}
-</style>
+<title>Ibrahima Souaré · Réseaux, systèmes et cloud</title>
+<meta name="theme-color" content="#0f0e0c">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="alternate" hreflang="fr" href="https://souare-ibrahima-rt.github.io/">
+<link rel="alternate" hreflang="en" href="https://souare-ibrahima-rt.github.io/en.html">
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">IS.</div>
-  <ul class="nav-links">
-    <li><a href="#apropos">À propos</a></li>    
-    <li><a href="#competences">Compétences</a></li>
-    <li><a href="#formation">Formation</a></li>    
-    <li><a href="#stage">Expériences</a></li>
-    <li><a href="#sae">Projets</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header class="nav">
+  <div class="wrap">
+    <a href="#accueil" class="brand"><i></i>ibrahima.souare</a>
+    <div class="nav-right">
+    <ul id="menu">
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="lang" aria-label="Langue"><svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></g></svg><span aria-current="page">FR</span><a href="en.html" hreflang="en" lang="en" title="English version">EN</a></div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
 
+<main>
+<!-- ============ ACCUEIL ============ -->
 <section class="hero" id="accueil">
-  <div class="hero-inner">
-    <div class="hero-layout">
-      <div class="hero-left">
-        <img src="photo.jpg" alt="Ibrahima SOUARE" class="avatar">
-      </div>
-      <div class="hero-right">
-        <div class="hero-tag">Disponible · Recherche alternance</div>
-        <h1 class="hero-name">Ibrahima<br><span>SOUARE</span></h1>
-        <p class="hero-title">Étudiant BUT Réseaux &amp; Télécommunications · Parcours Développement Système et Cloud · IUT de Colmar</p>
-        <p class="hero-desc">Je m'appelle Ibrahima SOUARE, j'ai 22 ans et je suis étudiant en 2ème année de BUT Réseaux et Télécommunications, parcours Développement Système et Cloud, à l'IUT de Colmar. Originaire du Sénégal, j'ai commencé ma formation en France à l'IUT de Roanne avant de rejoindre Colmar. Ce qui me passionne, c'est l'informatique dans sa globalité : les réseaux, les systèmes, le cloud, la cybersécurité, l'automatisation et les infrastructures. Actuellement en stage à la Banque Alimentaire du Bas-Rhin, je travaille sur des sujets concrets au quotidien. En troisième année, je recherche une alternance pour continuer à progresser en entreprise.</p>
-        <div class="hero-links">
-          <a href="#contact" class="btn btn-primary">Me contacter</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item"><div class="stat-num">2<span>ème</span></div><div class="stat-label">Année BUT RT</div></div>
-          <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Compétences BUT</div></div>
-          <div class="stat-item"><div class="stat-num">7<span>+</span></div><div class="stat-label">SAE réalisées</div></div>
-          <div class="stat-item"><div class="stat-num">8<span>semaines</span></div><div class="stat-label">De stage</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-<div class="divider"></div>
-
-<section id="apropos">
-  <div class="section-inner">
-    <div class="section-label">Qui suis-je</div>
-    <h2 class="section-title">À <span>propos</span></h2>
-    <div style="max-width:750px;font-size:1rem;color:rgba(232,237,245,0.8);line-height:1.9;">
-      <p style="margin-bottom:1.2rem;">L'informatique, c'est ma passion et mon métier de demain. Ce qui m'a attiré dans ce domaine, c'est la profondeur : comprendre comment un réseau fonctionne réellement, de bout en bout, pas juste en surface.</p>
-      <p style="margin-bottom:1.2rem;">Je suis curieux par nature et j'apprends vite. Quand je commence quelque chose, je veux comprendre pourquoi ça fonctionne, pas seulement comment l'utiliser. Cette façon de travailler, je l'applique dans tous mes projets, en cours comme en entreprise.</p>
-      <p style="margin-bottom:1.2rem;">Je suis ambitieux et je le vis simplement : chaque stage, chaque SAE, chaque projet est une occasion d'aller plus loin. La connaissance, c'est ce qui fait la différence et c'est ce que je construis chaque jour.</p>
-      <p style="margin-bottom:1.2rem;">Originaire du Sénégal, j'ai grandi dans une famille de cultivateurs. Toute mon enfance, j'ai travaillé aux champs avec mon père : l'arachide, le riz, le maïs. Cette expérience m'a appris la valeur du travail, la patience et la persévérance. Depuis 2024, je suis en France pour poursuivre mes études, mais ces valeurs m'accompagnent chaque jour.</p>
-      <p>En dehors de l'informatique, je joue au football et je suis impliqué dans l'association sénégalaise de Roanne et de Colmar.</p>
-    </div>
-  </div>
-</section>
-<section id="competences">
-  <div class="section-inner">
-    <div class="section-label">BUT Réseaux &amp; Télécommunications</div>
-    <h2 class="section-title">Les <span>5 compétences</span> du parcours</h2>
-  <div class="comp-grid">
-
-  <div class="comp-card">
-    <div class="comp-num">Compétence 01</div>
-    <div class="comp-name">Administrer</div>
-    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong>  Stage à la Banque Alimentaire du Bas-Rhin, avril - juin 2026, au sein du service informatique. J'ai administré le parc informatique de l'association : surveillance automatique des imprimantes via GLPI et SNMP, configuration du système de ticketing, récupération des licences Microsoft Office sur 24 postes, résolution d'une panne téléphonique DECT et rédaction d'un plan de déploiement Active Directory en 24 étapes avec Synology Directory Server et Samba 4. </div>
-    <div class="comp-reflexion">
-      <div class="comp-reflexion-label">Réflexivité</div>
-      <p>Ce stage m'a confronté à des situations que l'école ne reproduit pas. Sur chaque mission, j'ai rencontré un problème que je n'avais pas anticipé : un décalage de fuseau horaire dans Docker, une règle de sécurité Google qui bloquait silencieusement l'envoi des scans, une infrastructure téléphonique désynchronisée après une coupure de courant. Dans chaque cas, j'ai dû diagnostiquer, trouver la cause et documenter la solution pour qu'elle soit réutilisable. J'ai appris que sur le terrain, administrer un système demande autant de méthode que de capacité à résoudre des problèmes imprévus. C'est un savoir-faire applicable dans n'importe quel environnement professionnel.</p>
-    </div>
-    <div class="comp-tags">
-      <span class="tag accent">GLPI</span>
-      <span class="tag accent">Docker</span>
-      <span class="tag accent">SNMP</span>
-      <span class="tag accent">Active Directory</span>
-      <span class="tag">Windows Server</span>
-      <span class="tag">Synology</span>
-      <span class="tag">Linux</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-num">Compétence 02</div>
-    <div class="comp-name">Connecter</div>
-    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> Dans le cadre de la SAE3.03 à l'IUT de Colmar en 2025-2026, notre groupe de 3 étudiants devait concevoir et déployer un réseau multi-sites pour deux entreprises fictives. J'étais responsable de la partie LAN. J'ai configuré sur GNS3 une architecture hiérarchique 3 niveaux, un plan d'adressage IP complet pour 3 sites, les VLANs 10/20/30/40, les trunks 802.1Q, le VTP, le MSTP, le routage inter-VLAN Router-on-a-Stick, la haute disponibilité VRRP et le service DHCP avec adressage statique pour les serveurs.</div>
-    <div class="comp-reflexion">
-      <div class="comp-reflexion-label">Réflexivité</div>
-      <p>La partie la plus difficile a été la coordination avec mes collègues. Mon plan d'adressage LAN devait coller exactement avec la partie services et la partie interconnexion réalisées par les autres. J'ai appris à documenter mes choix techniques pour que les autres puissent s'y appuyer sans ambiguité. Sur ma partie, j'ai dû prendre des décisions techniques seul : le choix de l'architecture hiérarchique, la configuration VRRP pour la haute disponibilité, la gestion du MSTP. Chaque décision avait un impact sur le reste du projet. C'est là que j'ai compris qu'un réseau ne se configure pas en silo : tout est lié dès la conception.</p>
-    </div>
-    <div class="comp-tags">
-      <span class="tag accent">VLANs</span>
-      <span class="tag accent">VRRP</span>
-      <span class="tag accent">MSTP</span>
-      <span class="tag accent">802.1Q</span>
-      <span class="tag">Router-on-a-Stick</span>
-      <span class="tag">DHCP</span>
-      <span class="tag">GNS3</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-num">Compétence 03</div>
-    <div class="comp-name">Programmer</div>
-    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE3.02 : projet individuel, conception d'un système de communication anonyme inspiré du réseau TOR avec sockets TCP Python, chiffrement RSA par couches, interface PyQt5 et base MariaDB, déployé sur 3 VM. En stage à la Banque Alimentaire, développement d'un script batch Windows automatisant la surveillance SNMP des imprimantes avec alertes e-mail à 15% et mise à jour dans GLPI.</div>
-    <div class="comp-reflexion">
-      <div class="comp-reflexion-label">Réflexivité</div>
-      <p>La principale difficulté sur ce projet c'est les tests multi-VM. Mon PC n'avait que 8 Go de RAM, quand j'allumais les 3 VM en même temps il s'éteignait. Comme le projet a démarré avant les vacances de décembre, je ne pouvais pas utiliser les PC de l'IUT. J'ai investi dans un nouveau PC avec 32 Go de RAM pour avancer. Ce projet m'a appris ce que signifie vraiment travailler seul de A à Z. En stage, développer un script batch pour un vrai environnement professionnel m'a montré que l'automatisation c'est avant tout comprendre un besoin et y répondre de façon fiable.</p>
-    </div>
-    <div class="comp-tags">
-      <span class="tag accent">Python</span>
-      <span class="tag accent">Sockets TCP</span>
-      <span class="tag accent">Chiffrement RSA</span>
-      <span class="tag accent">Batch/CMD</span>
-      <span class="tag">PyQt5</span>
-      <span class="tag">MariaDB</span>
-      <span class="tag">Automatisation</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-num">Compétence 04</div>
-    <div class="comp-name">Orchestrer</div>
-    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE DevCloud 04 : réalisée à l'IUT de Colmar en 2025-2026, projet individuel. L'objectif était de concevoir une infrastructure virtualisée pour la société LOR, une PME pâtisserie, en garantissant la disponibilité de Prestashop et Odoo avec un RPO d'une heure. J'ai dimensionné l'architecture, justifié chaque choix technique et défendu le projet à l'oral individuellement.</div>
-    <div class="comp-reflexion">
-      <div class="comp-reflexion-label">Réflexivité</div>
-      <p>Ce projet était entièrement sur papier, sans manipulation directe des outils. La difficulté était de penser l'infrastructure dans sa globalité : choisir les bons composants, anticiper les pannes, respecter un RPO d'une heure, tout en restant dans un budget réaliste. J'ai appris à raisonner comme un architecte système, à justifier chaque choix technique devant un jury. C'est une compétence différente de la configuration : c'est savoir concevoir avant de déployer.</p>
-    </div>
-    <div class="comp-tags">
-      <span class="tag accent">Proxmox VE</span>
-      <span class="tag accent">RAID 5</span>
-      <span class="tag accent">iSCSI</span>
-      <span class="tag accent">Nginx</span>
-      <span class="tag">Prestashop</span>
-      <span class="tag">Odoo</span>
-      <span class="tag">Virtualisation</span>
-    </div>
-  </div>
-
-  <div class="comp-card">
-    <div class="comp-num">Compétence 05</div>
-    <div class="comp-name">Développer</div>
-    <div class="comp-context"><strong style="color:var(--text)">Contexte :</strong> SAE3.01 : IUT de Colmar, 2024-2025, groupe de 4. Développement d'une prise connectée WiFi : serveur web Django sur Raspberry Pi avec API REST et authentification JWT, programmation de 2 ESP8266 en C++ avec communication MQTT, lecture de température en temps réel et gestion de plages horaires automatiques.</div>
-    <div class="comp-reflexion">
-      <div class="comp-reflexion-label">Réflexivité</div>
-      <p>C'était la première fois que je développais un système où plusieurs technologies devaient fonctionner ensemble en temps réel. La difficulté principale était de synchroniser l'état des LEDs entre le bouton physique, l'interface web et les plages horaires sans conflit. J'ai compris qu'une application connectée ce n'est pas juste du code, c'est faire dialoguer des environnements qui ont chacun leur propre logique. Ce savoir-faire est applicable dans tout projet IoT ou infrastructure connectée.</p>
-    </div>
-    <div class="comp-tags">
-      <span class="tag accent">Django</span>
-      <span class="tag accent">Raspberry Pi</span>
-      <span class="tag accent">MQTT</span>
-      <span class="tag accent">ESP8266</span>
-      <span class="tag">Python</span>
-      <span class="tag">IoT</span>
-      <span class="tag">Linux</span>
-    </div>
-  </div>
-
-</div>
-  </div>
-</section>
-
-<div class="divider"></div>
-<div class="divider"></div>
-
-<section id="formation">
-  <div class="section-inner">
-    <div class="section-label">Parcours académique</div>
-    <h2 class="section-title">Ma <span>formation</span></h2>
-    <div class="stage-header">
-      <div style="flex:1">
-        <div class="stage-org">BUT Réseaux et Télécommunications - Parcours DevCloud</div>
-        <div class="stage-role">IUT de Colmar - Université de Haute-Alsace</div>
-        <div class="stage-meta">Depuis septembre 2025</div>
-      </div>
-    </div>
-    <div class="stage-header">
-      <div style="flex:1">
-        <div class="stage-org">BUT Réseaux et Télécommunications</div>
-        <div class="stage-role">IUT de Roanne</div>
-        <div class="stage-meta">Septembre 2024 - Juin 2025</div>
-      </div>
-    </div>
-    <div class="stage-header">
-      <div style="flex:1">
-        <div class="stage-org">Baccalauréat Scientifique Général</div>
-        <div class="stage-role">Lycée Cherif Samsidine Aïdara - Sénégal</div>
-        <div class="stage-meta">Octobre 2023 - Juillet 2024</div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="stage">
-  <div class="section-inner">
-    <div class="section-label">Expérience professionnelle</div>
-    <h2 class="section-title">Stage - <span>Banque Alimentaire du Bas-Rhin</span></h2>
-    <div class="stage-header">
-      <img src="logo-banque-alimentaire.jpg" alt="Banque Alimentaire du Bas-Rhin" style="width:56px;height:56px;object-fit:contain;border-radius:8px;background:#fff;padding:4px;">
-      <div class="stage-info">
-        <div class="stage-org">Banque Alimentaire du Bas-Rhin</div>
-        <div class="stage-role">Technicien informatique stagiaire</div>
-        <div class="stage-meta">20 avril → 12 juin 2026 &nbsp;·&nbsp; 8 semaines &nbsp;·&nbsp; 35h/semaine &nbsp;·&nbsp; Tuteur : Alexis Brandt, Coordinateur Services Généraux</div>
-      </div>
-    </div>
-    <div class="missions-grid">
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
-        <div class="mission-title">Surveillance automatique des imprimantes</div>
-        <div class="mission-desc">Script batch SNMP exécuté chaque nuit à 2h00. Mise à jour automatique des niveaux d'encre dans GLPI, alertes e-mail automatiques dès 15%.</div>
-        <div class="comp-tags"><span class="tag accent">GLPI</span><span class="tag accent">SNMP</span><span class="tag">Docker</span></div>
-      </div>
-
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div class="mission-title">Configuration Scan to Email</div>
-        <div class="mission-desc">Configuration SMTP Gmail sur HP Color LaserJet MFP E57540. Gestion de l'authentification avec mot de passe d'application Google.</div>
-        <div class="comp-tags"><span class="tag accent">SMTP</span><span class="tag accent">Gmail</span><span class="tag">HP LaserJet</span></div>
-      </div>
-
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <div class="mission-title">Mise en service du système de ticketing GLPI</div>
-        <div class="mission-desc">Configuration complète du ticketing GLPI : comptes utilisateurs, flux de traitement, notifications automatiques à chaque étape.</div>
-        <div class="comp-tags"><span class="tag accent">GLPI</span><span class="tag">SMTP</span><span class="tag">Windows</span></div>
-      </div>
-
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <div class="mission-title">Récupération des licences Microsoft Office</div>
-        <div class="mission-desc">Récupération manuelle via OSPP.VBS et intégration dans GLPI des licences Microsoft Office sur 24 postes sur 25.</div>
-        <div class="comp-tags"><span class="tag accent">PowerShell</span><span class="tag accent">OSPP.VBS</span><span class="tag">GLPI</span></div>
-      </div>
-
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.83-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="mission-title">Résolution panne téléphones DECT</div>
-        <div class="mission-desc">Diagnostic d'une perte de synchronisation des 3 bases DECT après une coupure de courant. Resynchronisation en 50 minutes par redémarrage contrôlé de chaque base.</div>
-        <div class="comp-tags"><span class="tag accent">Gigaset DECT</span><span class="tag">Diagnostic réseau</span></div>
-      </div>
-
-      <div class="mission-card">
-        <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
-        <div class="mission-title">Plan de déploiement Active Directory</div>
-        <div class="mission-desc">Recherches Synology Directory Server + Samba 4. Rédaction d'un plan complet en 24 étapes pour l'intégration Active Directory.</div>
-        <div class="comp-tags">
-          <span class="tag accent">Active Directory</span><span class="tag accent">Samba 4</span><span class="tag">Synology</span>
-          <a href="https://github.com/souare-ibrahima-rt/stage-systemes-reseaux" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;">Accéder au projet</a>
-        </div>
-      </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="sae">
-  <div class="section-inner">
-    <div class="section-label">Formation - IUT de Colmar</div>
-    <h2 class="section-title">Projets <span>SAE</span></h2>
-    <div class="sae-card">
-      <div class="sae-num">SAE-303 - BUT2</div>
-      <div class="sae-title">Réseau Multi-sites LAN</div>
-      <div class="sae-role">Responsable de la partie LAN · Groupe de 3 étudiants</div>
-      <div class="sae-comp-badges">
-        <span class="sae-comp-badge">Administrer</span>     
-        <span class="sae-comp-badge">Connecter</span>
-        <span class="sae-comp-badge">Développer</span> 
-      
-      </div>
-      <div class="comp-reflexion-label" style="margin-bottom:0.5rem;">Contexte</div>    
-      <div class="sae-body">Conception et configuration de l'architecture réseau LAN de deux entreprises fictives sur GNS3. Architecture hiérarchique 3 niveaux, plan d'adressage IP pour 3 sites, VLANs 10/20/30/40, Trunks 802.1Q, VTP, MSTP, routage inter-VLAN Router-on-a-Stick, haute disponibilité VRRP, service DHCP avec adressage statique pour les serveurs.</div>
-      <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Apprentissages critiques</div>
-    <p>AC21.01 | Configurer et dépanner le routage dynamique dans un réseau</p>
-    <p>AC21.02 | Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d'un réseau</p>
-    <p>AC21.03 | Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</p>
-    <p>AC21.04 | Déployer des services réseaux avancés</p>
-    <p>AC21.05 | Identifier les réseaux opérateurs et l'architecture d'Internet</p>
-    <p>AC21.06 | Travailler en équipe pour développer ses compétences professionnelles</p>
-    <p>AC22.02 | Mettre en place un accès distant sécurisé</p>
-    <p>AC22.03 | Mettre en place une connexion multi-site via un réseau opérateur</p>
-    <p>AC24.02DevCloud | Virtualiser un environnement</p>
-  </div>
-      <div class="comp-reflexion" style="margin-top:1rem;">
-        <div class="comp-reflexion-label">Réflexivité</div>
-        <p>Ce projet m'a permis de mettre en pratique pour la première fois une infrastructure réseau complète en conditions réelles. Concevoir le plan d'adressage IP pour deux entreprises sur trois sites, c'était un vrai travail de réflexion : chaque VLAN, chaque masque devait respecter une logique précise.</p>
-        <p style="margin-top:0.75rem;">La difficulté principale était la coordination au sein du groupe. Ma partie LAN devait être cohérente avec la partie services et la partie interconnexion réalisées par mes collègues. Ca m'a appris à communiquer techniquement, expliquer mes choix d'adressage pour que les autres puissent s'y appuyer.</p>
-        <p style="margin-top:0.75rem;">Etre responsable de la partie LAN m'a aussi appris à prendre des décisions seul sur des choix techniques importants : l'architecture hiérarchique, le choix du MSTP, la configuration VRRP pour la haute disponibilité. Chaque décision avait un impact sur tout le reste du projet.</p>
-        <p style="margin-top:0.75rem;">Ce que je retiens surtout : un réseau ne se configure pas par morceaux isolés. Tout est lié, et c'est en travaillant sur ce projet que j'ai vraiment compris la logique globale d'une infrastructure réseau d'entreprise.</p>
-      </div>
-      <div class="comp-tags">
-        <span class="tag accent">GNS3</span><span class="tag accent">VLANs</span><span class="tag accent">VRRP</span><span class="tag accent">MSTP</span><span class="tag">802.1Q</span><span class="tag">DHCP</span><span class="tag">Router-on-a-Stick</span><span class="tag">VTP</span>
-        <a href="https://github.com/souare-ibrahima-rt/SAE303-Multisite-LAN" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;position:absolute;right:20px;">Accéder au projet</a>
-    </div> 
-</div>
-            
-      <div class="sae-card">
-  <div class="sae-num">SAE 3.02 - BUT2</div>
-  <div class="sae-title">Développer des applications communicantes</div>
-  <div class="sae-role">Projet individuel · Année 2025-2026</div>
-  <div class="sae-comp-badges">
-    <span class="sae-comp-badge">Programmer</span>
-    
-  </div>
-  <div class="comp-reflexion-label" style="margin-bottom:0.5rem;">Contexte</div>          
-  <div class="sae-body">Conception et implémentation d'un système de communication anonyme inspiré du réseau TOR, utilisant le routage en oignon. Le projet comprend un serveur Master centralisant les routeurs, plusieurs routeurs virtuels effectuant un routage multi-sauts, des clients bidirectionnels avec interface graphique PyQt, un chiffrement asymétrique RSA par couches et une base de données MariaDB. Déployé sur 3 machines virtuelles : 1 VM Linux Master, 1 VM Linux Routeurs, 1 VM Windows Clients. Projet réalisé seul, de la conception au déploiement.</div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Apprentissages critiques</div>
-    <p>AC23.01 | Automatiser l'administration système avec des scripts</p>
-    <p>AC23.02 | Développer une application à partir d'un cahier des charges donné, pour le Web ou les périphériques mobiles</p>
-    <p>AC23.03 | Utiliser un protocole réseau pour programmer une application client/serveur</p>
-    <p>AC23.04 | Installer, administrer un système de gestion de données</p>
-    <p>AC23.05 | Accéder à un ensemble de données depuis une application et/ou un site web</p>
-  </div>          
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Réflexivité</div>
-    <p>Ce projet m'a beaucoup appris. Avant de le commencer, j'avais déjà effleuré la cryptographie en première année, mais jamais à ce niveau de profondeur. Les sockets réseau en Python étaient également nouveaux pour moi. Comprendre comment un message peut traverser plusieurs routeurs sans qu'on puisse savoir d'où il vient m'a vraiment fasciné. Implémenter ça moi-même, couche par couche, c'était un vrai défi technique.</p>
-    <p style="margin-top:0.75rem;">La difficulté principale que j'ai rencontrée, c'est les tests sur plusieurs machines virtuelles. Mon PC personnel n'avait pas assez de ressources pour faire tourner 3 VM en même temps - il plantait et buggait. Le projet a commencé juste avant les vacances de décembre, donc je ne pouvais pas utiliser les PC de l'IUT. J'ai fini par investir dans un nouveau PC avec 32 Go de RAM et 1 To de stockage pour pouvoir tester correctement.</p>
-    <p style="margin-top:0.75rem;">Ce projet m'a aussi appris l'autonomie. Travailler seul de A à Z - conception, développement, tests, documentation, déploiement - c'est une expérience complète. J'ai dû prendre toutes les décisions moi-même, résoudre tous les problèmes moi-même, et avancer sans pouvoir compter sur quelqu'un d'autre.</p>
-    <p style="margin-top:0.75rem;">Aujourd'hui je sais déployer une application sur plusieurs machines virtuelles qui communiquent entre elles en réseau. C'est une compétence concrète que je peux réutiliser dans n'importe quel projet d'infrastructure.</p>
-  </div>
-  <div class="comp-tags">
-    <span class="tag accent">Python</span>
-    <span class="tag accent">Sockets TCP</span>
-    <span class="tag accent">PyQt5</span>
-    <span class="tag accent">MariaDB</span>
-    <span class="tag">Threads</span>
-    <span class="tag">Chiffrement RSA</span>
-    <span class="tag">Virtualisation</span>
-    <span class="tag">Git</span>
-    <a href="https://github.com/Souare4089/SOUARE-SAE302" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;position:absolute;right:20px;">Accéder au projet</a>
-  </div>
-</div>
-<div class="sae-card">
-  <div class="sae-num">SAE-301 - BUT2</div>
-  <div class="sae-title">Prise connectée WiFi</div>
-  <div class="sae-role">Développeur serveur web · Groupe de 4 étudiants</div>
-  <div class="sae-comp-badges">
-    <span class="sae-comp-badge">Développer</span>
-    <span class="sae-comp-badge">Programmer</span>
-  </div>
-  <div class="comp-reflexion-label" style="margin-bottom:0.5rem;">Contexte</div>    
-  <div class="sae-body">Projet IoT en groupe de 4 : conception d'une prise connectée WiFi pilotable à distance. Le système comprend 2 ESP8266 gérant des LEDs, un capteur de température DS18B20, un bouton physique avec anti-rebond, une synchronisation NTP et une communication MQTT en temps réel avec le broker test.mosquitto.org. Ma partie : développement du serveur web Django sur Raspberry Pi, avec API REST sécurisée par authentification JWT, interface de contrôle temps réel pour allumer/éteindre LED1 et LED2, afficher la température en direct et gérer des plages horaires automatiques.</div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Apprentissages critiques</div>
-    <p>AC21.06 | Travailler en équipe pour développer ses compétences professionnelles</p>
-    <p>AC22.05 | Capacité à questionner un cahier des charges RT</p>
-    <p>AC23.02 | Développer une application à partir d'un cahier des charges donné, pour le Web ou les périphériques mobiles</p>
-    <p>AC23.03 | Utiliser un protocole réseau pour programmer une application client/serveur</p>
-    <p>AC23.04 | Installer, administrer un système de gestion de données</p>
-    <p>AC23.05 | Accéder à un ensemble de données depuis une application et/ou un site web</p>
-  </div>    
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Réflexivité</div>
-    <p>C'était la première fois que je développais une application web connectée à un système embarqué réel. La difficulté principale était de faire communiquer Django, MQTT et les ESP8266 en même temps, de manière fluide. Il fallait que l'interface web reflète l'état réel des LEDs sans délai visible. Ce projet m'a appris à travailler à l'interface entre le développement logiciel et le matériel, deux mondes qui ont leurs propres contraintes et qu'il faut apprendre à faire dialoguer.</p>
-  </div>
-  <div class="comp-tags">
-    <span class="tag accent">Django</span>
-    <span class="tag accent">Raspberry Pi</span>
-    <span class="tag accent">MQTT</span>
-    <span class="tag accent">ESP8266</span> 
-    <span class="tag">Python</span>
-    <span class="tag">Arduino</span>
-    <span class="tag">IoT</span>
-    <span class="tag">DS18B20</span>   
-    <a href="https://github.com/souare-ibrahima-rt/SAE301" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;position:absolute;right:20px;">Accéder au projet</a>   
-  </div>
-</div>
-<div class="sae-card">
-  <div class="sae-num">SAE 3.DevCloud.04 - BUT2</div>
-  <div class="sae-title">Infrastructure virtualisée - Société LOR</div>
-  <div class="sae-role">Projet individuel · Année 2025-2026</div>
-  <div class="sae-comp-badges">
-    <span class="sae-comp-badge">Orchestrer</span>
-  </div>
-  <div class="comp-reflexion-label" style="margin-bottom:0.5rem;">Contexte</div>
-  <div class="sae-body">SAE3.DevCloud.04. L'objectif était de concevoir une infrastructure virtualisée pour la société LOR, une PME pâtisserie, en garantissant la disponibilité de Prestashop et Odoo avec un RPO d'une heure. J'ai dimensionné l'architecture, justifié chaque choix technique et défendu le projet à l'oral.</div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Apprentissages critiques</div>
-    <p>AC24.01DevCloud | Proposer une solution Cloud adaptée à l'entreprise</p>
-    <p>AC24.02DevCloud | Virtualiser un environnement</p>
-    <p>AC24.04DevCloud | Analyser un service Cloud au travers des métriques</p>
-    <p>AC25.02DevCloud | Mettre en production une application</p>
-  </div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Réflexivité</div>
-    <p>Ce projet m'a appris à penser une infrastructure dans sa globalité, avant même de toucher aux outils. Il fallait choisir les bons composants, anticiper les pannes, respecter un RPO d'une heure, tout en restant dans un budget réaliste. Chaque choix technique devait être justifié et défendu devant un jury, ce qui m'a obligé à comprendre en profondeur les compromis entre performance, coût et fiabilité. J'ai appris à raisonner comme un architecte système : c'est une compétence différente de la configuration, c'est savoir concevoir une solution avant de la déployer.</p>
-  </div>
-  <div class="comp-tags">
-    <span class="tag accent">Proxmox VE</span>
-    <span class="tag accent">RAID 5</span>
-    <span class="tag accent">iSCSI</span>
-    <span class="tag">Nginx</span>
-    <span class="tag">Prestashop</span>
-    <span class="tag">Odoo</span>
-    <span class="tag">Virtualisation</span>
-    <a href="https://github.com/souare-ibrahima-rt/SAE-3.DevCloud.04" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;position:absolute;right:20px;">Accéder au projet</a>    
-  </div>
-</div> 
-<div class="sae-card">
-  <div class="sae-num">SAE-204 - BUT1</div>
-  <div class="sae-title">Projet intégratif</div>
-  <div class="sae-role">Atelier coopératif d'artistes (projet fictif)</div>
-  <div class="sae-comp-badges">
-    <span class="sae-comp-badge">Administrer</span>
-    <span class="sae-comp-badge">Programmer</span>
-  </div>
-  <div class="comp-reflexion-label" style="margin-bottom:0.5rem;">Contexte</div>
-  <div class="sae-body">SAE2.04, projet intégratif de fin de 1ère année. L'objectif était de répondre aux besoins informatiques complets d'un atelier coopératif d'artistes fictif. J'ai déployé un contrôleur de domaine Active Directory avec Samba4 dans un conteneur Docker, en créant un réseau isolé et en configurant les groupes et comptes utilisateurs en ligne de commande. J'ai également développé une œuvre générative en Python avec matplotlib, inspirée du travail de l'artiste François Morellet, puis porté cette logique en JavaScript avec Canvas pour produire une version web interactive.</div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Apprentissages critiques</div>
-    <p>AC11.03 | Configurer les fonctions de base du réseau local</p>
-    <p>AC11.04 | Maîtriser les rôles et les principes fondamentaux des systèmes d'exploitation afin d'interagir avec ceux-ci pour la configuration et l'administration des réseaux et services fournis</p>
-    <p>AC13.01 | Utiliser un système informatique et ses outils</p>
-    <p>AC13.02 | Lire, exécuter, corriger et modifier un programme</p>
-    <p>AC13.03 | Traduire un algorithme, dans un langage et pour un environnement donné</p>
-    <p>AC13.04 | Connaître l'architecture et les technologies d'un site Web</p>
-  </div>
-  <div class="comp-reflexion" style="margin-top:1rem;">
-    <div class="comp-reflexion-label">Réflexivité</div>
-    <p>Ce projet m'a appris à passer d'un environnement à un autre sans perdre la logique de ce que je voulais faire. Sur la partie infrastructure, configurer Active Directory en ligne de commande avec Samba4 a été la partie la plus exigeante : chaque commande devait être comprise avant d'être exécutée, sans interface graphique pour vérifier visuellement les erreurs. Sur la partie créative, le plus intéressant a été de prendre un même algorithme de génération de motifs et de le réécrire dans un autre langage, en passant de Python à JavaScript, tout en gardant l'esprit de l'œuvre originale. J'ai compris qu'un même problème peut se résoudre de plusieurs façons selon l'environnement, et que la vraie compétence c'est de comprendre la logique derrière le code, pas seulement la syntaxe d'un langage.</p>
-  </div>
-  <div class="comp-tags">
-    <span class="tag accent">Samba4</span>
-    <span class="tag accent">Docker</span>
-    <span class="tag accent">Python</span>
-    <span class="tag accent">JavaScript</span>
-    <span class="tag">Active Directory</span>
-    <span class="tag">matplotlib</span>
-    <span class="tag">Canvas</span>
-  </div>
-</div>
-<a href="https://github.com/souare-ibrahima-rt/SAE2.04-Projet-Integratif" target="_blank" style="color:#00d4a4;text-decoration:none;font-weight:700;font-size:0.95rem;border:1px solid #00d4a4;padding:5px 14px;border-radius:20px;position:absolute;right:20px;">Accéder au projet</a>        
-<div class="divider"></div>
-</div>
-</section>
-<section id="certifications" style="background:var(--bg3)">
-  <div class="section-inner">
-    <h2 class="section-title">Certification</h2>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;align-items:center;gap:1.5rem;max-width:500px;">
-      <div style="width:48px;height:48px;background:#fff;border:1px solid rgba(0,212,164,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;">
-        <img src="logo-secnumacademie.png" alt="SecNumacadémie" style="width:100%;height:100%;object-fit:contain;">
-      </div>
+  <div class="wrap">
+    <div class="hero-grid">
       <div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:4px;">SecNumacadémie</div>
-        <div style="font-size:0.85rem;color:var(--accent);">Sensibilisation aux enjeux de la cybersécurité : bonnes pratiques, menaces courantes, protection des données</div>
-        <div style="font-size:0.82rem;color:var(--muted);margin-top:4px;">2024</div>
+        <div class="hero-id">
+          <img class="hero-avatar" src="assets/img/photo.jpg" alt="Portrait d'Ibrahima Souaré" width="600" height="800" fetchpriority="high">
+          <div>
+            <div class="status"><i></i>Disponible · recherche une alternance</div>
+            <h1>Ibrahima<span>Souaré</span></h1>
+          </div>
+        </div>
+        <p class="hero-lead">Je suis arrivé du Sénégal en 2024 pour faire un <strong>BUT Réseaux et Télécoms</strong>, d'abord à l'IUT de Roanne, puis à Colmar dans le parcours <strong>Développement Système et Cloud (DevCloud)</strong>. Je cherche une alternance pour continuer à apprendre sur le terrain.</p>
+        <div class="hero-cta">
+          <a href="#projets" class="btn btn-main">Voir mes projets</a>
+          <a href="CV-ibrahima-souare-alternance.pdf" class="btn" target="_blank" rel="noopener">Mon CV (PDF)</a>
+        </div>
+      </div>
+      <div class="globe-box">
+        <canvas id="globe" aria-label="Globe en rotation montrant le parcours Sénégal, Roanne, Colmar" role="img"></canvas>
+        <div class="globe-legend"><span class="dot"></span>Sénégal → <b>Roanne</b> 2024 → <b>Colmar</b> 2025</div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>2<sup style="font-size:.5em">e</sup> année</strong><span>BUT R&amp;T, parcours DevCloud</span></div>
+      <div class="fact"><strong>5 SAE</strong><span>présentées sur ce site</span></div>
+      <div class="fact"><strong>8 semaines</strong><span>de stage en service informatique</span></div>
+      <div class="fact"><strong>2 IUT</strong><span>Roanne, puis Colmar</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Technologies et outils utilisés"><div class="marquee-track"><div class="marquee-group"><span class="tech" style="--brand:#1BA0D7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></svg>Cisco</span><span class="tech" style="--brand:#FCC624"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>Linux</span><span class="tech" style="--brand:#A81D33"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.88 12.685c-.4 0 .08.2.601.28.14-.1.27-.22.39-.33a3.001 3.001 0 01-.99.05m2.14-.53c.23-.33.4-.69.47-1.06-.06.27-.2.5-.33.73-.75.47-.07-.27 0-.56-.8 1.01-.11.6-.14.89m.781-2.05c.05-.721-.14-.501-.2-.221.07.04.13.5.2.22M12.38.31c.2.04.45.07.42.12.23-.05.28-.1-.43-.12m.43.12l-.15.03.14-.01V.43m6.633 9.944c.02.64-.2.95-.38 1.5l-.35.181c-.28.54.03.35-.17.78-.44.39-1.34 1.22-1.62 1.301-.201 0 .14-.25.19-.34-.591.4-.481.6-1.371.85l-.03-.06c-2.221 1.04-5.303-1.02-5.253-3.842-.03.17-.07.13-.12.2a3.551 3.552 0 012.001-3.501 3.361 3.362 0 013.732.48 3.341 3.342 0 00-2.721-1.3c-1.18.01-2.281.76-2.651 1.57-.6.38-.67 1.47-.93 1.661-.361 2.601.66 3.722 2.38 5.042.27.19.08.21.12.35a4.702 4.702 0 01-1.53-1.16c.23.33.47.66.8.91-.55-.18-1.27-1.3-1.48-1.35.93 1.66 3.78 2.921 5.261 2.3a6.203 6.203 0 01-2.33-.28c-.33-.16-.77-.51-.7-.57a5.802 5.803 0 005.902-.84c.44-.35.93-.94 1.07-.95-.2.32.04.16-.12.44.44-.72-.2-.3.46-1.24l.24.33c-.09-.6.74-1.321.66-2.262.19-.3.2.3 0 .97.29-.74.08-.85.15-1.46.08.2.18.42.23.63-.18-.7.2-1.2.28-1.6-.09-.05-.28.3-.32-.53 0-.37.1-.2.14-.28-.08-.05-.26-.32-.38-.861.08-.13.22.33.34.34-.08-.42-.2-.75-.2-1.08-.34-.68-.12.1-.4-.3-.34-1.091.3-.25.34-.74.54.77.84 1.96.981 2.46-.1-.6-.28-1.2-.49-1.76.16.07-.26-1.241.21-.37A7.823 7.824 0 0017.702 1.6c.18.17.42.39.33.42-.75-.45-.62-.48-.73-.67-.61-.25-.65.02-1.06 0C15.082.73 14.862.8 13.8.4l.05.23c-.77-.25-.9.1-1.73 0-.05-.04.27-.14.53-.18-.741.1-.701-.14-1.431.03.17-.13.36-.21.55-.32-.6.04-1.44.35-1.18.07C9.6.68 7.847 1.3 6.867 2.22L6.838 2c-.45.54-1.96 1.611-2.08 2.311l-.131.03c-.23.4-.38.85-.57 1.261-.3.52-.45.2-.4.28-.6 1.22-.9 2.251-1.16 3.102.18.27 0 1.65.07 2.76-.3 5.463 3.84 10.776 8.363 12.006.67.23 1.65.23 2.49.25-.99-.28-1.12-.15-2.08-.49-.7-.32-.85-.7-1.34-1.13l.2.35c-.971-.34-.57-.42-1.361-.67l.21-.27c-.31-.03-.83-.53-.97-.81l-.34.01c-.41-.501-.63-.871-.61-1.161l-.111.2c-.13-.21-1.52-1.901-.8-1.511-.13-.12-.31-.2-.5-.55l.14-.17c-.35-.44-.64-1.02-.62-1.2.2.24.32.3.45.33-.88-2.172-.93-.12-1.601-2.202l.15-.02c-.1-.16-.18-.34-.26-.51l.06-.6c-.63-.74-.18-3.102-.09-4.402.07-.54.53-1.1.88-1.981l-.21-.04c.4-.71 2.341-2.872 3.241-2.761.43-.55-.09 0-.18-.14.96-.991 1.26-.7 1.901-.88.7-.401-.6.16-.27-.151 1.2-.3.85-.7 2.421-.85.16.1-.39.14-.52.26 1-.49 3.151-.37 4.562.27 1.63.77 3.461 3.011 3.531 5.132l.08.02c-.04.85.13 1.821-.17 2.711l.2-.42M9.54 13.236l-.05.28c.26.35.47.73.8 1.01-.24-.47-.42-.66-.75-1.3m.62-.02c-.14-.15-.22-.34-.31-.52.08.32.26.6.43.88l-.12-.36m10.945-2.382l-.07.15c-.1.76-.34 1.511-.69 2.212.4-.73.65-1.541.75-2.362M12.45.12c.27-.1.66-.05.95-.12-.37.03-.74.05-1.1.1l.15.02M3.006 5.142c.07.57-.43.8.11.42.3-.66-.11-.18-.1-.42m-.64 2.661c.12-.39.15-.62.2-.84-.35.44-.17.53-.2.83"/></svg>Debian</span><span class="tech" style="--brand:#2496ED"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>Docker</span><span class="tech" style="--brand:#3776AB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.858 0c-.978.005-1.913.088-2.736.234C6.7.662 6.26 1.558 6.26 3.21v2.182h5.725v.727H4.111c-1.664 0-3.121 1-3.577 2.903-.526 2.181-.549 3.542 0 5.82.407 1.694 1.379 2.902 3.043 2.902h1.969v-2.616c0-1.89 1.635-3.557 3.576-3.557h5.72c1.591 0 2.862-1.31 2.862-2.91v-5.45c0-1.553-1.309-2.718-2.863-2.977A18 18 0 0 0 11.858 0M8.762 1.755c.591 0 1.074.491 1.074 1.095 0 .601-.483 1.087-1.074 1.087A1.08 1.08 0 0 1 7.688 2.85c0-.604.48-1.095 1.074-1.095m9.656 4.364v2.543c0 1.971-1.671 3.63-3.577 3.63H9.122c-1.566 0-2.862 1.34-2.862 2.91v5.452c0 1.551 1.349 2.464 2.862 2.91 1.813.532 3.55.628 5.72 0 1.44-.418 2.862-1.258 2.862-2.91V18.47h-5.719v-.727h8.582c1.664 0 2.284-1.16 2.862-2.903.598-1.793.573-3.518 0-5.819-.41-1.656-1.196-2.903-2.862-2.903zm-3.216 13.807a1.08 1.08 0 0 1 1.074 1.088c0 .604-.48 1.094-1.074 1.094-.592 0-1.075-.49-1.075-1.094 0-.601.483-1.088 1.075-1.088"/></svg>Python</span><span class="tech"><span class="mark">GLPI</span>GLPI</span><span class="tech" style="--brand:#E57000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.928 1.825c-1.09.553-1.09.64-.07 1.78 5.655 6.295 7.004 7.782 7.107 7.782.139.017 7.971-8.542 8.058-8.801.034-.07-.208-.312-.519-.536-.415-.312-.864-.433-1.712-.467-1.59-.104-2.144.242-4.115 2.455-.899 1.003-1.66 1.833-1.66 1.833-.017 0-.76-.813-1.642-1.798S8.473 2.1 8.127 1.91c-.796-.45-2.421-.484-3.2-.086zM1.297 4.367C.45 4.695 0 5.007 0 5.248c0 .121 1.331 1.678 2.94 3.459 1.625 1.78 2.939 3.268 2.939 3.302 0 .035-1.331 1.522-2.94 3.303C1.314 17.11.017 18.683.035 18.822c.086.467 1.504 1.055 2.541 1.055 1.678-.018 2.058-.312 5.603-4.202 1.78-1.954 3.233-3.614 3.233-3.666 0-.069-1.435-1.694-3.199-3.63-2.3-2.508-3.423-3.632-3.96-3.874-.812-.398-2.126-.467-2.956-.138zm18.467.12c-.502.26-1.764 1.505-3.943 3.891-1.763 1.937-3.199 3.562-3.199 3.631 0 .07 1.453 1.712 3.234 3.666 3.544 3.89 3.925 4.184 5.602 4.202 1.038 0 2.455-.588 2.542-1.055.017-.156-1.28-1.712-2.905-3.493-1.608-1.78-2.94-3.285-2.94-3.32 0-.034 1.332-1.539 2.94-3.32C22.72 6.91 24.017 5.352 24 5.214c-.087-.45-1.366-.968-2.473-1.038-.795-.034-1.21.035-1.763.312zM7.954 16.973c-2.144 2.369-3.908 4.374-3.943 4.46-.034.07.208.312.52.537.414.311.864.432 1.711.467 1.574.103 2.161-.26 4.15-2.508.864-.968 1.608-1.78 1.625-1.78s.761.812 1.643 1.798c2.023 2.248 2.559 2.576 4.132 2.49.848-.035 1.297-.156 1.712-.467.311-.225.553-.467.519-.536-.087-.26-7.92-8.819-8.058-8.801-.069 0-1.867 1.954-4.011 4.34z"/></svg>Proxmox</span><span class="tech" style="--brand:#1679A7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2.95 0c-1.62 0-2.95 1.32-2.95 2.95v18.1c0 1.63 1.32 2.95 2.95 2.95h18.1c1.62 0 2.95-1.32 2.95-2.95v-18.1c-.00024-1.63-1.32-2.95-2.95-2.95zm0 1.09h18.1c1.04 0 1.85.818 1.85 1.86v14h-5.27c-.335-.796-2.57-6.47.283-10.9a.516.517 0 0 0-.443-.794c-5.24.0827-8.2 3.19-9.74 6.21-1.35 2.64-1.63 4.91-1.69 5.53h-4.95v-14c0-1.04.817-1.86 1.85-1.86zm13.6 5.24c-2.62 5.24.248 11.4.248 11.4a.516.517 0 0 0 .469.301h5.62v3.05c0 1.04-.817 1.86-1.85 1.86h-18.1c-1.04 0-1.85-.818-1.85-1.86v-3.05h5.39a.516.517 0 0 0 .514-.477s.226-2.8 1.66-5.62c1.34-2.62 3.67-5.17 7.91-5.57z"/></svg>Wireshark</span><span class="tech"><span class="mark">GNS3</span>GNS3</span><span class="tech" style="--brand:#092E20"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 00-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39z"/></svg>Django</span><span class="tech" style="--brand:#A22846"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19.8955 10.8961-.1726-.3028c.0068-2.1746-1.0022-3.061-2.1788-3.7348.356-.0938.7237-.1711.8245-.6182.6118-.1566.7397-.4398.8011-.7398.16-.1066.6955-.4061.6394-.9211.2998-.2069.4669-.4725.3819-.8487.3222-.3515.407-.6419.2702-.9096.3868-.4805.2152-.7295.05-.9817.2897-.5254.0341-1.0887-.7758-.9944-.3221-.4733-1.0244-.3659-1.133-.3637-.1215-.1519-.2819-.2821-.7755-.219-.3197-.2851-.6771-.2364-1.0458-.0964-.4378-.3403-.7275-.0675-1.0584.0356-.53-.1706-.6513.0631-.9117.1583-.5781-.1203-.7538.1416-1.0309.4182l-.3224-.0063c-.8719.5061-1.305 1.5366-1.4585 2.0664-.1536-.5299-.5858-1.5604-1.4575-2.0664l-.3223.0063C9.942.5014 9.7663.2394 9.1883.3597 8.9279.2646 8.807.0309 8.2766.2015c-.2172-.0677-.417-.2084-.6522-.2012l.0004.0002C7.5017.0041 7.369.049 7.2185.166c-.3688-.1401-.7262-.1887-1.0459.0964-.4936-.0631-.654.0671-.7756.219C5.2887.4791 4.5862.3717 4.264.845c-.8096-.0943-1.0655.4691-.7756.9944-.1653.2521-.3366.5013.05.9819-.1367.2677-.0519.5581.2703.9096-.085.3763.0822.6418.3819.8487-.0561.515.4795.8144.6394.9211.0614.3001.1894.5832.8011.7398.1008.4472.4685.5244.8245.6183-1.1766.6737-2.1856 1.56-2.1788 3.7348l-.1724.3028c-1.3491.8082-2.5629 3.4056-.6648 5.5167.124.6609.3319 1.1355.5171 1.6609.2769 2.117 2.0841 3.1082 2.5608 3.2255.6984.524 1.4423 1.0212 2.449 1.3696.949.964 1.977 1.3314 3.0107 1.3308.0152 0 .0306.0002.0457 0 1.0337.0006 2.0618-.3668 3.0107-1.3308 1.0067-.3483 1.7506-.8456 2.4491-1.3696.4766-.1173 2.2838-1.1085 2.5607-3.2255.1851-.5253.3931-1 .517-1.6609 1.8981-2.1113.6843-4.7089-.6649-5.517zm-1.0386-.3715c-.0704.8759-4.6354-3.0504-3.8472-3.1808 2.1391-.3558 3.9191.896 3.8472 3.1808zm-2.0155 4.3649c-1.1481.7409-2.8025.2626-3.6953-1.0681-.8928-1.3306-.6858-3.0101.4623-3.7509 1.1481-.7409 2.8025-.2627 3.6953 1.068.8927 1.3307.6858 3.0101-.4623 3.751zM13.6591 1.3721c.0396.1967.0843.321.1354.3577.2537-.272.4611-.5506.7878-.8123.0011.1537-.0776.3205.1169.4425.1752-.2356.4119-.4459.7263-.6244-.1514.2611-.026.3404.0554.4486.24-.2059.4681-.4144.9109-.5759-.121.1474-.2902.2914-.1108.4607.2473-.1544.496-.3086 1.0833-.4183-.1323.1475-.4059.295-.2401.4426.3104-.1186.6539-.2047 1.034-.2546-.182.1496-.3337.2963-.1846.4122.3323-.1022.7899-.2398 1.2372-.1212l-.2832.2849c-.0314.0382.6623.0297 1.1202.0364-.167.2321-.3375.4562-.437.8548.0454.0459.2723.0204.4862 0-.2194.4618-.6004.5783-.6893.776.134.1015.32.075.5232.006-.158.3254-.4892.5484-.7509.8123.0662.047.1818.075.4555.0425-.2418.257-.5339.492-.8802.7032.0614.0708.2722.0681.4678.0727-.3136.3069-.7173.466-1.0955.6668.1885.1288.3234.0988.4678.097-.2676.2198-.7225.3342-1.1448.4668.0803.1249.1607.1589.3324.194-.447.2473-1.0873.1343-1.2679.2607.0435.1243.1665.2053.3139.2728-.7197.0418-2.6879-.0262-3.0652-1.5156.7367-.8094 2.0813-1.7593 4.394-2.934-1.7994.6022-3.4229 1.405-4.7817 2.5096-1.5978-.7436-.4965-2.6197.283-3.3645zm-1.6126 5.3718c1.1329-.0123 2.5356.8325 2.53 1.6286-.005.7027-.9851 1.2715-2.5213 1.2607-1.5043-.0177-2.5172-.7148-2.5137-1.3957.003-.5603 1.2282-1.5263 2.505-1.4936zm-5.7646-.6006c.1717-.0351.252-.0692.3323-.194-.4223-.1327-.8772-.247-1.1448-.4668.1444.0018.2792.0318.4678-.097-.3783-.2008-.782-.3599-1.0956-.6668.1955-.0048.4064-.002.4677-.0728-.3462-.2113-.6383-.4463-.8801-.7033.2738.0325.3893.0045.4555-.0425-.2617-.264-.593-.487-.7509-.8123.2032.069.3892.0954.5232-.006-.089-.1977-.47-.3142-.6894-.776.214.0204.4409.0459.4863 0-.0994-.3985-.2698-.6226-.4369-.8547.4579-.0067 1.1516.0018 1.1202-.0364l-.2831-.2849c.4472-.1186.9049.019 1.2371.1213.1492-.1159-.0026-.2626-.1847-.4123.3801.05.7236.1361 1.034.2547.1659-.1476-.1076-.2951-.24-.4426.5872.1097.8361.2639 1.0833.4183.1794-.1694.0103-.3133-.1108-.4607.4428.1615.6709.37.911.5759.0814-.1082.2068-.1875.0554-.4486.3143.1785.5511.3888.7263.6244.1945-.122.1159-.2888.1169-.4426.3267.2618.534.5404.7879.8124.0511-.0366.0959-.161.1354-.3577.7794.7448 1.8807 2.6208.2831 3.3646-1.3589-1.1039-2.9817-1.9064-4.78-2.5086 2.3115 1.174 3.6556 2.1239 4.392 2.9328-.3773 1.4895-2.3455 1.5575-3.0651 1.5157.1473-.0676.2703-.1485.3139-.2728-.1806-.1264-.8209-.0134-1.2679-.2607zm2.8175 1.1334c.7881.1304-3.7769 4.0567-3.8472 3.1809-.0719-2.2846 1.7079-3.5367 3.8472-3.1809zm-4.847 8.7567c-1.1094-.8789-1.4668-3.4529.5901-4.6097 1.2394-.3273.4184 5.051-.5901 4.6097zm4.2656 4.5989c-.6257.3719-2.1452.2187-3.2252-1.3095-.7283-1.2823-.6345-2.5872-.123-2.9705.7648-.4589 1.9464.1609 2.8559 1.2003.7923.9405 1.1536 2.5927.4923 3.0797zm-1.2415-5.6086c-1.1481-.7409-1.3551-2.4203-.4623-3.7511.8928-1.3307 2.5472-1.8089 3.6952-1.068 1.1481.7409 1.3551 2.4203.4623 3.7509-.8926 1.3308-2.5471 1.809-3.6952 1.0682zm4.7948 8.2279c-1.3763.0584-2.7258-1.1105-2.7081-1.5157-.0206-.594 1.6758-1.0578 2.782-1.0306 1.1131-.0479 2.6068.3531 2.6097.8851.0184.5166-1.3547 1.6838-2.6836 1.6612zm2.7584-5.8578c.0081 1.3899-1.226 2.5225-2.7562 2.5299-1.5302.0073-2.7773-1.1135-2.7854-2.5033v-.0265c-.008-1.3899 1.2259-2.5226 2.7562-2.5299 1.5302-.0073 2.7773 1.1134 2.7853 2.5033a.7794.7794 0 0 1 .0001.0265zm3.855 2.0029c-1.186 1.6208-2.7916 1.684-3.3896 1.2325-.6255-.5811-.148-2.3854.7094-3.3747v-.0003c.9812-1.0912 2.0302-1.8037 2.7609-1.2469.4919.4828.7805 2.3008-.0807 3.3894zm1.0724-3.4301c-1.0086.4413-1.8298-4.9372-.5901-4.61 2.0568 1.1569 1.6994 3.731.5901 4.61zm-.0256-8.3279h.2985v-.5304h.2986c.1502 0 .2053.0624.2262.2052.0152.1088.0113.2395.0477.3253h.2984c-.0533-.0763-.0515-.2358-.0571-.3213-.0097-.1373-.0513-.2796-.1977-.3176v-.0037c.1502-.061.2149-.1807.2149-.341 0-.2048-.1539-.3738-.3974-.3738h-.732v1.3573zm.2985-1.1255h.3269c.1333 0 .2054.0573.2054.188 0 .1369-.0721.1942-.2054.1942H20.03v-.3822zm-1.0337.4633c0 .7009.5682 1.2694 1.2695 1.2694s1.2695-.5684 1.2695-1.2694c0-.7013-.5683-1.2697-1.2695-1.2697-.7013 0-1.2695.5684-1.2695 1.2697zm2.3275 0c0 .5845-.4737 1.058-1.058 1.058s-1.058-.4735-1.058-1.058c0-.5849.4737-1.058 1.058-1.058s1.058.4731 1.058 1.058z"/></svg>Raspberry Pi</span><span class="tech" style="--brand:#003545"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.157 4.412c-.676.284-.79.31-1.673.372-.65.045-.757.057-1.212.209-.75.246-1.395.75-2.02 1.59-.296.398-1.249 1.913-1.249 1.988 0 .057-.65.998-.915 1.32-.574.713-1.08 1.079-2.14 1.59-.77.36-1.224.524-4.102 1.477-1.073.353-2.133.738-2.367.864-.852.449-1.515 1.036-2.203 1.938-1.003 1.32-.972 1.313-3.042.947a12.264 12.264 0 00-.675-.063c-.644-.05-1.023.044-1.332.334L0 17.193l.177.088c.094.05.353.234.561.398.215.17.461.347.55.391.088.044.17.088.183.101.012.013-.089.17-.228.353-.435.581-.593.871-.574 1.048.019.164.032.17.43.17.517-.006.826-.056 1.261-.208.65-.233 2.058-.94 2.784-1.4.776-.5 1.717-.998 1.956-1.042.082-.02.354-.07.594-.114.58-.107 1.464-.095 2.587.05.108.013.373.045.6.064.227.025.43.057.454.076.026.012.474.037.998.056.934.026 1.104.007 1.3-.189.126-.133.385-.631.498-.985.209-.643.417-.921.366-.492-.113.966-.322 1.692-.713 2.411-.259.499-.663 1.092-.934 1.395-.322.347-.315.36.088.315.619-.063 1.471-.397 2.096-.82.827-.562 1.647-1.691 2.19-3.03.107-.27.22-.22.183.083-.013.094-.038.315-.057.498l-.031.328.353-.202c.833-.48 1.414-1.262 2.127-2.884.227-.518.877-2.922 1.073-3.976a9.64 9.64 0 01.271-1.042c.127-.429.196-.555.48-.858.183-.19.625-.555.978-.808.72-.505.953-.75 1.187-1.205.208-.417.284-1.13.132-1.357-.132-.202-.284-.196-.763.006Z"/></svg>MariaDB</span><span class="tech" style="--brand:#F03C2E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg>Git</span><span class="tech" style="--brand:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span><span class="tech"><span class="mark">SAMB</span>Samba 4</span><span class="tech" style="--brand:#009639"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z"/></svg>NGINX</span><span class="tech" style="--brand:#4EAA25"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.038,4.9l-7.577-4.498C13.009,0.134,12.505,0,12,0c-0.505,0-1.009,0.134-1.462,0.403L2.961,4.9 C2.057,5.437,1.5,6.429,1.5,7.503v8.995c0,1.073,0.557,2.066,1.462,2.603l7.577,4.497C10.991,23.866,11.495,24,12,24 c0.505,0,1.009-0.134,1.461-0.402l7.577-4.497c0.904-0.537,1.462-1.529,1.462-2.603V7.503C22.5,6.429,21.943,5.437,21.038,4.9z M15.17,18.946l0.013,0.646c0.001,0.078-0.05,0.167-0.111,0.198l-0.383,0.22c-0.061,0.031-0.111-0.007-0.112-0.085L14.57,19.29 c-0.328,0.136-0.66,0.169-0.872,0.084c-0.04-0.016-0.057-0.075-0.041-0.142l0.139-0.584c0.011-0.046,0.036-0.092,0.069-0.121 c0.012-0.011,0.024-0.02,0.036-0.026c0.022-0.011,0.043-0.014,0.062-0.006c0.229,0.077,0.521,0.041,0.802-0.101 c0.357-0.181,0.596-0.545,0.592-0.907c-0.003-0.328-0.181-0.465-0.613-0.468c-0.55,0.001-1.064-0.107-1.072-0.917 c-0.007-0.667,0.34-1.361,0.889-1.8l-0.007-0.652c-0.001-0.08,0.048-0.168,0.111-0.2l0.37-0.236 c0.061-0.031,0.111,0.007,0.112,0.087l0.006,0.653c0.273-0.109,0.511-0.138,0.726-0.088c0.047,0.012,0.067,0.076,0.048,0.151 l-0.144,0.578c-0.011,0.044-0.036,0.088-0.065,0.116c-0.012,0.012-0.025,0.021-0.038,0.028c-0.019,0.01-0.038,0.013-0.057,0.009 c-0.098-0.022-0.332-0.073-0.699,0.113c-0.385,0.195-0.52,0.53-0.517,0.778c0.003,0.297,0.155,0.387,0.681,0.396 c0.7,0.012,1.003,0.318,1.01,1.023C16.105,17.747,15.736,18.491,15.17,18.946z M19.143,17.859c0,0.06-0.008,0.116-0.058,0.145 l-1.916,1.164c-0.05,0.029-0.09,0.004-0.09-0.056v-0.494c0-0.06,0.037-0.093,0.087-0.122l1.887-1.129 c0.05-0.029,0.09-0.004,0.09,0.056V17.859z M20.459,6.797l-7.168,4.427c-0.894,0.523-1.553,1.109-1.553,2.187v8.833 c0,0.645,0.26,1.063,0.66,1.184c-0.131,0.023-0.264,0.039-0.398,0.039c-0.42,0-0.833-0.114-1.197-0.33L3.226,18.64 c-0.741-0.44-1.201-1.261-1.201-2.142V7.503c0-0.881,0.46-1.702,1.201-2.142l7.577-4.498c0.363-0.216,0.777-0.33,1.197-0.33 c0.419,0,0.833,0.114,1.197,0.33l7.577,4.498c0.624,0.371,1.046,1.013,1.164,1.732C21.686,6.557,21.12,6.411,20.459,6.797z"/></svg>GNU Bash</span><span class="tech" style="--brand:#00878F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.087 6.146c-.3 0-.607.017-.907.069-2.532.367-4.23 2.239-5.18 3.674-.95-1.435-2.648-3.307-5.18-3.674a6.49 6.49 0 0 0-.907-.069C2.648 6.146 0 8.77 0 12s2.656 5.854 5.913 5.854c.3 0 .607-.017.916-.069 2.531-.376 4.23-2.247 5.18-3.683.949 1.436 2.647 3.307 5.18 3.683.299.043.607.069.915.069C21.344 17.854 24 15.23 24 12s-2.656-5.854-5.913-5.854zM6.53 15.734a3.837 3.837 0 0 1-.625.043c-2.148 0-3.889-1.7-3.889-3.777 0-2.085 1.749-3.777 3.898-3.777.208 0 .416.017.624.043 2.39.35 3.847 2.768 4.347 3.734-.508.974-1.974 3.384-4.355 3.734zm11.558.043c-.208 0-.416-.017-.624-.043-2.39-.35-3.856-2.768-4.347-3.734.491-.966 1.957-3.384 4.347-3.734.208-.026.416-.043.624-.043 2.149 0 3.89 1.7 3.89 3.777 0 2.085-1.75 3.777-3.89 3.777zm1.65-4.404v1.134h-1.205v1.182h-1.156v-1.182H16.17v-1.134h1.206V10.19h1.156v1.183h1.206zM4.246 12.498H7.82v-1.125H4.245v1.125z"/></svg>Arduino</span><span class="tech" style="--brand:#E7352C"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.926 19.324a7.6 7.6 0 00-2.983-6.754 7.44 7.44 0 00-3.828-1.554.697.697 0 01-.606-.731.674.674 0 01.743-.617 8.97 8.97 0 018 9.805 7.828 7.828 0 01-.298 1.542l1.989.56a11.039 11.039 0 001.714-.651 12.159 12.159 0 00.217-2.343A12.57 12.57 0 007.212 6.171a5.53 5.53 0 00-2 0 4.354 4.354 0 00-2.16 1.337 4.274 4.274 0 001.909 6.856 9.896 9.896 0 001.074.195 4.011 4.011 0 013.337 3.954 3.965 3.965 0 01-.64 2.16l1.371.88a10.182 10.182 0 002.057.342 7.52 7.52 0 00.754-2.628m.16 4.73A13.073 13.073 0 01.001 10.983 12.982 12.982 0 013.83 1.737l.743.697a12.067 12.067 0 000 17.141 12.067 12.067 0 0017.141 0l.697.697a12.97 12.97 0 01-9.336 3.726M24 10.993A10.993 10.993 0 0012.949 0c-.389 0-.766 0-1.143.057l-.252.732a18.912 18.912 0 0111.588 11.576l.731-.263c0-.366.069-.732.069-1.143m-1.269 5.165A17.53 17.53 0 007.818 1.27a11.119 11.119 0 00-2.457 1.77v1.635A13.919 13.919 0 0119.268 18.57h1.634a11.713 11.713 0 001.771-2.446M7.92 17.884a1.691 1.691 0 11-1.69-1.691 1.691 1.691 0 011.69 1.691"/></svg>Espressif</span><span class="tech" style="--brand:#F7DF1E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>JavaScript</span><span class="tech" style="--brand:#660066"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.657 23.994h-9.45A1.212 1.212 0 0 1 0 22.788v-9.18h.071c5.784 0 10.504 4.65 10.586 10.386Zm7.606 0h-4.045C14.135 16.246 7.795 9.977 0 9.942V6.038h.071c9.983 0 18.121 8.044 18.192 17.956Zm4.53 0h-.97C21.754 12.071 11.995 2.407 0 2.372v-1.16C0 .55.544.006 1.207.006h7.64C15.733 2.49 21.257 7.789 24 14.508v8.291c0 .663-.544 1.195-1.207 1.195ZM16.713.006h6.092A1.19 1.19 0 0 1 24 1.2v5.914c-.91-1.242-2.046-2.65-3.158-3.762C19.588 2.11 18.122.987 16.714.005Z"/></svg>MQTT</span><span class="tech"><span class="mark">ACTI</span>Active Directory</span><span class="tech" style="--brand:#2F61B4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 1.758 5.182 20c.129.455.25.691.421.945.063.092.13.179.202.264.173.204.37.378.59.525.243.163.49.286.763.371.324.1.61.137.99.137h4.327l1.918-6.615h6.798v3.699a.11.11 0 0 1-.109.11h-4.88l-.813 2.806h5.654a2.92 2.92 0 0 0 1.95-.725A2.903 2.903 0 0 0 24 19.285v-6.47H12.28l-1.919 6.614H7.937L3.715 4.564h2.922l1.546 5.444H11.1l-2.343-8.25zm15.496 0-2.4 8.25H24v-5.29a2.962 2.962 0 0 0-1.825-2.741 3.044 3.044 0 0 0-1.129-.22zm2.11 2.806h3.476a.11.11 0 0 1 .11.112V7.2h-4.354z"/></svg>VirtualBox</span><span class="tech" style="--brand:#B5B5B6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.44 8.927l-.889.37.056.117a.623.623 0 0 1 .212-.054c.05 0 .093.017.126.046.033.028.058.081.072.16.015.08.022.29.022.634v2.736c0 .189-.013.316-.042.381a.295.295 0 0 1-.118.142c-.053.031-.147.045-.286.045v.12h1.481v-.12c-.154 0-.261-.017-.32-.048a.29.29 0 0 1-.126-.142c-.026-.06-.04-.187-.04-.378V8.927zm-11.722.34c-.33 0-.608.05-.84.147-.233.1-.411.246-.534.436a1.083 1.083 0 0 0-.185.612c0 .338.131.627.393.864.184.167.507.309.968.422.358.091.587.153.688.191a.7.7 0 0 1 .31.183c.058.07.088.158.088.259 0 .155-.07.291-.21.41-.142.116-.35.176-.628.176-.262 0-.47-.066-.625-.197-.154-.132-.255-.339-.307-.619L0 12.23c.056.48.228.845.517 1.096.289.252.704.378 1.244.378.371 0 .68-.054.93-.156a1.263 1.263 0 0 0 .781-1.169 1.29 1.29 0 0 0-.171-.684 1.203 1.203 0 0 0-.472-.437c-.2-.107-.508-.21-.927-.31-.418-.098-.683-.193-.79-.286a.326.326 0 0 1 .009-.524c.14-.105.336-.156.586-.156.24 0 .422.049.542.145.122.097.199.256.237.471l.864-.028c-.013-.395-.154-.71-.425-.949-.271-.235-.674-.353-1.208-.353zm21.808.33a.475.475 0 1 0-.002.95.475.475 0 0 0 .002-.95zm0 .072a.4.4 0 0 1 .401.403c0 .116-.05.22-.128.294l-.086-.135a.396.396 0 0 0-.065-.078.212.212 0 0 0-.048-.03.2.2 0 0 0 .127-.057.144.144 0 0 0 .043-.109.178.178 0 0 0-.025-.091.125.125 0 0 0-.067-.055.309.309 0 0 0-.123-.02h-.266v.606h.08v-.268h.091c.02 0 .036.001.045.003.013.004.025.007.036.014.013.01.024.023.04.043.015.019.035.049.059.083l.08.125h.043a.396.396 0 0 1-.237.08.405.405 0 0 1-.404-.405c0-.224.18-.403.404-.403zm-.157.191h.191c.044 0 .077.01.097.027a.089.089 0 0 1 .03.07.09.09 0 0 1-.016.055.076.076 0 0 1-.047.035.196.196 0 0 1-.085.013h-.17zm-15.037.6c-.41 0-.752.17-1.023.514v-.455h-.754v3.105h.814v-1.401c0-.348.022-.583.063-.713a.583.583 0 0 1 .234-.306.666.666 0 0 1 .385-.118c.11 0 .208.028.287.082.08.054.135.13.17.229.037.099.054.314.054.646v1.581h.816V11.7a2.54 2.54 0 0 0-.046-.55.925.925 0 0 0-.16-.343.83.83 0 0 0-.341-.25 1.285 1.285 0 0 0-.499-.097zm2.65 0a1.7 1.7 0 0 0-.826.2 1.39 1.39 0 0 0-.571.586 1.684 1.684 0 0 0-.202.793c0 .356.068.657.202.904.134.25.33.438.588.566.259.129.53.194.814.194.46 0 .841-.156 1.144-.463.303-.31.455-.698.455-1.167 0-.465-.15-.85-.451-1.156-.3-.305-.683-.457-1.154-.457zm7.315.05c-.351 0-.64.108-.865.323a1.02 1.02 0 0 0-.336.77c0 .194.05.371.147.534.1.162.24.285.423.379-.223.187-.366.335-.429.44a.55.55 0 0 0-.092.271c0 .068.024.13.071.184.046.056.127.116.24.187a9.626 9.626 0 0 0-.329.355c-.113.145-.19.253-.226.336a.41.41 0 0 0-.034.157c0 .12.081.232.246.343.291.19.649.284 1.071.284.55 0 .996-.16 1.337-.477.232-.216.35-.45.35-.694a.613.613 0 0 0-.183-.45.838.838 0 0 0-.49-.227 8.478 8.478 0 0 0-.878-.053 4.257 4.257 0 0 1-.46-.027c-.105-.015-.177-.04-.212-.075-.038-.037-.056-.072-.056-.112a.37.37 0 0 1 .05-.159.868.868 0 0 1 .186-.221c.156.049.309.07.459.07.36 0 .648-.1.864-.301a.956.956 0 0 0 .323-.722c0-.247-.062-.45-.187-.61h.394c.097 0 .15-.002.167-.01a.056.056 0 0 0 .035-.025.289.289 0 0 0 .018-.12.214.214 0 0 0-.02-.105.083.083 0 0 0-.033-.028.83.83 0 0 0-.166-.008h-.639a1.307 1.307 0 0 0-.746-.21zm-2.752 0c-.252 0-.49.065-.714.194a1.437 1.437 0 0 0-.546.61 1.816 1.816 0 0 0-.205.825c0 .381.114.724.34 1.03a1.29 1.29 0 0 0 1.09.543c.28 0 .532-.07.76-.211.23-.14.409-.35.54-.627.13-.276.194-.55.194-.821 0-.385-.118-.725-.354-1.022a1.344 1.344 0 0 0-1.105-.522zm-12.182.009l1.174 3.113a1.193 1.193 0 0 1-.21.431c-.09.112-.23.167-.419.167-.102 0-.218-.013-.344-.04l.067.645c.152.033.307.052.464.052.155 0 .294-.019.418-.052a1.04 1.04 0 0 0 .31-.138.862.862 0 0 0 .224-.234 2.2 2.2 0 0 0 .205-.414l.199-.545 1.085-2.985h-.844l-.722 2.204-.74-2.204zm16.631.078v.122a.84.84 0 0 1 .245.091c.035.029.08.08.136.157.072.102.125.186.158.255l1.088 2.275-.213.526c-.079.194-.158.326-.236.393-.08.068-.15.104-.217.104a.878.878 0 0 1-.167-.05.924.924 0 0 0-.3-.07c-.105 0-.19.025-.25.084a.286.286 0 0 0-.092.22c0 .098.042.183.126.257a.457.457 0 0 0 .322.112c.18 0 .366-.072.56-.223.193-.15.35-.37.469-.664l1.226-3.014a1.6 1.6 0 0 1 .113-.254.55.55 0 0 1 .145-.146.473.473 0 0 1 .188-.053v-.122h-.978v.122c.093 0 .16.008.197.023a.172.172 0 0 1 .083.057.146.146 0 0 1 .023.087c0 .091-.019.18-.056.271l-.675 1.671-.737-1.53c-.074-.15-.11-.268-.11-.356a.21.21 0 0 1 .074-.16.346.346 0 0 1 .224-.063h.068v-.122zm-1.753.08c.175 0 .316.074.43.217.15.196.224.466.224.815 0 .265-.053.46-.16.584a.516.516 0 0 1-.41.188.528.528 0 0 1-.43-.216c-.149-.19-.223-.458-.223-.802 0-.268.054-.461.163-.59a.515.515 0 0 1 .406-.197zm-2.798.054c.242 0 .44.102.598.312.23.308.346.727.346 1.263 0 .429-.07.73-.209.905a.646.646 0 0 1-.528.264c-.286 0-.516-.161-.691-.477-.174-.32-.263-.695-.263-1.135 0-.272.037-.493.11-.669a.731.731 0 0 1 .285-.361.667.667 0 0 1 .352-.102zm-4.463.395c.216 0 .396.084.543.247.144.162.216.397.216.703 0 .311-.072.55-.216.712a.695.695 0 0 1-.543.248.695.695 0 0 1-.542-.248c-.147-.161-.22-.398-.22-.708 0-.308.073-.545.22-.707a.704.704 0 0 1 .542-.247zm6.66 2.498c.265.036.647.065 1.142.08.34.007.566.034.68.083.113.048.17.13.17.241 0 .157-.094.304-.282.442-.19.138-.48.208-.874.208-.414 0-.732-.07-.951-.204-.128-.078-.19-.168-.19-.277 0-.078.024-.169.076-.26a1.51 1.51 0 0 1 .228-.313z"/></svg>Synology</span><span class="tech" style="--brand:#714B67"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z"/></svg>Odoo</span><span class="tech"><span class="mark">WIND</span>Windows Server</span><span class="tech"><span class="mark">SNMP</span>SNMP</span></div><div class="marquee-group" aria-hidden="true"><span class="tech" style="--brand:#1BA0D7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></svg>Cisco</span><span class="tech" style="--brand:#FCC624"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>Linux</span><span class="tech" style="--brand:#A81D33"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.88 12.685c-.4 0 .08.2.601.28.14-.1.27-.22.39-.33a3.001 3.001 0 01-.99.05m2.14-.53c.23-.33.4-.69.47-1.06-.06.27-.2.5-.33.73-.75.47-.07-.27 0-.56-.8 1.01-.11.6-.14.89m.781-2.05c.05-.721-.14-.501-.2-.221.07.04.13.5.2.22M12.38.31c.2.04.45.07.42.12.23-.05.28-.1-.43-.12m.43.12l-.15.03.14-.01V.43m6.633 9.944c.02.64-.2.95-.38 1.5l-.35.181c-.28.54.03.35-.17.78-.44.39-1.34 1.22-1.62 1.301-.201 0 .14-.25.19-.34-.591.4-.481.6-1.371.85l-.03-.06c-2.221 1.04-5.303-1.02-5.253-3.842-.03.17-.07.13-.12.2a3.551 3.552 0 012.001-3.501 3.361 3.362 0 013.732.48 3.341 3.342 0 00-2.721-1.3c-1.18.01-2.281.76-2.651 1.57-.6.38-.67 1.47-.93 1.661-.361 2.601.66 3.722 2.38 5.042.27.19.08.21.12.35a4.702 4.702 0 01-1.53-1.16c.23.33.47.66.8.91-.55-.18-1.27-1.3-1.48-1.35.93 1.66 3.78 2.921 5.261 2.3a6.203 6.203 0 01-2.33-.28c-.33-.16-.77-.51-.7-.57a5.802 5.803 0 005.902-.84c.44-.35.93-.94 1.07-.95-.2.32.04.16-.12.44.44-.72-.2-.3.46-1.24l.24.33c-.09-.6.74-1.321.66-2.262.19-.3.2.3 0 .97.29-.74.08-.85.15-1.46.08.2.18.42.23.63-.18-.7.2-1.2.28-1.6-.09-.05-.28.3-.32-.53 0-.37.1-.2.14-.28-.08-.05-.26-.32-.38-.861.08-.13.22.33.34.34-.08-.42-.2-.75-.2-1.08-.34-.68-.12.1-.4-.3-.34-1.091.3-.25.34-.74.54.77.84 1.96.981 2.46-.1-.6-.28-1.2-.49-1.76.16.07-.26-1.241.21-.37A7.823 7.824 0 0017.702 1.6c.18.17.42.39.33.42-.75-.45-.62-.48-.73-.67-.61-.25-.65.02-1.06 0C15.082.73 14.862.8 13.8.4l.05.23c-.77-.25-.9.1-1.73 0-.05-.04.27-.14.53-.18-.741.1-.701-.14-1.431.03.17-.13.36-.21.55-.32-.6.04-1.44.35-1.18.07C9.6.68 7.847 1.3 6.867 2.22L6.838 2c-.45.54-1.96 1.611-2.08 2.311l-.131.03c-.23.4-.38.85-.57 1.261-.3.52-.45.2-.4.28-.6 1.22-.9 2.251-1.16 3.102.18.27 0 1.65.07 2.76-.3 5.463 3.84 10.776 8.363 12.006.67.23 1.65.23 2.49.25-.99-.28-1.12-.15-2.08-.49-.7-.32-.85-.7-1.34-1.13l.2.35c-.971-.34-.57-.42-1.361-.67l.21-.27c-.31-.03-.83-.53-.97-.81l-.34.01c-.41-.501-.63-.871-.61-1.161l-.111.2c-.13-.21-1.52-1.901-.8-1.511-.13-.12-.31-.2-.5-.55l.14-.17c-.35-.44-.64-1.02-.62-1.2.2.24.32.3.45.33-.88-2.172-.93-.12-1.601-2.202l.15-.02c-.1-.16-.18-.34-.26-.51l.06-.6c-.63-.74-.18-3.102-.09-4.402.07-.54.53-1.1.88-1.981l-.21-.04c.4-.71 2.341-2.872 3.241-2.761.43-.55-.09 0-.18-.14.96-.991 1.26-.7 1.901-.88.7-.401-.6.16-.27-.151 1.2-.3.85-.7 2.421-.85.16.1-.39.14-.52.26 1-.49 3.151-.37 4.562.27 1.63.77 3.461 3.011 3.531 5.132l.08.02c-.04.85.13 1.821-.17 2.711l.2-.42M9.54 13.236l-.05.28c.26.35.47.73.8 1.01-.24-.47-.42-.66-.75-1.3m.62-.02c-.14-.15-.22-.34-.31-.52.08.32.26.6.43.88l-.12-.36m10.945-2.382l-.07.15c-.1.76-.34 1.511-.69 2.212.4-.73.65-1.541.75-2.362M12.45.12c.27-.1.66-.05.95-.12-.37.03-.74.05-1.1.1l.15.02M3.006 5.142c.07.57-.43.8.11.42.3-.66-.11-.18-.1-.42m-.64 2.661c.12-.39.15-.62.2-.84-.35.44-.17.53-.2.83"/></svg>Debian</span><span class="tech" style="--brand:#2496ED"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>Docker</span><span class="tech" style="--brand:#3776AB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.858 0c-.978.005-1.913.088-2.736.234C6.7.662 6.26 1.558 6.26 3.21v2.182h5.725v.727H4.111c-1.664 0-3.121 1-3.577 2.903-.526 2.181-.549 3.542 0 5.82.407 1.694 1.379 2.902 3.043 2.902h1.969v-2.616c0-1.89 1.635-3.557 3.576-3.557h5.72c1.591 0 2.862-1.31 2.862-2.91v-5.45c0-1.553-1.309-2.718-2.863-2.977A18 18 0 0 0 11.858 0M8.762 1.755c.591 0 1.074.491 1.074 1.095 0 .601-.483 1.087-1.074 1.087A1.08 1.08 0 0 1 7.688 2.85c0-.604.48-1.095 1.074-1.095m9.656 4.364v2.543c0 1.971-1.671 3.63-3.577 3.63H9.122c-1.566 0-2.862 1.34-2.862 2.91v5.452c0 1.551 1.349 2.464 2.862 2.91 1.813.532 3.55.628 5.72 0 1.44-.418 2.862-1.258 2.862-2.91V18.47h-5.719v-.727h8.582c1.664 0 2.284-1.16 2.862-2.903.598-1.793.573-3.518 0-5.819-.41-1.656-1.196-2.903-2.862-2.903zm-3.216 13.807a1.08 1.08 0 0 1 1.074 1.088c0 .604-.48 1.094-1.074 1.094-.592 0-1.075-.49-1.075-1.094 0-.601.483-1.088 1.075-1.088"/></svg>Python</span><span class="tech"><span class="mark">GLPI</span>GLPI</span><span class="tech" style="--brand:#E57000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.928 1.825c-1.09.553-1.09.64-.07 1.78 5.655 6.295 7.004 7.782 7.107 7.782.139.017 7.971-8.542 8.058-8.801.034-.07-.208-.312-.519-.536-.415-.312-.864-.433-1.712-.467-1.59-.104-2.144.242-4.115 2.455-.899 1.003-1.66 1.833-1.66 1.833-.017 0-.76-.813-1.642-1.798S8.473 2.1 8.127 1.91c-.796-.45-2.421-.484-3.2-.086zM1.297 4.367C.45 4.695 0 5.007 0 5.248c0 .121 1.331 1.678 2.94 3.459 1.625 1.78 2.939 3.268 2.939 3.302 0 .035-1.331 1.522-2.94 3.303C1.314 17.11.017 18.683.035 18.822c.086.467 1.504 1.055 2.541 1.055 1.678-.018 2.058-.312 5.603-4.202 1.78-1.954 3.233-3.614 3.233-3.666 0-.069-1.435-1.694-3.199-3.63-2.3-2.508-3.423-3.632-3.96-3.874-.812-.398-2.126-.467-2.956-.138zm18.467.12c-.502.26-1.764 1.505-3.943 3.891-1.763 1.937-3.199 3.562-3.199 3.631 0 .07 1.453 1.712 3.234 3.666 3.544 3.89 3.925 4.184 5.602 4.202 1.038 0 2.455-.588 2.542-1.055.017-.156-1.28-1.712-2.905-3.493-1.608-1.78-2.94-3.285-2.94-3.32 0-.034 1.332-1.539 2.94-3.32C22.72 6.91 24.017 5.352 24 5.214c-.087-.45-1.366-.968-2.473-1.038-.795-.034-1.21.035-1.763.312zM7.954 16.973c-2.144 2.369-3.908 4.374-3.943 4.46-.034.07.208.312.52.537.414.311.864.432 1.711.467 1.574.103 2.161-.26 4.15-2.508.864-.968 1.608-1.78 1.625-1.78s.761.812 1.643 1.798c2.023 2.248 2.559 2.576 4.132 2.49.848-.035 1.297-.156 1.712-.467.311-.225.553-.467.519-.536-.087-.26-7.92-8.819-8.058-8.801-.069 0-1.867 1.954-4.011 4.34z"/></svg>Proxmox</span><span class="tech" style="--brand:#1679A7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2.95 0c-1.62 0-2.95 1.32-2.95 2.95v18.1c0 1.63 1.32 2.95 2.95 2.95h18.1c1.62 0 2.95-1.32 2.95-2.95v-18.1c-.00024-1.63-1.32-2.95-2.95-2.95zm0 1.09h18.1c1.04 0 1.85.818 1.85 1.86v14h-5.27c-.335-.796-2.57-6.47.283-10.9a.516.517 0 0 0-.443-.794c-5.24.0827-8.2 3.19-9.74 6.21-1.35 2.64-1.63 4.91-1.69 5.53h-4.95v-14c0-1.04.817-1.86 1.85-1.86zm13.6 5.24c-2.62 5.24.248 11.4.248 11.4a.516.517 0 0 0 .469.301h5.62v3.05c0 1.04-.817 1.86-1.85 1.86h-18.1c-1.04 0-1.85-.818-1.85-1.86v-3.05h5.39a.516.517 0 0 0 .514-.477s.226-2.8 1.66-5.62c1.34-2.62 3.67-5.17 7.91-5.57z"/></svg>Wireshark</span><span class="tech"><span class="mark">GNS3</span>GNS3</span><span class="tech" style="--brand:#092E20"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.146 0h3.924v18.166c-2.013.382-3.491.535-5.096.535-4.791 0-7.288-2.166-7.288-6.32 0-4.002 2.65-6.6 6.753-6.6.637 0 1.121.05 1.707.203zm0 9.143a3.894 3.894 0 00-1.325-.204c-1.988 0-3.134 1.223-3.134 3.365 0 2.09 1.096 3.236 3.109 3.236.433 0 .79-.025 1.35-.102V9.142zM21.314 6.06v9.098c0 3.134-.229 4.638-.917 5.937-.637 1.249-1.478 2.039-3.211 2.905l-3.644-1.733c1.733-.815 2.574-1.53 3.109-2.625.561-1.121.739-2.421.739-5.835V6.059h3.924zM17.39.021h3.924v4.026H17.39z"/></svg>Django</span><span class="tech" style="--brand:#A22846"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19.8955 10.8961-.1726-.3028c.0068-2.1746-1.0022-3.061-2.1788-3.7348.356-.0938.7237-.1711.8245-.6182.6118-.1566.7397-.4398.8011-.7398.16-.1066.6955-.4061.6394-.9211.2998-.2069.4669-.4725.3819-.8487.3222-.3515.407-.6419.2702-.9096.3868-.4805.2152-.7295.05-.9817.2897-.5254.0341-1.0887-.7758-.9944-.3221-.4733-1.0244-.3659-1.133-.3637-.1215-.1519-.2819-.2821-.7755-.219-.3197-.2851-.6771-.2364-1.0458-.0964-.4378-.3403-.7275-.0675-1.0584.0356-.53-.1706-.6513.0631-.9117.1583-.5781-.1203-.7538.1416-1.0309.4182l-.3224-.0063c-.8719.5061-1.305 1.5366-1.4585 2.0664-.1536-.5299-.5858-1.5604-1.4575-2.0664l-.3223.0063C9.942.5014 9.7663.2394 9.1883.3597 8.9279.2646 8.807.0309 8.2766.2015c-.2172-.0677-.417-.2084-.6522-.2012l.0004.0002C7.5017.0041 7.369.049 7.2185.166c-.3688-.1401-.7262-.1887-1.0459.0964-.4936-.0631-.654.0671-.7756.219C5.2887.4791 4.5862.3717 4.264.845c-.8096-.0943-1.0655.4691-.7756.9944-.1653.2521-.3366.5013.05.9819-.1367.2677-.0519.5581.2703.9096-.085.3763.0822.6418.3819.8487-.0561.515.4795.8144.6394.9211.0614.3001.1894.5832.8011.7398.1008.4472.4685.5244.8245.6183-1.1766.6737-2.1856 1.56-2.1788 3.7348l-.1724.3028c-1.3491.8082-2.5629 3.4056-.6648 5.5167.124.6609.3319 1.1355.5171 1.6609.2769 2.117 2.0841 3.1082 2.5608 3.2255.6984.524 1.4423 1.0212 2.449 1.3696.949.964 1.977 1.3314 3.0107 1.3308.0152 0 .0306.0002.0457 0 1.0337.0006 2.0618-.3668 3.0107-1.3308 1.0067-.3483 1.7506-.8456 2.4491-1.3696.4766-.1173 2.2838-1.1085 2.5607-3.2255.1851-.5253.3931-1 .517-1.6609 1.8981-2.1113.6843-4.7089-.6649-5.517zm-1.0386-.3715c-.0704.8759-4.6354-3.0504-3.8472-3.1808 2.1391-.3558 3.9191.896 3.8472 3.1808zm-2.0155 4.3649c-1.1481.7409-2.8025.2626-3.6953-1.0681-.8928-1.3306-.6858-3.0101.4623-3.7509 1.1481-.7409 2.8025-.2627 3.6953 1.068.8927 1.3307.6858 3.0101-.4623 3.751zM13.6591 1.3721c.0396.1967.0843.321.1354.3577.2537-.272.4611-.5506.7878-.8123.0011.1537-.0776.3205.1169.4425.1752-.2356.4119-.4459.7263-.6244-.1514.2611-.026.3404.0554.4486.24-.2059.4681-.4144.9109-.5759-.121.1474-.2902.2914-.1108.4607.2473-.1544.496-.3086 1.0833-.4183-.1323.1475-.4059.295-.2401.4426.3104-.1186.6539-.2047 1.034-.2546-.182.1496-.3337.2963-.1846.4122.3323-.1022.7899-.2398 1.2372-.1212l-.2832.2849c-.0314.0382.6623.0297 1.1202.0364-.167.2321-.3375.4562-.437.8548.0454.0459.2723.0204.4862 0-.2194.4618-.6004.5783-.6893.776.134.1015.32.075.5232.006-.158.3254-.4892.5484-.7509.8123.0662.047.1818.075.4555.0425-.2418.257-.5339.492-.8802.7032.0614.0708.2722.0681.4678.0727-.3136.3069-.7173.466-1.0955.6668.1885.1288.3234.0988.4678.097-.2676.2198-.7225.3342-1.1448.4668.0803.1249.1607.1589.3324.194-.447.2473-1.0873.1343-1.2679.2607.0435.1243.1665.2053.3139.2728-.7197.0418-2.6879-.0262-3.0652-1.5156.7367-.8094 2.0813-1.7593 4.394-2.934-1.7994.6022-3.4229 1.405-4.7817 2.5096-1.5978-.7436-.4965-2.6197.283-3.3645zm-1.6126 5.3718c1.1329-.0123 2.5356.8325 2.53 1.6286-.005.7027-.9851 1.2715-2.5213 1.2607-1.5043-.0177-2.5172-.7148-2.5137-1.3957.003-.5603 1.2282-1.5263 2.505-1.4936zm-5.7646-.6006c.1717-.0351.252-.0692.3323-.194-.4223-.1327-.8772-.247-1.1448-.4668.1444.0018.2792.0318.4678-.097-.3783-.2008-.782-.3599-1.0956-.6668.1955-.0048.4064-.002.4677-.0728-.3462-.2113-.6383-.4463-.8801-.7033.2738.0325.3893.0045.4555-.0425-.2617-.264-.593-.487-.7509-.8123.2032.069.3892.0954.5232-.006-.089-.1977-.47-.3142-.6894-.776.214.0204.4409.0459.4863 0-.0994-.3985-.2698-.6226-.4369-.8547.4579-.0067 1.1516.0018 1.1202-.0364l-.2831-.2849c.4472-.1186.9049.019 1.2371.1213.1492-.1159-.0026-.2626-.1847-.4123.3801.05.7236.1361 1.034.2547.1659-.1476-.1076-.2951-.24-.4426.5872.1097.8361.2639 1.0833.4183.1794-.1694.0103-.3133-.1108-.4607.4428.1615.6709.37.911.5759.0814-.1082.2068-.1875.0554-.4486.3143.1785.5511.3888.7263.6244.1945-.122.1159-.2888.1169-.4426.3267.2618.534.5404.7879.8124.0511-.0366.0959-.161.1354-.3577.7794.7448 1.8807 2.6208.2831 3.3646-1.3589-1.1039-2.9817-1.9064-4.78-2.5086 2.3115 1.174 3.6556 2.1239 4.392 2.9328-.3773 1.4895-2.3455 1.5575-3.0651 1.5157.1473-.0676.2703-.1485.3139-.2728-.1806-.1264-.8209-.0134-1.2679-.2607zm2.8175 1.1334c.7881.1304-3.7769 4.0567-3.8472 3.1809-.0719-2.2846 1.7079-3.5367 3.8472-3.1809zm-4.847 8.7567c-1.1094-.8789-1.4668-3.4529.5901-4.6097 1.2394-.3273.4184 5.051-.5901 4.6097zm4.2656 4.5989c-.6257.3719-2.1452.2187-3.2252-1.3095-.7283-1.2823-.6345-2.5872-.123-2.9705.7648-.4589 1.9464.1609 2.8559 1.2003.7923.9405 1.1536 2.5927.4923 3.0797zm-1.2415-5.6086c-1.1481-.7409-1.3551-2.4203-.4623-3.7511.8928-1.3307 2.5472-1.8089 3.6952-1.068 1.1481.7409 1.3551 2.4203.4623 3.7509-.8926 1.3308-2.5471 1.809-3.6952 1.0682zm4.7948 8.2279c-1.3763.0584-2.7258-1.1105-2.7081-1.5157-.0206-.594 1.6758-1.0578 2.782-1.0306 1.1131-.0479 2.6068.3531 2.6097.8851.0184.5166-1.3547 1.6838-2.6836 1.6612zm2.7584-5.8578c.0081 1.3899-1.226 2.5225-2.7562 2.5299-1.5302.0073-2.7773-1.1135-2.7854-2.5033v-.0265c-.008-1.3899 1.2259-2.5226 2.7562-2.5299 1.5302-.0073 2.7773 1.1134 2.7853 2.5033a.7794.7794 0 0 1 .0001.0265zm3.855 2.0029c-1.186 1.6208-2.7916 1.684-3.3896 1.2325-.6255-.5811-.148-2.3854.7094-3.3747v-.0003c.9812-1.0912 2.0302-1.8037 2.7609-1.2469.4919.4828.7805 2.3008-.0807 3.3894zm1.0724-3.4301c-1.0086.4413-1.8298-4.9372-.5901-4.61 2.0568 1.1569 1.6994 3.731.5901 4.61zm-.0256-8.3279h.2985v-.5304h.2986c.1502 0 .2053.0624.2262.2052.0152.1088.0113.2395.0477.3253h.2984c-.0533-.0763-.0515-.2358-.0571-.3213-.0097-.1373-.0513-.2796-.1977-.3176v-.0037c.1502-.061.2149-.1807.2149-.341 0-.2048-.1539-.3738-.3974-.3738h-.732v1.3573zm.2985-1.1255h.3269c.1333 0 .2054.0573.2054.188 0 .1369-.0721.1942-.2054.1942H20.03v-.3822zm-1.0337.4633c0 .7009.5682 1.2694 1.2695 1.2694s1.2695-.5684 1.2695-1.2694c0-.7013-.5683-1.2697-1.2695-1.2697-.7013 0-1.2695.5684-1.2695 1.2697zm2.3275 0c0 .5845-.4737 1.058-1.058 1.058s-1.058-.4735-1.058-1.058c0-.5849.4737-1.058 1.058-1.058s1.058.4731 1.058 1.058z"/></svg>Raspberry Pi</span><span class="tech" style="--brand:#003545"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.157 4.412c-.676.284-.79.31-1.673.372-.65.045-.757.057-1.212.209-.75.246-1.395.75-2.02 1.59-.296.398-1.249 1.913-1.249 1.988 0 .057-.65.998-.915 1.32-.574.713-1.08 1.079-2.14 1.59-.77.36-1.224.524-4.102 1.477-1.073.353-2.133.738-2.367.864-.852.449-1.515 1.036-2.203 1.938-1.003 1.32-.972 1.313-3.042.947a12.264 12.264 0 00-.675-.063c-.644-.05-1.023.044-1.332.334L0 17.193l.177.088c.094.05.353.234.561.398.215.17.461.347.55.391.088.044.17.088.183.101.012.013-.089.17-.228.353-.435.581-.593.871-.574 1.048.019.164.032.17.43.17.517-.006.826-.056 1.261-.208.65-.233 2.058-.94 2.784-1.4.776-.5 1.717-.998 1.956-1.042.082-.02.354-.07.594-.114.58-.107 1.464-.095 2.587.05.108.013.373.045.6.064.227.025.43.057.454.076.026.012.474.037.998.056.934.026 1.104.007 1.3-.189.126-.133.385-.631.498-.985.209-.643.417-.921.366-.492-.113.966-.322 1.692-.713 2.411-.259.499-.663 1.092-.934 1.395-.322.347-.315.36.088.315.619-.063 1.471-.397 2.096-.82.827-.562 1.647-1.691 2.19-3.03.107-.27.22-.22.183.083-.013.094-.038.315-.057.498l-.031.328.353-.202c.833-.48 1.414-1.262 2.127-2.884.227-.518.877-2.922 1.073-3.976a9.64 9.64 0 01.271-1.042c.127-.429.196-.555.48-.858.183-.19.625-.555.978-.808.72-.505.953-.75 1.187-1.205.208-.417.284-1.13.132-1.357-.132-.202-.284-.196-.763.006Z"/></svg>MariaDB</span><span class="tech" style="--brand:#F03C2E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg>Git</span><span class="tech" style="--brand:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span><span class="tech"><span class="mark">SAMB</span>Samba 4</span><span class="tech" style="--brand:#009639"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z"/></svg>NGINX</span><span class="tech" style="--brand:#4EAA25"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.038,4.9l-7.577-4.498C13.009,0.134,12.505,0,12,0c-0.505,0-1.009,0.134-1.462,0.403L2.961,4.9 C2.057,5.437,1.5,6.429,1.5,7.503v8.995c0,1.073,0.557,2.066,1.462,2.603l7.577,4.497C10.991,23.866,11.495,24,12,24 c0.505,0,1.009-0.134,1.461-0.402l7.577-4.497c0.904-0.537,1.462-1.529,1.462-2.603V7.503C22.5,6.429,21.943,5.437,21.038,4.9z M15.17,18.946l0.013,0.646c0.001,0.078-0.05,0.167-0.111,0.198l-0.383,0.22c-0.061,0.031-0.111-0.007-0.112-0.085L14.57,19.29 c-0.328,0.136-0.66,0.169-0.872,0.084c-0.04-0.016-0.057-0.075-0.041-0.142l0.139-0.584c0.011-0.046,0.036-0.092,0.069-0.121 c0.012-0.011,0.024-0.02,0.036-0.026c0.022-0.011,0.043-0.014,0.062-0.006c0.229,0.077,0.521,0.041,0.802-0.101 c0.357-0.181,0.596-0.545,0.592-0.907c-0.003-0.328-0.181-0.465-0.613-0.468c-0.55,0.001-1.064-0.107-1.072-0.917 c-0.007-0.667,0.34-1.361,0.889-1.8l-0.007-0.652c-0.001-0.08,0.048-0.168,0.111-0.2l0.37-0.236 c0.061-0.031,0.111,0.007,0.112,0.087l0.006,0.653c0.273-0.109,0.511-0.138,0.726-0.088c0.047,0.012,0.067,0.076,0.048,0.151 l-0.144,0.578c-0.011,0.044-0.036,0.088-0.065,0.116c-0.012,0.012-0.025,0.021-0.038,0.028c-0.019,0.01-0.038,0.013-0.057,0.009 c-0.098-0.022-0.332-0.073-0.699,0.113c-0.385,0.195-0.52,0.53-0.517,0.778c0.003,0.297,0.155,0.387,0.681,0.396 c0.7,0.012,1.003,0.318,1.01,1.023C16.105,17.747,15.736,18.491,15.17,18.946z M19.143,17.859c0,0.06-0.008,0.116-0.058,0.145 l-1.916,1.164c-0.05,0.029-0.09,0.004-0.09-0.056v-0.494c0-0.06,0.037-0.093,0.087-0.122l1.887-1.129 c0.05-0.029,0.09-0.004,0.09,0.056V17.859z M20.459,6.797l-7.168,4.427c-0.894,0.523-1.553,1.109-1.553,2.187v8.833 c0,0.645,0.26,1.063,0.66,1.184c-0.131,0.023-0.264,0.039-0.398,0.039c-0.42,0-0.833-0.114-1.197-0.33L3.226,18.64 c-0.741-0.44-1.201-1.261-1.201-2.142V7.503c0-0.881,0.46-1.702,1.201-2.142l7.577-4.498c0.363-0.216,0.777-0.33,1.197-0.33 c0.419,0,0.833,0.114,1.197,0.33l7.577,4.498c0.624,0.371,1.046,1.013,1.164,1.732C21.686,6.557,21.12,6.411,20.459,6.797z"/></svg>GNU Bash</span><span class="tech" style="--brand:#00878F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.087 6.146c-.3 0-.607.017-.907.069-2.532.367-4.23 2.239-5.18 3.674-.95-1.435-2.648-3.307-5.18-3.674a6.49 6.49 0 0 0-.907-.069C2.648 6.146 0 8.77 0 12s2.656 5.854 5.913 5.854c.3 0 .607-.017.916-.069 2.531-.376 4.23-2.247 5.18-3.683.949 1.436 2.647 3.307 5.18 3.683.299.043.607.069.915.069C21.344 17.854 24 15.23 24 12s-2.656-5.854-5.913-5.854zM6.53 15.734a3.837 3.837 0 0 1-.625.043c-2.148 0-3.889-1.7-3.889-3.777 0-2.085 1.749-3.777 3.898-3.777.208 0 .416.017.624.043 2.39.35 3.847 2.768 4.347 3.734-.508.974-1.974 3.384-4.355 3.734zm11.558.043c-.208 0-.416-.017-.624-.043-2.39-.35-3.856-2.768-4.347-3.734.491-.966 1.957-3.384 4.347-3.734.208-.026.416-.043.624-.043 2.149 0 3.89 1.7 3.89 3.777 0 2.085-1.75 3.777-3.89 3.777zm1.65-4.404v1.134h-1.205v1.182h-1.156v-1.182H16.17v-1.134h1.206V10.19h1.156v1.183h1.206zM4.246 12.498H7.82v-1.125H4.245v1.125z"/></svg>Arduino</span><span class="tech" style="--brand:#E7352C"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.926 19.324a7.6 7.6 0 00-2.983-6.754 7.44 7.44 0 00-3.828-1.554.697.697 0 01-.606-.731.674.674 0 01.743-.617 8.97 8.97 0 018 9.805 7.828 7.828 0 01-.298 1.542l1.989.56a11.039 11.039 0 001.714-.651 12.159 12.159 0 00.217-2.343A12.57 12.57 0 007.212 6.171a5.53 5.53 0 00-2 0 4.354 4.354 0 00-2.16 1.337 4.274 4.274 0 001.909 6.856 9.896 9.896 0 001.074.195 4.011 4.011 0 013.337 3.954 3.965 3.965 0 01-.64 2.16l1.371.88a10.182 10.182 0 002.057.342 7.52 7.52 0 00.754-2.628m.16 4.73A13.073 13.073 0 01.001 10.983 12.982 12.982 0 013.83 1.737l.743.697a12.067 12.067 0 000 17.141 12.067 12.067 0 0017.141 0l.697.697a12.97 12.97 0 01-9.336 3.726M24 10.993A10.993 10.993 0 0012.949 0c-.389 0-.766 0-1.143.057l-.252.732a18.912 18.912 0 0111.588 11.576l.731-.263c0-.366.069-.732.069-1.143m-1.269 5.165A17.53 17.53 0 007.818 1.27a11.119 11.119 0 00-2.457 1.77v1.635A13.919 13.919 0 0119.268 18.57h1.634a11.713 11.713 0 001.771-2.446M7.92 17.884a1.691 1.691 0 11-1.69-1.691 1.691 1.691 0 011.69 1.691"/></svg>Espressif</span><span class="tech" style="--brand:#F7DF1E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>JavaScript</span><span class="tech" style="--brand:#660066"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.657 23.994h-9.45A1.212 1.212 0 0 1 0 22.788v-9.18h.071c5.784 0 10.504 4.65 10.586 10.386Zm7.606 0h-4.045C14.135 16.246 7.795 9.977 0 9.942V6.038h.071c9.983 0 18.121 8.044 18.192 17.956Zm4.53 0h-.97C21.754 12.071 11.995 2.407 0 2.372v-1.16C0 .55.544.006 1.207.006h7.64C15.733 2.49 21.257 7.789 24 14.508v8.291c0 .663-.544 1.195-1.207 1.195ZM16.713.006h6.092A1.19 1.19 0 0 1 24 1.2v5.914c-.91-1.242-2.046-2.65-3.158-3.762C19.588 2.11 18.122.987 16.714.005Z"/></svg>MQTT</span><span class="tech"><span class="mark">ACTI</span>Active Directory</span><span class="tech" style="--brand:#2F61B4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 1.758 5.182 20c.129.455.25.691.421.945.063.092.13.179.202.264.173.204.37.378.59.525.243.163.49.286.763.371.324.1.61.137.99.137h4.327l1.918-6.615h6.798v3.699a.11.11 0 0 1-.109.11h-4.88l-.813 2.806h5.654a2.92 2.92 0 0 0 1.95-.725A2.903 2.903 0 0 0 24 19.285v-6.47H12.28l-1.919 6.614H7.937L3.715 4.564h2.922l1.546 5.444H11.1l-2.343-8.25zm15.496 0-2.4 8.25H24v-5.29a2.962 2.962 0 0 0-1.825-2.741 3.044 3.044 0 0 0-1.129-.22zm2.11 2.806h3.476a.11.11 0 0 1 .11.112V7.2h-4.354z"/></svg>VirtualBox</span><span class="tech" style="--brand:#B5B5B6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.44 8.927l-.889.37.056.117a.623.623 0 0 1 .212-.054c.05 0 .093.017.126.046.033.028.058.081.072.16.015.08.022.29.022.634v2.736c0 .189-.013.316-.042.381a.295.295 0 0 1-.118.142c-.053.031-.147.045-.286.045v.12h1.481v-.12c-.154 0-.261-.017-.32-.048a.29.29 0 0 1-.126-.142c-.026-.06-.04-.187-.04-.378V8.927zm-11.722.34c-.33 0-.608.05-.84.147-.233.1-.411.246-.534.436a1.083 1.083 0 0 0-.185.612c0 .338.131.627.393.864.184.167.507.309.968.422.358.091.587.153.688.191a.7.7 0 0 1 .31.183c.058.07.088.158.088.259 0 .155-.07.291-.21.41-.142.116-.35.176-.628.176-.262 0-.47-.066-.625-.197-.154-.132-.255-.339-.307-.619L0 12.23c.056.48.228.845.517 1.096.289.252.704.378 1.244.378.371 0 .68-.054.93-.156a1.263 1.263 0 0 0 .781-1.169 1.29 1.29 0 0 0-.171-.684 1.203 1.203 0 0 0-.472-.437c-.2-.107-.508-.21-.927-.31-.418-.098-.683-.193-.79-.286a.326.326 0 0 1 .009-.524c.14-.105.336-.156.586-.156.24 0 .422.049.542.145.122.097.199.256.237.471l.864-.028c-.013-.395-.154-.71-.425-.949-.271-.235-.674-.353-1.208-.353zm21.808.33a.475.475 0 1 0-.002.95.475.475 0 0 0 .002-.95zm0 .072a.4.4 0 0 1 .401.403c0 .116-.05.22-.128.294l-.086-.135a.396.396 0 0 0-.065-.078.212.212 0 0 0-.048-.03.2.2 0 0 0 .127-.057.144.144 0 0 0 .043-.109.178.178 0 0 0-.025-.091.125.125 0 0 0-.067-.055.309.309 0 0 0-.123-.02h-.266v.606h.08v-.268h.091c.02 0 .036.001.045.003.013.004.025.007.036.014.013.01.024.023.04.043.015.019.035.049.059.083l.08.125h.043a.396.396 0 0 1-.237.08.405.405 0 0 1-.404-.405c0-.224.18-.403.404-.403zm-.157.191h.191c.044 0 .077.01.097.027a.089.089 0 0 1 .03.07.09.09 0 0 1-.016.055.076.076 0 0 1-.047.035.196.196 0 0 1-.085.013h-.17zm-15.037.6c-.41 0-.752.17-1.023.514v-.455h-.754v3.105h.814v-1.401c0-.348.022-.583.063-.713a.583.583 0 0 1 .234-.306.666.666 0 0 1 .385-.118c.11 0 .208.028.287.082.08.054.135.13.17.229.037.099.054.314.054.646v1.581h.816V11.7a2.54 2.54 0 0 0-.046-.55.925.925 0 0 0-.16-.343.83.83 0 0 0-.341-.25 1.285 1.285 0 0 0-.499-.097zm2.65 0a1.7 1.7 0 0 0-.826.2 1.39 1.39 0 0 0-.571.586 1.684 1.684 0 0 0-.202.793c0 .356.068.657.202.904.134.25.33.438.588.566.259.129.53.194.814.194.46 0 .841-.156 1.144-.463.303-.31.455-.698.455-1.167 0-.465-.15-.85-.451-1.156-.3-.305-.683-.457-1.154-.457zm7.315.05c-.351 0-.64.108-.865.323a1.02 1.02 0 0 0-.336.77c0 .194.05.371.147.534.1.162.24.285.423.379-.223.187-.366.335-.429.44a.55.55 0 0 0-.092.271c0 .068.024.13.071.184.046.056.127.116.24.187a9.626 9.626 0 0 0-.329.355c-.113.145-.19.253-.226.336a.41.41 0 0 0-.034.157c0 .12.081.232.246.343.291.19.649.284 1.071.284.55 0 .996-.16 1.337-.477.232-.216.35-.45.35-.694a.613.613 0 0 0-.183-.45.838.838 0 0 0-.49-.227 8.478 8.478 0 0 0-.878-.053 4.257 4.257 0 0 1-.46-.027c-.105-.015-.177-.04-.212-.075-.038-.037-.056-.072-.056-.112a.37.37 0 0 1 .05-.159.868.868 0 0 1 .186-.221c.156.049.309.07.459.07.36 0 .648-.1.864-.301a.956.956 0 0 0 .323-.722c0-.247-.062-.45-.187-.61h.394c.097 0 .15-.002.167-.01a.056.056 0 0 0 .035-.025.289.289 0 0 0 .018-.12.214.214 0 0 0-.02-.105.083.083 0 0 0-.033-.028.83.83 0 0 0-.166-.008h-.639a1.307 1.307 0 0 0-.746-.21zm-2.752 0c-.252 0-.49.065-.714.194a1.437 1.437 0 0 0-.546.61 1.816 1.816 0 0 0-.205.825c0 .381.114.724.34 1.03a1.29 1.29 0 0 0 1.09.543c.28 0 .532-.07.76-.211.23-.14.409-.35.54-.627.13-.276.194-.55.194-.821 0-.385-.118-.725-.354-1.022a1.344 1.344 0 0 0-1.105-.522zm-12.182.009l1.174 3.113a1.193 1.193 0 0 1-.21.431c-.09.112-.23.167-.419.167-.102 0-.218-.013-.344-.04l.067.645c.152.033.307.052.464.052.155 0 .294-.019.418-.052a1.04 1.04 0 0 0 .31-.138.862.862 0 0 0 .224-.234 2.2 2.2 0 0 0 .205-.414l.199-.545 1.085-2.985h-.844l-.722 2.204-.74-2.204zm16.631.078v.122a.84.84 0 0 1 .245.091c.035.029.08.08.136.157.072.102.125.186.158.255l1.088 2.275-.213.526c-.079.194-.158.326-.236.393-.08.068-.15.104-.217.104a.878.878 0 0 1-.167-.05.924.924 0 0 0-.3-.07c-.105 0-.19.025-.25.084a.286.286 0 0 0-.092.22c0 .098.042.183.126.257a.457.457 0 0 0 .322.112c.18 0 .366-.072.56-.223.193-.15.35-.37.469-.664l1.226-3.014a1.6 1.6 0 0 1 .113-.254.55.55 0 0 1 .145-.146.473.473 0 0 1 .188-.053v-.122h-.978v.122c.093 0 .16.008.197.023a.172.172 0 0 1 .083.057.146.146 0 0 1 .023.087c0 .091-.019.18-.056.271l-.675 1.671-.737-1.53c-.074-.15-.11-.268-.11-.356a.21.21 0 0 1 .074-.16.346.346 0 0 1 .224-.063h.068v-.122zm-1.753.08c.175 0 .316.074.43.217.15.196.224.466.224.815 0 .265-.053.46-.16.584a.516.516 0 0 1-.41.188.528.528 0 0 1-.43-.216c-.149-.19-.223-.458-.223-.802 0-.268.054-.461.163-.59a.515.515 0 0 1 .406-.197zm-2.798.054c.242 0 .44.102.598.312.23.308.346.727.346 1.263 0 .429-.07.73-.209.905a.646.646 0 0 1-.528.264c-.286 0-.516-.161-.691-.477-.174-.32-.263-.695-.263-1.135 0-.272.037-.493.11-.669a.731.731 0 0 1 .285-.361.667.667 0 0 1 .352-.102zm-4.463.395c.216 0 .396.084.543.247.144.162.216.397.216.703 0 .311-.072.55-.216.712a.695.695 0 0 1-.543.248.695.695 0 0 1-.542-.248c-.147-.161-.22-.398-.22-.708 0-.308.073-.545.22-.707a.704.704 0 0 1 .542-.247zm6.66 2.498c.265.036.647.065 1.142.08.34.007.566.034.68.083.113.048.17.13.17.241 0 .157-.094.304-.282.442-.19.138-.48.208-.874.208-.414 0-.732-.07-.951-.204-.128-.078-.19-.168-.19-.277 0-.078.024-.169.076-.26a1.51 1.51 0 0 1 .228-.313z"/></svg>Synology</span><span class="tech" style="--brand:#714B67"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z"/></svg>Odoo</span><span class="tech"><span class="mark">WIND</span>Windows Server</span><span class="tech"><span class="mark">SNMP</span>SNMP</span></div></div></div>
+
+<!-- ============ PARCOURS / À PROPOS ============ -->
+<section id="parcours">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="label"><b>01</b> · Parcours</div><h2>D'où je viens</h2></div>
+    </div>
+    <div class="about about-noimg">
+      <div class="about-text reveal">
+        <p>J'ai grandi au Sénégal, dans une famille de cultivateurs. Enfant, je passais une bonne partie de mon temps aux champs avec mon père, entre l'arachide, le riz et le maïs.</p>
+        <p>C'est là que j'ai appris à travailler longtemps sur quelque chose avant de voir le résultat. Après mon bac scientifique, je suis venu en France en 2024 pour faire un BUT Réseaux et Télécoms à Roanne, puis j'ai continué à Colmar en parcours DevCloud.</p>
+        <p>Ce qui m'intéresse, c'est de comprendre ce qui se passe vraiment quand un service tombe. Pendant mon stage, ça voulait dire chercher pourquoi les scans n'arrivaient plus par mail (une règle de sécurité Google bloquait l'envoi sans rien dire), ou pourquoi les téléphones DECT ne marchaient plus après une coupure de courant.</p>
+        <p>En dehors des cours, je joue au foot et je suis impliqué dans l'association sénégalaise de Roanne et de Colmar.</p>
+        <ul class="route">
+          <li><div class="when">2023 → 2024</div><div class="what">Baccalauréat scientifique général</div><div class="where">Lycée Cherif Samsidine Aïdara, Sénégal</div></li>
+          <li><div class="when">2024 → 2025</div><div class="what">BUT Réseaux et Télécommunications, 1<sup>re</sup> année</div><div class="where">IUT de Roanne</div></li>
+          <li class="now"><div class="when">Depuis septembre 2025</div><div class="what">BUT Réseaux et Télécommunications, parcours DevCloud</div><div class="where">IUT de Colmar, Université de Haute-Alsace</div></li>
+          <li><div class="when">Avril → juin 2026</div><div class="what">Stage de technicien informatique</div><div class="where">Banque Alimentaire du Bas-Rhin</div></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>      
-<section id="skills">
-  <div class="section-inner">
-    <div class="section-label">Compétences techniques</div>
-    <h2 class="section-title">Technologies <span>&amp; outils</span></h2>
-    <div class="skills-grid">
-      <div class="skill-cat">
-        <div class="skill-cat-title">Réseaux</div>
-        <div class="skill-pills">
-          <span class="skill-pill">VLANs</span><span class="skill-pill">TCP/IP</span><span class="skill-pill">VRRP</span><span class="skill-pill">MSTP</span><span class="skill-pill">SNMP</span><span class="skill-pill">SMTP</span><span class="skill-pill">DHCP</span><span class="skill-pill">DNS</span><span class="skill-pill">NAT/PAT</span><span class="skill-pill">Cisco</span><span class="skill-pill">Wireshark</span>
-        </div>
-      </div>
-      <div class="skill-cat">
-        <div class="skill-cat-title">Systèmes</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Linux</span><span class="skill-pill">Windows Server</span><span class="skill-pill">Active Directory</span><span class="skill-pill">Samba 4</span><span class="skill-pill">Synology NAS</span><span class="skill-pill">Docker</span><span class="skill-pill">VirtualBox</span>
-        </div>
-      </div>
-      <div class="skill-cat">
-        <div class="skill-cat-title">Programmation</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Python</span><span class="skill-pill">Bash</span><span class="skill-pill">Batch</span><span class="skill-pill">C</span><span class="skill-pill">JavaScript</span><span class="skill-pill">HTML/CSS</span><span class="skill-pill">SQL</span>
-        </div>
-      </div>
-      <div class="skill-cat">
-        <div class="skill-cat-title">Outils</div>
-        <div class="skill-pills">
-          <span class="skill-pill">GLPI</span><span class="skill-pill">GNS3</span><span class="skill-pill">GitHub</span><span class="skill-pill">Packet Tracer</span>
-        </div>
-      </div>
-      <div class="skill-cat">
-        <div class="skill-cat-title">Langues</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Français C1</span><span class="skill-pill">Anglais B1</span>
-        </div>
-      </div>
+<!-- ============ PROJETS ============ -->
+<section id="projets" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="label"><b>02</b> · Projets</div><h2>Ce que j'ai construit</h2></div>
+      <p>Mon stage et mes SAE à l'IUT. Chaque projet a sa fiche complète : contexte, apprentissages critiques et réflexivité.</p>
+    </div>
+    <div class="topo-band reveal"><canvas id="topo" role="img" aria-label="Topologie réseau animée : serveur central relié à Internet et aux postes clients"></canvas></div>
+    <div class="projects">
+<article class="card feature reveal">
+  <div class="card-img"><img src="assets/img/stage-glpi.jpg" alt="Capture de GLPI : liste des imprimantes avec leurs niveaux d'encre" loading="lazy" width="1200" height="794" style="object-position:left top"><span class="chip">GLPI · niveaux d'encre remontés chaque nuit par SNMP</span></div>
+  <div class="card-body">
+    <div class="label"><b>Stage</b> · avril → juin 2026 · 8 semaines</div>
+    <h3>Banque Alimentaire du Bas-Rhin</h3>
+    <div class="role">Technicien informatique stagiaire, au service informatique</div>
+    <ul class="missions">
+      <li><span>01</span>Surveillance automatique des imprimantes</li><li><span>02</span>Configuration Scan to Email</li><li><span>03</span>Mise en service du système de ticketing GLPI</li><li><span>04</span>Récupération des licences Microsoft Office</li><li><span>05</span>Résolution panne téléphones DECT</li><li><span>06</span>Plan de déploiement Active Directory</li>
+    </ul>
+    <div class="tags"><span class="tag">GLPI</span><span class="tag">SNMP</span><span class="tag">Docker</span><span class="tag">SMTP</span><span class="tag">Active Directory</span><span class="tag">Samba 4</span><span class="tag">Synology</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-stage">Lire le détail</button><a class="link" href="https://github.com/souare-ibrahima-rt/stage-systemes-reseaux" target="_blank" rel="noopener">Rapports <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
+<article class="card wide reveal">
+  <div class="card-img"><img src="assets/img/sae303-topologie.jpg" class="contain" alt="Topologie GNS3 du réseau LAN" loading="lazy" width="1200" height="800"><span class="chip">Topologie GNS3</span></div>
+  <div class="card-body">
+    <div class="label">SAE 3.03 · BUT2 · 2025-2026</div>
+    <h3>Réseau multi-sites, partie LAN</h3>
+    <div class="role">Responsable de la partie LAN · Groupe de 3 étudiants</div>
+    <p class="pitch">Le LAN de deux entreprises réparties sur trois sites, monté sur GNS3 : VLAN, trunks 802.1Q, MSTP, routage inter-VLAN, VRRP et DHCP.</p>
+    <div class="tags"><span class="tag">GNS3</span><span class="tag">VLAN</span><span class="tag">VRRP</span><span class="tag">MSTP</span><span class="tag">DHCP</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-303">Lire le détail</button><a class="link" href="https://github.com/souare-ibrahima-rt/SAE303-Multisite-LAN" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
+<article class="card wide reveal">
+  <div class="card-img"><img src="assets/img/sae302-schema.jpg" class="contain" alt="Schéma dessiné à la main de l&#x27;architecture client, routeurs et serveur master" loading="lazy" width="1200" height="800"><span class="chip">Le schéma de départ, à la main</span></div>
+  <div class="card-body">
+    <div class="label">SAE 3.02 · BUT2 · 2025-2026</div>
+    <h3>Routage en oignon, façon TOR</h3>
+    <div class="role">Projet individuel · Année 2025-2026</div>
+    <p class="pitch">Un système de messagerie anonyme codé seul en Python : chaque message passe par plusieurs routeurs, avec un chiffrement RSA par couches. Déployé sur 3 VM.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Sockets TCP</span><span class="tag">RSA</span><span class="tag">PyQt5</span><span class="tag">MariaDB</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-302">Lire le détail</button><a class="link" href="https://github.com/Souare4089/SOUARE-SAE302" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
+<article class="card  reveal">
+  <div class="card-img"><img src="assets/img/sae301-montage.jpg" class="" alt="Deux ESP8266 câblés sur une breadboard" loading="lazy" width="1200" height="800"><span class="chip">Le montage : 2 ESP8266</span></div>
+  <div class="card-body">
+    <div class="label">SAE 3.01 · BUT2 · 2025-2026</div>
+    <h3>Prise connectée WiFi</h3>
+    <div class="role">Développeur serveur web · Groupe de 4 étudiants</div>
+    <p class="pitch">Deux ESP8266, un broker MQTT et un serveur Django sur Raspberry Pi. Ma partie : le serveur web, l'API REST et l'authentification JWT.</p>
+    <div class="tags"><span class="tag">Django</span><span class="tag">MQTT</span><span class="tag">ESP8266</span><span class="tag">Raspberry Pi</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-301">Lire le détail</button><a class="link" href="https://github.com/souare-ibrahima-rt/SAE301" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
+<article class="card  reveal">
+  <div class="card-img"><img src="assets/img/dc04-archi.jpg" class="contain" alt="Schéma des VM Prestashop, Odoo, base de données, sauvegardes et supervision" loading="lazy" width="1200" height="800"><span class="chip">Schéma tiré du rapport</span></div>
+  <div class="card-body">
+    <div class="label">SAE 3.DevCloud.04 · BUT2 · 2025-2026</div>
+    <h3>Infrastructure virtualisée pour LOR</h3>
+    <div class="role">Projet individuel · Année 2025-2026</div>
+    <p class="pitch">Une pâtisserie qui ne peut pas perdre plus d'une heure de données : dimensionnement Proxmox, RAID 5, iSCSI, défendu seul à l'oral.</p>
+    <div class="tags"><span class="tag">Proxmox VE</span><span class="tag">RAID 5</span><span class="tag">iSCSI</span><span class="tag">Odoo</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-dc04">Lire le détail</button><a class="link" href="https://github.com/souare-ibrahima-rt/SAE-3.DevCloud.04" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
+<article class="card  reveal">
+  <div class="card-img"><img src="assets/img/sae204-art.jpg" class="" alt="Motif génératif inspiré de François Morellet, produit en Python" loading="lazy" width="1200" height="800"><span class="chip">Art génératif en Python</span></div>
+  <div class="card-body">
+    <div class="label">SAE 2.04 · BUT1 · 2024-2025</div>
+    <h3>Projet intégratif</h3>
+    <div class="role">Atelier coopératif d&#x27;artistes (projet fictif)</div>
+    <p class="pitch">Un contrôleur de domaine Samba4 dans Docker, et une œuvre générative inspirée de François Morellet, en Python puis en JavaScript.</p>
+    <div class="tags"><span class="tag">Samba4</span><span class="tag">Docker</span><span class="tag">Python</span><span class="tag">Canvas</span></div>
+  </div>
+  <div class="card-foot"><button class="link more" data-open="d-204">Lire le détail</button><a class="link" href="https://github.com/souare-ibrahima-rt/SAE2.04-Projet-Integratif" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></div>
+</article>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- ============ COMPÉTENCES ============ -->
+<section id="competences">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="label"><b>03</b> · Compétences du BUT</div><h2>Les 5 compétences</h2></div>
+      <p>Les compétences du parcours DevCloud, chacune reliée au projet où je l'ai le plus travaillée.</p>
+    </div>
+    <div class="skills reveal"><div class="skill"><span class="n">01</span><h3>Administrer</h3><p>GLPI, Docker, SNMP, Active Directory</p><div class="from">Vu dans : Stage Banque Alimentaire</div><button class="link more" data-open="d-c0">Contexte et réflexivité</button></div><div class="skill"><span class="n">02</span><h3>Connecter</h3><p>VLANs, VRRP, MSTP, 802.1Q</p><div class="from">Vu dans : SAE 3.03</div><button class="link more" data-open="d-c1">Contexte et réflexivité</button></div><div class="skill"><span class="n">03</span><h3>Programmer</h3><p>Python, Sockets TCP, Chiffrement RSA, Batch/CMD</p><div class="from">Vu dans : SAE 3.02 · script SNMP du stage</div><button class="link more" data-open="d-c2">Contexte et réflexivité</button></div><div class="skill"><span class="n">04</span><h3>Orchestrer</h3><p>Proxmox VE, RAID 5, iSCSI, Nginx</p><div class="from">Vu dans : SAE 3.DevCloud.04</div><button class="link more" data-open="d-c3">Contexte et réflexivité</button></div><div class="skill"><span class="n">05</span><h3>Développer</h3><p>Django, Raspberry Pi, MQTT, ESP8266</p><div class="from">Vu dans : SAE 3.01</div><button class="link more" data-open="d-c4">Contexte et réflexivité</button></div></div>
 
-<section id="cv">
-  <div class="section-inner">
-    <div class="cv-section">
-      <div class="cv-title">Curriculum Vitae</div>
-      <div class="cv-sub">Disponible en français et en anglais</div>
-      <div class="cv-btns">
-        <a href="CV-ibrahima-souare-alternance.pdf" class="btn btn-primary" download>Télécharger CV Français</a>
-        <a href="CV-ibrahima-souare-english.pdf" class="btn btn-ghost" download>Download CV English</a>
+    <div class="stack reveal" style="margin-top:72px">
+      <div><h3>Réseaux</h3><p>VLANs, TCP/IP, VRRP, MSTP, SNMP, SMTP, DHCP, DNS, NAT/PAT, Cisco, Wireshark</p></div>
+      <div><h3>Systèmes</h3><p>Linux, Windows Server, Active Directory, Samba 4, Synology NAS, Docker, VirtualBox</p></div>
+      <div><h3>Programmation</h3><p>Python, Bash, Batch, C, JavaScript, HTML/CSS, SQL</p></div>
+      <div><h3>Outils et langues</h3><p>GLPI, GNS3, GitHub, Packet Tracer<br>Français C1, anglais B1</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="border-top:1px solid var(--line)">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <div class="label"><b>04</b> · Contact</div>
+      <h2>Je cherche une alternance. <span>On en parle ?</span></h2>
+      <p class="lead">Pour la suite de mon BUT, je vise un poste en réseaux, systèmes ou cloud. Si votre équipe recrute, ou si vous voulez en savoir plus sur un de mes projets, écrivez-moi.</p>
+      <div class="contact-actions">
+        <a href="mailto:souarei574@gmail.com?subject=Alternance%20-%20prise%20de%20contact" class="btn btn-main"><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>M'envoyer un email</a>
+        <a href="CV-ibrahima-souare-alternance.pdf" class="btn" target="_blank" rel="noopener"><svg viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM216 232l0 102.1 31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31L168 232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>Télécharger mon CV</a>
+      </div>
+      <p class="contact-note">Aussi disponible : <a href="CV-ibrahima-souare-english.pdf" target="_blank" rel="noopener" hreflang="en">CV in English</a></p>
+    </div>
+    <div>
+      <div class="contact-cards">
+        <a class="ccard" href="mailto:souarei574@gmail.com"><span class="ico"><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span><span class="k">Email</span><span class="v">souarei574@gmail.com</span><span class="go"><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></span></a>
+        <a class="ccard" href="tel:+33759685926"><span class="ico"><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span><span class="k">Téléphone</span><span class="v">+33 7 59 68 59 26</span><span class="go"><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></span></a>
+        <a class="ccard ln" href="https://www.linkedin.com/in/souare-ibrahima" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></span><span class="k">LinkedIn</span><span class="v">souare-ibrahima</span><span class="go"><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></span></a>
+        <a class="ccard gh" href="https://github.com/souare-ibrahima-rt" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 496 512" aria-hidden="true" focusable="false"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span><span class="k">GitHub</span><span class="v">souare-ibrahima-rt</span><span class="go"><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></span></a>
+      </div>
+      <div class="side-card">
+        <img src="logo-secnumacademie.png" alt="Logo SecNumacadémie">
+        <div><strong>SecNumacadémie (ANSSI), 2024</strong><span>Sensibilisation aux enjeux de la cybersécurité : bonnes pratiques, menaces courantes, protection des données</span></div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<section id="contact">
-  <div class="section-inner">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <a href="mailto:souarei574@gmail.com" class="contact-card">
-        <div class="contact-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-       <div><div class="contact-info-label">Email</div><div class="contact-info-val">souarei574@gmail.com</div></div>
-      </a>
-      <a href="https://linkedin.com/in/souare-ibrahima" target="_blank" class="contact-card">
-        <div class="contact-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-        <div><div class="contact-info-label">LinkedIn</div><div class="contact-info-val">souare-ibrahima</div></div>
-      </a>
-      <a href="https://github.com/souare-ibrahima-rt" target="_blank" class="contact-card">
-        <div class="contact-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
-        <div><div class="contact-info-label">GitHub</div><div class="contact-info-val">souare-ibrahima-rt</div></div>
-      </a>
-      <a href="tel:+33759685926" class="contact-card">
-        <div class="contact-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d4a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.83-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div><div class="contact-info-label">Téléphone</div><div class="contact-info-val">+33 7 59 68 59 26</div></div>
-      </a>    
-    </div>
-  </div>
-</section>
+</main>
 
 <footer>
-  <p>© 2026 Ibrahima SOUARE · <a href="confidentialite.html" style="color:var(--muted);text-decoration:none;">Politique de confidentialité</a> · IUT de Colmar · BUT Réseaux &amp; Télécommunications · Développement Système et Cloud</p>
+  <div class="wrap">
+    <span>© 2026 Ibrahima Souaré · BUT Réseaux et Télécommunications, parcours DevCloud · IUT de Colmar</span>
+    <a href="confidentialite.html">Politique de confidentialité</a>
+  </div>
 </footer>
-<!-- Bouton retour en haut -->
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="back-to-top" style="position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--accent);border:none;border-radius:50%;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:999;transition:opacity 0.3s;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0f1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+
+
+<button id="to-top" class="to-top" aria-label="Remonter en haut de la page" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M6 12l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-<script>
-// Bouton retour en haut
-const btn = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 400) {
-    btn.style.display = 'flex';
-  } else {
-    btn.style.display = 'none';
-  }
-});
+<dialog id="d-stage" aria-labelledby="d-stage-t">
+  <div class="dlg-head"><div><div class="label">Stage · avril → juin 2026</div><h3 id="d-stage-t">Banque Alimentaire du Bas-Rhin</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Le stage</h4><p>Banque Alimentaire du Bas-Rhin, technicien informatique stagiaire. Du 20 avril au 12 juin 2026, 8 semaines à 35 h par semaine. Tuteur : Alexis Brandt, coordinateur Services Généraux.</p><h4>Missions</h4><p><strong style="color:var(--text);font-weight:500">Surveillance automatique des imprimantes.</strong> Script batch SNMP exécuté chaque nuit à 2h00. Mise à jour automatique des niveaux d&#x27;encre dans GLPI, alertes e-mail automatiques dès 15%.</p><p><strong style="color:var(--text);font-weight:500">Configuration Scan to Email.</strong> Configuration SMTP Gmail sur HP Color LaserJet MFP E57540. Gestion de l&#x27;authentification avec mot de passe d&#x27;application Google.</p><p><strong style="color:var(--text);font-weight:500">Mise en service du système de ticketing GLPI.</strong> Configuration complète du ticketing GLPI : comptes utilisateurs, flux de traitement, notifications automatiques à chaque étape.</p><p><strong style="color:var(--text);font-weight:500">Récupération des licences Microsoft Office.</strong> Récupération manuelle via OSPP.VBS et intégration dans GLPI des licences Microsoft Office sur 24 postes sur 25.</p><p><strong style="color:var(--text);font-weight:500">Résolution panne téléphones DECT.</strong> Diagnostic d&#x27;une perte de synchronisation des 3 bases DECT après une coupure de courant. Resynchronisation en 50 minutes par redémarrage contrôlé de chaque base.</p><p><strong style="color:var(--text);font-weight:500">Plan de déploiement Active Directory.</strong> Recherches Synology Directory Server + Samba 4. Rédaction d&#x27;un plan complet en 24 étapes pour l&#x27;intégration Active Directory.</p><p style="margin-top:22px"><a class="btn" href="https://github.com/souare-ibrahima-rt/stage-systemes-reseaux" target="_blank" rel="noopener">Voir les rapports sur GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-303" aria-labelledby="d-303-t">
+  <div class="dlg-head"><div><div class="label">SAE 3.03 · BUT2</div><h3 id="d-303-t">Réseau Multi-sites LAN</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Rôle</h4><p>Responsable de la partie LAN · Groupe de 3 étudiants</p><h4>Compétences mobilisées</h4><div class="badges"><span class="tag">Administrer</span><span class="tag">Connecter</span><span class="tag">Développer</span></div><h4>Contexte</h4><p>Conception et configuration de l&#x27;architecture réseau LAN de deux entreprises fictives sur GNS3. Architecture hiérarchique 3 niveaux, plan d&#x27;adressage IP pour 3 sites, VLANs 10/20/30/40, Trunks 802.1Q, VTP, MSTP, routage inter-VLAN Router-on-a-Stick, haute disponibilité VRRP, service DHCP avec adressage statique pour les serveurs.</p><h4>Apprentissages critiques</h4><ul><li><code>AC21.01</code><span>Configurer et dépanner le routage dynamique dans un réseau</span></li><li><code>AC21.02</code><span>Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d&#x27;un réseau</span></li><li><code>AC21.03</code><span>Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</span></li><li><code>AC21.04</code><span>Déployer des services réseaux avancés</span></li><li><code>AC21.05</code><span>Identifier les réseaux opérateurs et l&#x27;architecture d&#x27;Internet</span></li><li><code>AC21.06</code><span>Travailler en équipe pour développer ses compétences professionnelles</span></li><li><code>AC22.02</code><span>Mettre en place un accès distant sécurisé</span></li><li><code>AC22.03</code><span>Mettre en place une connexion multi-site via un réseau opérateur</span></li><li><code>AC24.02DevCloud</code><span>Virtualiser un environnement</span></li></ul><h4>Réflexivité</h4><p>Ce projet m&#x27;a permis de mettre en pratique pour la première fois une infrastructure réseau complète en conditions réelles. Concevoir le plan d&#x27;adressage IP pour deux entreprises sur trois sites, c&#x27;était un vrai travail de réflexion : chaque VLAN, chaque masque devait respecter une logique précise.</p><p>La difficulté principale était la coordination au sein du groupe. Ma partie LAN devait être cohérente avec la partie services et la partie interconnexion réalisées par mes collègues. Ca m&#x27;a appris à communiquer techniquement, expliquer mes choix d&#x27;adressage pour que les autres puissent s&#x27;y appuyer.</p><p>Etre responsable de la partie LAN m&#x27;a aussi appris à prendre des décisions seul sur des choix techniques importants : l&#x27;architecture hiérarchique, le choix du MSTP, la configuration VRRP pour la haute disponibilité. Chaque décision avait un impact sur tout le reste du projet.</p><p>Ce que je retiens surtout : un réseau ne se configure pas par morceaux isolés. Tout est lié, et c&#x27;est en travaillant sur ce projet que j&#x27;ai vraiment compris la logique globale d&#x27;une infrastructure réseau d&#x27;entreprise.</p><h4>Outils</h4><div class="tags"><span class="tag">GNS3</span><span class="tag">VLANs</span><span class="tag">VRRP</span><span class="tag">MSTP</span><span class="tag">802.1Q</span><span class="tag">DHCP</span><span class="tag">Router-on-a-Stick</span><span class="tag">VTP</span></div><p style="margin-top:22px"><a class="btn" href="https://github.com/souare-ibrahima-rt/SAE303-Multisite-LAN" target="_blank" rel="noopener">Voir le dépôt GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-302" aria-labelledby="d-302-t">
+  <div class="dlg-head"><div><div class="label">SAE 3.02 · BUT2</div><h3 id="d-302-t">Développer des applications communicantes</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Rôle</h4><p>Projet individuel · Année 2025-2026</p><h4>Compétences mobilisées</h4><div class="badges"><span class="tag">Programmer</span></div><h4>Contexte</h4><p>Conception et implémentation d&#x27;un système de communication anonyme inspiré du réseau TOR, utilisant le routage en oignon. Le projet comprend un serveur Master centralisant les routeurs, plusieurs routeurs virtuels effectuant un routage multi-sauts, des clients bidirectionnels avec interface graphique PyQt, un chiffrement asymétrique RSA par couches et une base de données MariaDB. Déployé sur 3 machines virtuelles : 1 VM Linux Master, 1 VM Linux Routeurs, 1 VM Windows Clients. Projet réalisé seul, de la conception au déploiement.</p><h4>Apprentissages critiques</h4><ul><li><code>AC23.01</code><span>Automatiser l&#x27;administration système avec des scripts</span></li><li><code>AC23.02</code><span>Développer une application à partir d&#x27;un cahier des charges donné, pour le Web ou les périphériques mobiles</span></li><li><code>AC23.03</code><span>Utiliser un protocole réseau pour programmer une application client/serveur</span></li><li><code>AC23.04</code><span>Installer, administrer un système de gestion de données</span></li><li><code>AC23.05</code><span>Accéder à un ensemble de données depuis une application et/ou un site web</span></li></ul><h4>Réflexivité</h4><p>Ce projet m&#x27;a beaucoup appris. Avant de le commencer, j&#x27;avais déjà effleuré la cryptographie en première année, mais jamais à ce niveau de profondeur. Les sockets réseau en Python étaient également nouveaux pour moi. Comprendre comment un message peut traverser plusieurs routeurs sans qu&#x27;on puisse savoir d&#x27;où il vient m&#x27;a vraiment fasciné. Implémenter ça moi-même, couche par couche, c&#x27;était un vrai défi technique.</p><p>La difficulté principale que j&#x27;ai rencontrée, c&#x27;est les tests sur plusieurs machines virtuelles. Mon PC personnel n&#x27;avait pas assez de ressources pour faire tourner 3 VM en même temps - il plantait et buggait. Le projet a commencé juste avant les vacances de décembre, donc je ne pouvais pas utiliser les PC de l&#x27;IUT. J&#x27;ai fini par investir dans un nouveau PC avec 32 Go de RAM et 1 To de stockage pour pouvoir tester correctement.</p><p>Ce projet m&#x27;a aussi appris l&#x27;autonomie. Travailler seul de A à Z - conception, développement, tests, documentation, déploiement - c&#x27;est une expérience complète. J&#x27;ai dû prendre toutes les décisions moi-même, résoudre tous les problèmes moi-même, et avancer sans pouvoir compter sur quelqu&#x27;un d&#x27;autre.</p><p>Aujourd&#x27;hui je sais déployer une application sur plusieurs machines virtuelles qui communiquent entre elles en réseau. C&#x27;est une compétence concrète que je peux réutiliser dans n&#x27;importe quel projet d&#x27;infrastructure.</p><h4>Outils</h4><div class="tags"><span class="tag">Python</span><span class="tag">Sockets TCP</span><span class="tag">PyQt5</span><span class="tag">MariaDB</span><span class="tag">Threads</span><span class="tag">Chiffrement RSA</span><span class="tag">Virtualisation</span><span class="tag">Git</span></div><p style="margin-top:22px"><a class="btn" href="https://github.com/Souare4089/SOUARE-SAE302" target="_blank" rel="noopener">Voir le dépôt GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-301" aria-labelledby="d-301-t">
+  <div class="dlg-head"><div><div class="label">SAE 3.01 · BUT2</div><h3 id="d-301-t">Prise connectée WiFi</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Rôle</h4><p>Développeur serveur web · Groupe de 4 étudiants</p><h4>Compétences mobilisées</h4><div class="badges"><span class="tag">Développer</span><span class="tag">Programmer</span></div><h4>Contexte</h4><p>Projet IoT en groupe de 4 : conception d&#x27;une prise connectée WiFi pilotable à distance. Le système comprend 2 ESP8266 gérant des LEDs, un capteur de température DS18B20, un bouton physique avec anti-rebond, une synchronisation NTP et une communication MQTT en temps réel avec le broker test.mosquitto.org. Ma partie : développement du serveur web Django sur Raspberry Pi, avec API REST sécurisée par authentification JWT, interface de contrôle temps réel pour allumer/éteindre LED1 et LED2, afficher la température en direct et gérer des plages horaires automatiques.</p><h4>Apprentissages critiques</h4><ul><li><code>AC21.06</code><span>Travailler en équipe pour développer ses compétences professionnelles</span></li><li><code>AC22.05</code><span>Capacité à questionner un cahier des charges RT</span></li><li><code>AC23.02</code><span>Développer une application à partir d&#x27;un cahier des charges donné, pour le Web ou les périphériques mobiles</span></li><li><code>AC23.03</code><span>Utiliser un protocole réseau pour programmer une application client/serveur</span></li><li><code>AC23.04</code><span>Installer, administrer un système de gestion de données</span></li><li><code>AC23.05</code><span>Accéder à un ensemble de données depuis une application et/ou un site web</span></li></ul><h4>Réflexivité</h4><p>C&#x27;était la première fois que je développais une application web connectée à un système embarqué réel. La difficulté principale était de faire communiquer Django, MQTT et les ESP8266 en même temps, de manière fluide. Il fallait que l&#x27;interface web reflète l&#x27;état réel des LEDs sans délai visible. Ce projet m&#x27;a appris à travailler à l&#x27;interface entre le développement logiciel et le matériel, deux mondes qui ont leurs propres contraintes et qu&#x27;il faut apprendre à faire dialoguer.</p><h4>Outils</h4><div class="tags"><span class="tag">Django</span><span class="tag">Raspberry Pi</span><span class="tag">MQTT</span><span class="tag">ESP8266</span><span class="tag">Python</span><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">DS18B20</span></div><p style="margin-top:22px"><a class="btn" href="https://github.com/souare-ibrahima-rt/SAE301" target="_blank" rel="noopener">Voir le dépôt GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-dc04" aria-labelledby="d-dc04-t">
+  <div class="dlg-head"><div><div class="label">SAE 3.DevCloud.04 · BUT2</div><h3 id="d-dc04-t">Infrastructure virtualisée - Société LOR</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Rôle</h4><p>Projet individuel · Année 2025-2026</p><h4>Compétences mobilisées</h4><div class="badges"><span class="tag">Orchestrer</span></div><h4>Contexte</h4><p>SAE3.DevCloud.04. L&#x27;objectif était de concevoir une infrastructure virtualisée pour la société LOR, une PME pâtisserie, en garantissant la disponibilité de Prestashop et Odoo avec un RPO d&#x27;une heure. J&#x27;ai dimensionné l&#x27;architecture, justifié chaque choix technique et défendu le projet à l&#x27;oral.</p><h4>Apprentissages critiques</h4><ul><li><code>AC24.01DevCloud</code><span>Proposer une solution Cloud adaptée à l&#x27;entreprise</span></li><li><code>AC24.02DevCloud</code><span>Virtualiser un environnement</span></li><li><code>AC24.04DevCloud</code><span>Analyser un service Cloud au travers des métriques</span></li><li><code>AC25.02DevCloud</code><span>Mettre en production une application</span></li></ul><h4>Réflexivité</h4><p>Ce projet m&#x27;a appris à penser une infrastructure dans sa globalité, avant même de toucher aux outils. Il fallait choisir les bons composants, anticiper les pannes, respecter un RPO d&#x27;une heure, tout en restant dans un budget réaliste. Chaque choix technique devait être justifié et défendu devant un jury, ce qui m&#x27;a obligé à comprendre en profondeur les compromis entre performance, coût et fiabilité. J&#x27;ai appris à raisonner comme un architecte système : c&#x27;est une compétence différente de la configuration, c&#x27;est savoir concevoir une solution avant de la déployer.</p><h4>Outils</h4><div class="tags"><span class="tag">Proxmox VE</span><span class="tag">RAID 5</span><span class="tag">iSCSI</span><span class="tag">Nginx</span><span class="tag">Prestashop</span><span class="tag">Odoo</span><span class="tag">Virtualisation</span></div><p style="margin-top:22px"><a class="btn" href="https://github.com/souare-ibrahima-rt/SAE-3.DevCloud.04" target="_blank" rel="noopener">Voir le dépôt GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-204" aria-labelledby="d-204-t">
+  <div class="dlg-head"><div><div class="label">SAE 2.04 · BUT1</div><h3 id="d-204-t">Projet intégratif</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Rôle</h4><p>Atelier coopératif d&#x27;artistes (projet fictif)</p><h4>Compétences mobilisées</h4><div class="badges"><span class="tag">Administrer</span><span class="tag">Programmer</span></div><h4>Contexte</h4><p>SAE2.04, projet intégratif de fin de 1ère année. L&#x27;objectif était de répondre aux besoins informatiques complets d&#x27;un atelier coopératif d&#x27;artistes fictif. J&#x27;ai déployé un contrôleur de domaine Active Directory avec Samba4 dans un conteneur Docker, en créant un réseau isolé et en configurant les groupes et comptes utilisateurs en ligne de commande. J&#x27;ai également développé une œuvre générative en Python avec matplotlib, inspirée du travail de l&#x27;artiste François Morellet, puis porté cette logique en JavaScript avec Canvas pour produire une version web interactive.</p><h4>Apprentissages critiques</h4><ul><li><code>AC11.03</code><span>Configurer les fonctions de base du réseau local</span></li><li><code>AC11.04</code><span>Maîtriser les rôles et les principes fondamentaux des systèmes d&#x27;exploitation afin d&#x27;interagir avec ceux-ci pour la configuration et l&#x27;administration des réseaux et services fournis</span></li><li><code>AC13.01</code><span>Utiliser un système informatique et ses outils</span></li><li><code>AC13.02</code><span>Lire, exécuter, corriger et modifier un programme</span></li><li><code>AC13.03</code><span>Traduire un algorithme, dans un langage et pour un environnement donné</span></li><li><code>AC13.04</code><span>Connaître l&#x27;architecture et les technologies d&#x27;un site Web</span></li></ul><h4>Réflexivité</h4><p>Ce projet m&#x27;a appris à passer d&#x27;un environnement à un autre sans perdre la logique de ce que je voulais faire. Sur la partie infrastructure, configurer Active Directory en ligne de commande avec Samba4 a été la partie la plus exigeante : chaque commande devait être comprise avant d&#x27;être exécutée, sans interface graphique pour vérifier visuellement les erreurs. Sur la partie créative, le plus intéressant a été de prendre un même algorithme de génération de motifs et de le réécrire dans un autre langage, en passant de Python à JavaScript, tout en gardant l&#x27;esprit de l&#x27;œuvre originale. J&#x27;ai compris qu&#x27;un même problème peut se résoudre de plusieurs façons selon l&#x27;environnement, et que la vraie compétence c&#x27;est de comprendre la logique derrière le code, pas seulement la syntaxe d&#x27;un langage.</p><h4>Outils</h4><div class="tags"><span class="tag">Samba4</span><span class="tag">Docker</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Active Directory</span><span class="tag">matplotlib</span><span class="tag">Canvas</span></div><p style="margin-top:22px"><a class="btn" href="https://github.com/souare-ibrahima-rt/SAE2.04-Projet-Integratif" target="_blank" rel="noopener">Voir le dépôt GitHub <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a></p></div>
+</dialog>
+<dialog id="d-c0" aria-labelledby="d-c0-t">
+  <div class="dlg-head"><div><div class="label">Compétence 01</div><h3 id="d-c0-t">Administrer</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Contexte</h4><p>Stage à la Banque Alimentaire du Bas-Rhin, avril - juin 2026, au sein du service informatique. J&#x27;ai administré le parc informatique de l&#x27;association : surveillance automatique des imprimantes via GLPI et SNMP, configuration du système de ticketing, récupération des licences Microsoft Office sur 24 postes, résolution d&#x27;une panne téléphonique DECT et rédaction d&#x27;un plan de déploiement Active Directory en 24 étapes avec Synology Directory Server et Samba 4.</p><h4>Réflexivité</h4><p>Ce stage m&#x27;a confronté à des situations que l&#x27;école ne reproduit pas. Sur chaque mission, j&#x27;ai rencontré un problème que je n&#x27;avais pas anticipé : un décalage de fuseau horaire dans Docker, une règle de sécurité Google qui bloquait silencieusement l&#x27;envoi des scans, une infrastructure téléphonique désynchronisée après une coupure de courant. Dans chaque cas, j&#x27;ai dû diagnostiquer, trouver la cause et documenter la solution pour qu&#x27;elle soit réutilisable. J&#x27;ai appris que sur le terrain, administrer un système demande autant de méthode que de capacité à résoudre des problèmes imprévus. C&#x27;est un savoir-faire applicable dans n&#x27;importe quel environnement professionnel.</p><h4>Outils</h4><div class="tags"><span class="tag">GLPI</span><span class="tag">Docker</span><span class="tag">SNMP</span><span class="tag">Active Directory</span><span class="tag">Windows Server</span><span class="tag">Synology</span><span class="tag">Linux</span></div></div>
+</dialog>
+<dialog id="d-c1" aria-labelledby="d-c1-t">
+  <div class="dlg-head"><div><div class="label">Compétence 02</div><h3 id="d-c1-t">Connecter</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Contexte</h4><p>Dans le cadre de la SAE3.03 à l&#x27;IUT de Colmar en 2025-2026, notre groupe de 3 étudiants devait concevoir et déployer un réseau multi-sites pour deux entreprises fictives. J&#x27;étais responsable de la partie LAN. J&#x27;ai configuré sur GNS3 une architecture hiérarchique 3 niveaux, un plan d&#x27;adressage IP complet pour 3 sites, les VLANs 10/20/30/40, les trunks 802.1Q, le VTP, le MSTP, le routage inter-VLAN Router-on-a-Stick, la haute disponibilité VRRP et le service DHCP avec adressage statique pour les serveurs.</p><h4>Réflexivité</h4><p>La partie la plus difficile a été la coordination avec mes collègues. Mon plan d&#x27;adressage LAN devait coller exactement avec la partie services et la partie interconnexion réalisées par les autres. J&#x27;ai appris à documenter mes choix techniques pour que les autres puissent s&#x27;y appuyer sans ambiguité. Sur ma partie, j&#x27;ai dû prendre des décisions techniques seul : le choix de l&#x27;architecture hiérarchique, la configuration VRRP pour la haute disponibilité, la gestion du MSTP. Chaque décision avait un impact sur le reste du projet. C&#x27;est là que j&#x27;ai compris qu&#x27;un réseau ne se configure pas en silo : tout est lié dès la conception.</p><h4>Outils</h4><div class="tags"><span class="tag">VLANs</span><span class="tag">VRRP</span><span class="tag">MSTP</span><span class="tag">802.1Q</span><span class="tag">Router-on-a-Stick</span><span class="tag">DHCP</span><span class="tag">GNS3</span></div></div>
+</dialog>
+<dialog id="d-c2" aria-labelledby="d-c2-t">
+  <div class="dlg-head"><div><div class="label">Compétence 03</div><h3 id="d-c2-t">Programmer</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Contexte</h4><p>SAE3.02 : projet individuel, conception d&#x27;un système de communication anonyme inspiré du réseau TOR avec sockets TCP Python, chiffrement RSA par couches, interface PyQt5 et base MariaDB, déployé sur 3 VM. En stage à la Banque Alimentaire, développement d&#x27;un script batch Windows automatisant la surveillance SNMP des imprimantes avec alertes e-mail à 15% et mise à jour dans GLPI.</p><h4>Réflexivité</h4><p>La principale difficulté sur ce projet c&#x27;est les tests multi-VM. Mon PC n&#x27;avait que 8 Go de RAM, quand j&#x27;allumais les 3 VM en même temps il s&#x27;éteignait. Comme le projet a démarré avant les vacances de décembre, je ne pouvais pas utiliser les PC de l&#x27;IUT. J&#x27;ai investi dans un nouveau PC avec 32 Go de RAM pour avancer. Ce projet m&#x27;a appris ce que signifie vraiment travailler seul de A à Z. En stage, développer un script batch pour un vrai environnement professionnel m&#x27;a montré que l&#x27;automatisation c&#x27;est avant tout comprendre un besoin et y répondre de façon fiable.</p><h4>Outils</h4><div class="tags"><span class="tag">Python</span><span class="tag">Sockets TCP</span><span class="tag">Chiffrement RSA</span><span class="tag">Batch/CMD</span><span class="tag">PyQt5</span><span class="tag">MariaDB</span><span class="tag">Automatisation</span></div></div>
+</dialog>
+<dialog id="d-c3" aria-labelledby="d-c3-t">
+  <div class="dlg-head"><div><div class="label">Compétence 04</div><h3 id="d-c3-t">Orchestrer</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Contexte</h4><p>SAE DevCloud 04 : réalisée à l&#x27;IUT de Colmar en 2025-2026, projet individuel. L&#x27;objectif était de concevoir une infrastructure virtualisée pour la société LOR, une PME pâtisserie, en garantissant la disponibilité de Prestashop et Odoo avec un RPO d&#x27;une heure. J&#x27;ai dimensionné l&#x27;architecture, justifié chaque choix technique et défendu le projet à l&#x27;oral individuellement.</p><h4>Réflexivité</h4><p>Ce projet était entièrement sur papier, sans manipulation directe des outils. La difficulté était de penser l&#x27;infrastructure dans sa globalité : choisir les bons composants, anticiper les pannes, respecter un RPO d&#x27;une heure, tout en restant dans un budget réaliste. J&#x27;ai appris à raisonner comme un architecte système, à justifier chaque choix technique devant un jury. C&#x27;est une compétence différente de la configuration : c&#x27;est savoir concevoir avant de déployer.</p><h4>Outils</h4><div class="tags"><span class="tag">Proxmox VE</span><span class="tag">RAID 5</span><span class="tag">iSCSI</span><span class="tag">Nginx</span><span class="tag">Prestashop</span><span class="tag">Odoo</span><span class="tag">Virtualisation</span></div></div>
+</dialog>
+<dialog id="d-c4" aria-labelledby="d-c4-t">
+  <div class="dlg-head"><div><div class="label">Compétence 05</div><h3 id="d-c4-t">Développer</h3></div><button class="dlg-close" aria-label="Fermer">✕</button></div>
+  <div class="dlg-body"><h4>Contexte</h4><p>SAE3.01 : IUT de Colmar, 2025-2026, groupe de 4. Développement d&#x27;une prise connectée WiFi : serveur web Django sur Raspberry Pi avec API REST et authentification JWT, programmation de 2 ESP8266 en C++ avec communication MQTT, lecture de température en temps réel et gestion de plages horaires automatiques.</p><h4>Réflexivité</h4><p>C&#x27;était la première fois que je développais un système où plusieurs technologies devaient fonctionner ensemble en temps réel. La difficulté principale était de synchroniser l&#x27;état des LEDs entre le bouton physique, l&#x27;interface web et les plages horaires sans conflit. J&#x27;ai compris qu&#x27;une application connectée ce n&#x27;est pas juste du code, c&#x27;est faire dialoguer des environnements qui ont chacun leur propre logique. Ce savoir-faire est applicable dans tout projet IoT ou infrastructure connectée.</p><h4>Outils</h4><div class="tags"><span class="tag">Django</span><span class="tag">Raspberry Pi</span><span class="tag">MQTT</span><span class="tag">ESP8266</span><span class="tag">Python</span><span class="tag">IoT</span><span class="tag">Linux</span></div></div>
+</dialog>
 
-// Animation au scroll - gauche/droite alternés, dans les deux sens
-const animateElements = document.querySelectorAll('.comp-card, .mission-card, .sae-card, .skill-cat, .contact-card, .stage-header, .section-title, .section-label, .stat-item');
-
-animateElements.forEach((el, index) => {
-  const direction = index % 2 === 0 ? '-60px' : '60px';
-  el.style.opacity = '0';
-  el.style.transform = `translateX(${direction})`;
-  el.style.transition = 'opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-  el.dataset.direction = direction;
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateX(0)';
-    } else {
-      entry.target.style.opacity = '0';
-      entry.target.style.transform = `translateX(${entry.target.dataset.direction})`;
-    }
-  });
-}, {threshold: 0.15});
-
-animateElements.forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/topo.js" defer></script>
+<script src="assets/js/globe-dots.js" defer></script>
+<script src="assets/js/globe.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
