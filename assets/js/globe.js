@@ -83,11 +83,11 @@
     ctx.clearRect(0, 0, W, H);
     // halo
     const g = ctx.createRadialGradient(cx, cy, R * 0.6, cx, cy, R * 1.45);
-    g.addColorStop(0, 'rgba(46,180,255,0.10)'); g.addColorStop(1, 'rgba(46,180,255,0)');
+    g.addColorStop(0, 'rgba(26,121,205,0.20)'); g.addColorStop(1, 'rgba(26,121,205,0)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
     // sphère
     const s = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-    s.addColorStop(0, '#15202b'); s.addColorStop(1, '#0c1117');
+    s.addColorStop(0, '#0f2a55'); s.addColorStop(1, '#08111f');
     ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fillStyle = s; ctx.fill();
     ctx.lineWidth = 1 * dpr; ctx.strokeStyle = 'rgba(241,236,227,0.10)'; ctx.stroke();
 
@@ -98,7 +98,7 @@
       const v = project(tmp, tmp2);
       if (v[2] <= 0) continue;
       ctx.globalAlpha = 0.3 + 0.7 * v[2];
-      ctx.fillStyle = '#cfe2f0';
+      ctx.fillStyle = '#d1eff2';
       ctx.fillRect(v[0] - size / 2, v[1] - size / 2, size, size);
     }
     ctx.globalAlpha = 1;
@@ -112,9 +112,13 @@
         const v = project(p, tmp);
         if (shown(v)) { pen ? ctx.lineTo(v[0], v[1]) : ctx.moveTo(v[0], v[1]); pen = true; } else pen = false;
       }
-      ctx.lineWidth = (arc.main ? 2 : 1) * dpr;
-      ctx.strokeStyle = arc.main ? 'rgba(46,180,255,0.95)' : 'rgba(150,210,255,0.30)';
-      ctx.stroke();
+      if (arc.main) {
+        // trait azur épais + filet cyan clair au centre : effet de lueur
+        ctx.lineWidth = 4 * dpr; ctx.strokeStyle = 'rgba(26,121,205,0.9)'; ctx.stroke();
+        ctx.lineWidth = 1.3 * dpr; ctx.strokeStyle = '#7cecf2'; ctx.stroke();
+      } else {
+        ctx.lineWidth = 1 * dpr; ctx.strokeStyle = 'rgba(60,158,221,0.38)'; ctx.stroke();
+      }
       // paquet qui circule
       const t = ((time * arc.speed + (arc.off || 0)) % 1 + 1) % 1;
       const idx = t * (arc.pts.length - 1), i0 = Math.floor(idx), f = idx - i0;
@@ -123,9 +127,9 @@
       if (shown(v)) {
         const r = (arc.main ? 3.2 : 2) * dpr;
         ctx.beginPath(); ctx.arc(v[0], v[1], r * 2.6, 0, Math.PI * 2);
-        ctx.fillStyle = arc.main ? 'rgba(46,180,255,0.22)' : 'rgba(150,210,255,0.16)'; ctx.fill();
+        ctx.fillStyle = arc.main ? 'rgba(59,201,238,0.28)' : 'rgba(59,201,238,0.16)'; ctx.fill();
         ctx.beginPath(); ctx.arc(v[0], v[1], r, 0, Math.PI * 2);
-        ctx.fillStyle = arc.main ? '#c4ecff' : '#d6efff'; ctx.fill();
+        ctx.fillStyle = arc.main ? '#7cecf2' : '#d1eff2'; ctx.fill();
       }
     }
 
@@ -136,8 +140,8 @@
       if (v[2] <= 0.05) return;
       const pulse = (time * 0.6 + i * 0.33) % 1;
       ctx.beginPath(); ctx.arc(v[0], v[1], (3 + pulse * 10) * dpr, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(46,180,255,${0.6 * (1 - pulse)})`; ctx.lineWidth = 1 * dpr; ctx.stroke();
-      ctx.beginPath(); ctx.arc(v[0], v[1], 3 * dpr, 0, Math.PI * 2); ctx.fillStyle = '#2eb4ff'; ctx.fill();
+      ctx.strokeStyle = `rgba(59,201,238,${0.7 * (1 - pulse)})`; ctx.lineWidth = 1 * dpr; ctx.stroke();
+      ctx.beginPath(); ctx.arc(v[0], v[1], 3 * dpr, 0, Math.PI * 2); ctx.fillStyle = '#3bc9ee'; ctx.fill();
       ctx.globalAlpha = Math.min(1, v[2] * 2.5);
       ctx.fillStyle = '#f1ece3';
       // Roanne et Colmar sont proches : on décale les étiquettes
