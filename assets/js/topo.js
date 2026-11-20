@@ -16,10 +16,10 @@
   const NODES = [
     { x: 0.50, y: 0.12, t: 'net' }, // Internet / globe, au-dessus
     { x: 0.50, y: 0.44, t: 'srv' }, // serveur central
-    { x: 0.16, y: 0.70, t: 'pc' }, { x: 0.30, y: 0.78, t: 'pc' },
-    { x: 0.43, y: 0.73, t: 'pc' }, { x: 0.57, y: 0.73, t: 'pc' },
-    { x: 0.70, y: 0.78, t: 'pc' }, { x: 0.84, y: 0.70, t: 'pc' },
-    { x: 0.22, y: 0.42, t: 'pc' }, { x: 0.78, y: 0.42, t: 'pc' },
+    { x: 0.10, y: 0.72, t: 'pc' }, { x: 0.27, y: 0.80, t: 'pc' },
+    { x: 0.42, y: 0.74, t: 'pc' }, { x: 0.58, y: 0.74, t: 'pc' },
+    { x: 0.73, y: 0.80, t: 'pc' }, { x: 0.90, y: 0.72, t: 'pc' },
+    { x: 0.17, y: 0.40, t: 'pc' }, { x: 0.83, y: 0.40, t: 'pc' },
   ];
   const SRV = 1, NET = 0;
   // Internet -> serveur, puis serveur -> chaque poste client
@@ -36,7 +36,7 @@
     H = canvas.height = Math.max(1, Math.round(r.height * dpr));
   }
   const px = n => NODES[n].x * W, py = n => NODES[n].y * H;
-  const U = () => Math.max(7, Math.min(W, H * 1.6) / 95) * dpr; // échelle des glyphes
+  const U = () => Math.max(9, Math.min(W, H * 1.6) / 72) * dpr; // échelle des glyphes
 
   function stroke(c, w) { ctx.strokeStyle = c; ctx.lineWidth = w * dpr; }
 

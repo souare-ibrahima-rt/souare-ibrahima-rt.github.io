@@ -249,8 +249,9 @@ dialog::backdrop{background:rgba(8,7,6,.72);backdrop-filter:blur(4px)}
 /* Fond topologie réseau de la section Projets */
 .has-topo{position:relative}
 .has-topo > .wrap{position:relative;z-index:1}
-.topo{position:absolute;top:0;left:0;right:0;height:min(46vh,400px);z-index:0;pointer-events:none;opacity:.7;-webkit-mask-image:linear-gradient(180deg,#000 84%,transparent);mask-image:linear-gradient(180deg,#000 84%,transparent)}
-@media (max-width:720px){.topo{height:300px;opacity:.55}}
+.has-topo .head h2,.has-topo .head .label,.has-topo .head p{text-shadow:0 1px 2px var(--bg-2),0 2px 22px rgba(15,14,12,.9)}
+.topo{position:absolute;top:0;left:0;right:0;height:min(56vh,480px);z-index:0;pointer-events:none;opacity:.9;-webkit-mask-image:linear-gradient(180deg,#000 86%,transparent);mask-image:linear-gradient(180deg,#000 86%,transparent)}
+@media (max-width:720px){.topo{height:340px;opacity:.7}}
 
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.82rem;color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
