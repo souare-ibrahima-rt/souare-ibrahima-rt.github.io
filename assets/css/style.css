@@ -19,8 +19,8 @@
   --text:#f1ece3;        /* crème */
   --muted:#a39b8e;
   --faint:#6f685e;
-  --accent:#e07a3f;      /* ocre / terre */
-  --accent-soft:rgba(224,122,63,.14);
+  --accent:#2eb4ff;      /* bleu électrique (réseaux, télécoms) */
+  --accent-soft:rgba(46,180,255,.14);
   --signal:#9bd3a8;      /* vert pâle : points du globe, statut */
   --radius:14px;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
@@ -55,8 +55,8 @@ a{color:inherit}
 /* ---------- Boutons ---------- */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;font-size:.92rem;font-weight:500;text-decoration:none;border:1px solid var(--line-2);color:var(--text);transition:transform .2s,background .2s,border-color .2s,color .2s;cursor:pointer;background:none;font-family:inherit}
 .btn:hover{border-color:var(--text);transform:translateY(-2px)}
-.btn-main{background:var(--accent);border-color:var(--accent);color:#16110c}
-.btn-main:hover{background:#ec8a51;border-color:#ec8a51}
+.btn-main{background:var(--accent);border-color:var(--accent);color:#04121c}
+.btn-main:hover{background:#63c8ff;border-color:#63c8ff}
 .btn svg{width:16px;height:16px}
 
 /* ---------- Accueil ---------- */
