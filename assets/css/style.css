@@ -246,12 +246,10 @@ dialog::backdrop{background:rgba(8,7,6,.72);backdrop-filter:blur(4px)}
 @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .3s}}
 
 
-/* Fond topologie réseau de la section Projets */
-.has-topo{position:relative}
-.has-topo > .wrap{position:relative;z-index:1}
-.has-topo .head h2,.has-topo .head .label,.has-topo .head p{text-shadow:0 1px 2px var(--bg-2),0 2px 22px rgba(15,14,12,.9)}
-.topo{position:absolute;top:0;left:0;right:0;height:min(56vh,480px);z-index:0;pointer-events:none;opacity:.9;-webkit-mask-image:linear-gradient(180deg,#000 86%,transparent);mask-image:linear-gradient(180deg,#000 86%,transparent)}
-@media (max-width:720px){.topo{height:340px;opacity:.7}}
+/* Bande dédiée à la topologie réseau animée (sous le titre, avant les cartes) */
+.topo-band{position:relative;height:clamp(230px,30vw,360px);margin:0 0 40px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:radial-gradient(120% 140% at 50% 30%,rgba(26,121,205,.12),transparent 62%),var(--bg)}
+.topo-band canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.topo-band::after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask-image:radial-gradient(130% 130% at 50% 50%,transparent 70%,#000);mask-image:radial-gradient(130% 130% at 50% 50%,transparent 70%,#000);background:var(--bg-2)}
 
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.82rem;color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
