@@ -20,7 +20,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduce) {
     const dist = window.innerWidth < 720 ? 40 : 60;
-    const els = document.querySelectorAll('.head, .fact, .portrait, .about-text, .route li, .card, .skill, .stack > div, .contacts li, .cv-row, .side-card');
+    const els = document.querySelectorAll('.head, .fact, .portrait, .about-text, .route li, .card, .skill, .stack > div, .contact-intro, .ccard, .side-card');
     els.forEach((el, i) => {
       el.style.setProperty('--dx', (i % 2 === 0 ? -dist : dist) + 'px');
       el.classList.add('slide');
