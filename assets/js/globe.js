@@ -33,7 +33,7 @@
   ].map(([a, b], i) => ({ a, b, main: false, speed: 0.08 + (i % 5) * 0.025, off: i * 0.37 }));
   const arcs = route.concat(links);
   const labels = [
-    { k: 'senegal', t: 'Sénégal' }, { k: 'roanne', t: 'Roanne' }, { k: 'colmar', t: 'Colmar' }
+    { k: 'senegal', t: document.documentElement.lang === 'en' ? 'Senegal' : 'Sénégal' }, { k: 'roanne', t: 'Roanne' }, { k: 'colmar', t: 'Colmar' }
   ];
 
   // Vecteurs unitaires pré-calculés

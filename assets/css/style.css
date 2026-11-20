@@ -53,6 +53,11 @@ a{color:inherit}
 .nav ul{display:flex;gap:28px;list-style:none}
 .nav ul a{font-size:.88rem;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav ul a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:28px}
+.lang{display:flex;align-items:center;font-family:var(--mono);font-size:.78rem;border:1px solid var(--line-2);border-radius:999px;padding:3px}
+.lang a,.lang span{padding:4px 10px;border-radius:999px;text-decoration:none;color:var(--muted);line-height:1.2}
+.lang a:hover{color:var(--text)}
+.lang [aria-current]{background:var(--accent);color:#fff}
 .nav-toggle{display:none;background:none;border:1px solid var(--line-2);color:var(--text);border-radius:8px;padding:6px 10px;font-family:var(--mono);font-size:.78rem;cursor:pointer}
 
 /* ---------- Boutons ---------- */
@@ -231,6 +236,7 @@ html{overflow-x:clip}
   .nav ul.open{display:flex}
   .nav ul a{display:block;padding:12px 0;font-size:1rem}
   .nav-toggle{display:block}
+  .nav-right{gap:10px}
   .facts{grid-template-columns:repeat(2,1fr);row-gap:10px}
   .projects{grid-template-columns:1fr}
   .card,.card.wide,.card.feature{grid-column:auto}
