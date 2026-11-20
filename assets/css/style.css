@@ -54,9 +54,10 @@ a{color:inherit}
 .nav ul a{font-size:.88rem;color:var(--muted);text-decoration:none;transition:color .2s}
 .nav ul a:hover{color:var(--text)}
 .nav-right{display:flex;align-items:center;gap:28px}
-.lang{display:flex;align-items:center;font-family:var(--mono);font-size:.78rem;border:1px solid var(--line-2);border-radius:999px;padding:3px}
+.lang{display:flex;align-items:center;gap:2px;font-family:var(--mono);font-size:.78rem;border:1px solid var(--line-2);border-radius:999px;padding:3px}
 .lang a,.lang span{padding:4px 10px;border-radius:999px;text-decoration:none;color:var(--muted);line-height:1.2}
 .lang a:hover{color:var(--text)}
+.lang-globe{width:15px;height:15px;color:var(--muted);margin:0 4px 0 6px;flex-shrink:0}
 .lang [aria-current]{background:var(--accent);color:#fff}
 .nav-toggle{display:none;background:none;border:1px solid var(--line-2);color:var(--text);border-radius:8px;padding:6px 10px;font-family:var(--mono);font-size:.78rem;cursor:pointer}
 
