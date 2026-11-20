@@ -245,6 +245,13 @@ dialog::backdrop{background:rgba(8,7,6,.72);backdrop-filter:blur(4px)}
 .to-top:focus-visible{outline:2px solid var(--text);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .3s}}
 
+
+/* Fond topologie réseau de la section Projets */
+.has-topo{position:relative}
+.has-topo > .wrap{position:relative;z-index:1}
+.topo{position:absolute;top:0;left:0;right:0;height:min(46vh,420px);z-index:0;pointer-events:none;opacity:.75;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+@media (max-width:720px){.topo{height:300px;opacity:.6}}
+
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.82rem;color:var(--faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--muted)}

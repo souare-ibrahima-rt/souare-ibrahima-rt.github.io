@@ -88,7 +88,8 @@
 </section>
 
 <!-- ============ PROJETS ============ -->
-<section id="projets" style="background:var(--bg-2);border-block:1px solid var(--line)">
+<section id="projets" style="background:var(--bg-2);border-block:1px solid var(--line)" class="has-topo">
+  <canvas id="topo" class="topo" role="img" aria-label="Animated network topology"></canvas>
   <div class="wrap">
     <div class="head reveal">
       <div><div class="label"><b>02</b> · Projects</div><h2>What I have built</h2></div>
@@ -271,6 +272,7 @@
   <div class="dlg-body"><h4>Context</h4><p>SAE3.01: IUT de Colmar, 2025-2026, team of 4. Development of a Wi-Fi smart plug: a Django web server on a Raspberry Pi with a REST API and JWT authentication, 2 ESP8266 boards programmed in C++ with MQTT communication, real-time temperature reading and automatic time slots.</p><h4>Reflection</h4><p>It was the first time I built a system where several technologies had to work together in real time. The main difficulty was keeping the LED state in sync between the physical button, the web interface and the time slots without conflicts. I understood that a connected application is not just code: it means getting environments that each have their own logic to talk to each other. This know-how applies to any IoT or connected infrastructure project.</p><h4>Tools</h4><div class="tags"><span class="tag">Django</span><span class="tag">Raspberry Pi</span><span class="tag">MQTT</span><span class="tag">ESP8266</span><span class="tag">Python</span><span class="tag">IoT</span><span class="tag">Linux</span></div></div>
 </dialog>
 
+<script src="assets/js/topo.js" defer></script>
 <script src="assets/js/globe-dots.js" defer></script>
 <script src="assets/js/globe.js" defer></script>
 <script src="assets/js/main.js" defer></script>

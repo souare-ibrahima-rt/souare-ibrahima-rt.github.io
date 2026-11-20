@@ -88,7 +88,8 @@
 </section>
 
 <!-- ============ PROJETS ============ -->
-<section id="projets" style="background:var(--bg-2);border-block:1px solid var(--line)">
+<section id="projets" style="background:var(--bg-2);border-block:1px solid var(--line)" class="has-topo">
+  <canvas id="topo" class="topo" role="img" aria-label="Topologie réseau animée"></canvas>
   <div class="wrap">
     <div class="head reveal">
       <div><div class="label"><b>02</b> · Projets</div><h2>Ce que j'ai construit</h2></div>
@@ -271,6 +272,7 @@
   <div class="dlg-body"><h4>Contexte</h4><p>SAE3.01 : IUT de Colmar, 2025-2026, groupe de 4. Développement d&#x27;une prise connectée WiFi : serveur web Django sur Raspberry Pi avec API REST et authentification JWT, programmation de 2 ESP8266 en C++ avec communication MQTT, lecture de température en temps réel et gestion de plages horaires automatiques.</p><h4>Réflexivité</h4><p>C&#x27;était la première fois que je développais un système où plusieurs technologies devaient fonctionner ensemble en temps réel. La difficulté principale était de synchroniser l&#x27;état des LEDs entre le bouton physique, l&#x27;interface web et les plages horaires sans conflit. J&#x27;ai compris qu&#x27;une application connectée ce n&#x27;est pas juste du code, c&#x27;est faire dialoguer des environnements qui ont chacun leur propre logique. Ce savoir-faire est applicable dans tout projet IoT ou infrastructure connectée.</p><h4>Outils</h4><div class="tags"><span class="tag">Django</span><span class="tag">Raspberry Pi</span><span class="tag">MQTT</span><span class="tag">ESP8266</span><span class="tag">Python</span><span class="tag">IoT</span><span class="tag">Linux</span></div></div>
 </dialog>
 
+<script src="assets/js/topo.js" defer></script>
 <script src="assets/js/globe-dots.js" defer></script>
 <script src="assets/js/globe.js" defer></script>
 <script src="assets/js/main.js" defer></script>
