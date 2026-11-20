@@ -41,4 +41,22 @@
     // clic en dehors de la fenêtre = fermer
     d.addEventListener('click', e => { if (e.target === d) d.close(); });
   });
+
+  // Bouton « Retour en haut » : visible après ~500 px, défilement fluide au clic
+  const toTop = document.getElementById('to-top');
+  if (toTop) {
+    const onScrollTop = () => {
+      const show = window.scrollY > 500;
+      toTop.classList.toggle('show', show);
+      toTop.hidden = false;
+    };
+    toTop.hidden = false;
+    onScrollTop();
+    window.addEventListener('scroll', onScrollTop, { passive: true });
+    toTop.addEventListener('click', () => {
+      const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    });
+  }
+
 })();
