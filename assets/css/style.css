@@ -204,8 +204,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--muted)}
 
 /* Apparition au défilement (une seule fois, discrète) */
-.reveal{transform:translateY(18px);transition:transform .8s ease}
-.reveal.in{transform:none}
+/* Blocs qui arrivent par la gauche ou la droite au défilement (comme sur la première version du site).
+   On utilise la propriété "translate" pour ne pas gêner le petit soulèvement des cartes au survol. */
+.slide{opacity:0;translate:var(--dx,-60px) 0;transition:opacity .8s cubic-bezier(.25,.46,.45,.94),translate .8s cubic-bezier(.25,.46,.45,.94),transform .3s,border-color .3s}
+.slide.in{opacity:1;translate:0 0}
+html{overflow-x:clip}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1020px){
@@ -245,6 +248,5 @@ footer a{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .marquee-track{animation:none}
-  .reveal{transform:none;transition:none}
   .status i{animation:none}
 }

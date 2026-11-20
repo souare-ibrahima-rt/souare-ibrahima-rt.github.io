@@ -16,14 +16,20 @@
     menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // Apparition douce, une seule fois par élément
-  const els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  // Blocs qui glissent depuis la gauche ou la droite, en alternance, à chaque passage (dans les deux sens)
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    const dist = window.innerWidth < 720 ? 40 : 60;
+    const els = document.querySelectorAll('.head, .fact, .portrait, .about-text, .route li, .card, .skill, .stack > div, .contacts li, .cv-row, .side-card');
+    els.forEach((el, i) => {
+      el.style.setProperty('--dx', (i % 2 === 0 ? -dist : dist) + 'px');
+      el.classList.add('slide');
+    });
     const io = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      e.target.classList.toggle('in', e.isIntersecting);
+    }), { threshold: 0.15 });
     els.forEach(el => io.observe(el));
-  } else els.forEach(el => el.classList.add('in'));
+  }
 
   // Fenêtres de détail (projets et compétences)
   document.querySelectorAll('[data-open]').forEach(btn => btn.addEventListener('click', () => {
